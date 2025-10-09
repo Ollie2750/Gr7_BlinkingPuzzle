@@ -4,23 +4,26 @@ public class PlatformTrigger : MonoBehaviour
 {
     public GameObject platformMove;
 
+    private Animator animator;
+
+    private void Awake()
+    {
+        animator = platformMove.GetComponent<Animator>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            platformMove.GetComponent<Animator>().Play("PlatMove_Animation");
-            this.gameObject.GetComponent<BoxCollider>().enabled = false;
+            animator.SetBool("IsPlayerOnPlatform", true);
         }
-
     }
-    
+
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
         {
-            platformMove.GetComponent<Animator>().Play("PlatMoveDown_Animation");
-            this.gameObject.GetComponent<BoxCollider>().enabled = true;
+            animator.SetBool("IsPlayerOnPlatform", false);
         }
-
     }
 }
