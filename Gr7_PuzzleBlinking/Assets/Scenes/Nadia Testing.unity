@@ -1313,6 +1313,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: collected map
       objectReference: {fileID: 0}
+    - target: {fileID: 8556883362360359799, guid: 810220aba88eb8e4089c485922a95539, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 4463199355605523122, guid: 45c5a874563f43540b49377217748036, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1572,6 +1576,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Table
       objectReference: {fileID: 0}
+    - target: {fileID: 8442510506162454399, guid: 5e0b5256e94749548ac01f8581ab1548, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8392130447483743927, guid: f794da0341758bb49a14f4d52a5e6762, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
