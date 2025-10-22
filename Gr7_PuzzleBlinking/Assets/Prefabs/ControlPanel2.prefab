@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9180012828398266957, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: m_Name
+      value: CameraSwitch
+      objectReference: {fileID: 0}
+    - target: {fileID: -9099071377699837460, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eda74d854d060d4458de6fd491e5942a, type: 2}
     - target: {fileID: -8679921383154817045, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -60,12 +68,165 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8106879285722602359, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eda74d854d060d4458de6fd491e5942a, type: 2}
+    - target: {fileID: -7641015066999239902, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: m_Name
+      value: Light(Test)Text
+      objectReference: {fileID: 0}
+    - target: {fileID: -6457326625098736441, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: m_Name
+      value: Light(Control)Text
+      objectReference: {fileID: 0}
+    - target: {fileID: -5377357656524151172, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: m_Name
+      value: Light(All)Text
+      objectReference: {fileID: 0}
+    - target: {fileID: -5008999608735098178, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eda74d854d060d4458de6fd491e5942a, type: 2}
+    - target: {fileID: -4968228519884944783, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: m_Name
+      value: MainText
+      objectReference: {fileID: 0}
+    - target: {fileID: -4818251250597677704, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: m_Name
+      value: LightSwitch
+      objectReference: {fileID: 0}
+    - target: {fileID: -4676638553533190349, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: m_Name
+      value: Door(Test)Text
+      objectReference: {fileID: 0}
+    - target: {fileID: -4324853746505224002, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: m_Name
+      value: DoorText
+      objectReference: {fileID: 0}
+    - target: {fileID: -4132003141822328483, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: m_Name
+      value: Door(All)Text
+      objectReference: {fileID: 0}
+    - target: {fileID: -3912231138716796913, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eda74d854d060d4458de6fd491e5942a, type: 2}
+    - target: {fileID: -3560074735817869238, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: m_Name
+      value: ElevatorText
+      objectReference: {fileID: 0}
+    - target: {fileID: -3290804001511696879, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eda74d854d060d4458de6fd491e5942a, type: 2}
+    - target: {fileID: -3234498117857499981, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eda74d854d060d4458de6fd491e5942a, type: 2}
+    - target: {fileID: -1049726544161059166, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: m_Name
+      value: Door(Cell)Text
+      objectReference: {fileID: 0}
+    - target: {fileID: -699156138352024757, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: m_Name
+      value: ButtonSwitch
+      objectReference: {fileID: 0}
+    - target: {fileID: -618208064851376098, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eda74d854d060d4458de6fd491e5942a, type: 2}
+    - target: {fileID: 28172598356157996, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eda74d854d060d4458de6fd491e5942a, type: 2}
     - target: {fileID: 919132149155446097, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
       propertyPath: m_Name
       value: ControlPanel2
       objectReference: {fileID: 0}
+    - target: {fileID: 1482519974497621762, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eda74d854d060d4458de6fd491e5942a, type: 2}
+    - target: {fileID: 1653557885646439181, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eda74d854d060d4458de6fd491e5942a, type: 2}
+    - target: {fileID: 2113321010632384331, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: m_Name
+      value: MirrorSwitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 2216761805143188365, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eda74d854d060d4458de6fd491e5942a, type: 2}
+    - target: {fileID: 2259387970125912692, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: m_Name
+      value: ButtonText
+      objectReference: {fileID: 0}
+    - target: {fileID: 3328422244138286064, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eda74d854d060d4458de6fd491e5942a, type: 2}
+    - target: {fileID: 3492157072836073286, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eda74d854d060d4458de6fd491e5942a, type: 2}
+    - target: {fileID: 3790991528618848773, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: m_Name
+      value: CameraText
+      objectReference: {fileID: 0}
+    - target: {fileID: 3942258107334499155, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: m_Name
+      value: PressureSwitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777775578089807531, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: m_Name
+      value: Door(Control)Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953905994564900381, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eda74d854d060d4458de6fd491e5942a, type: 2}
+    - target: {fileID: 6078073889865196737, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: m_Name
+      value: MirrorText
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802345032902436946, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: m_Name
+      value: SubjectText
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268958337356312662, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eda74d854d060d4458de6fd491e5942a, type: 2}
+    - target: {fileID: 7307109073415605764, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9b2ac31f4ed8b0b4c966c9d4594693ea, type: 2}
+    - target: {fileID: 7312561206959214721, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: m_Name
+      value: ElevatorSwitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545795519434846961, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eda74d854d060d4458de6fd491e5942a, type: 2}
+    - target: {fileID: 8105799130654620817, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: m_Name
+      value: LightText
+      objectReference: {fileID: 0}
+    - target: {fileID: 8199499861884703919, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: m_Name
+      value: Light(Cell)Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 8258831176960936551, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eda74d854d060d4458de6fd491e5942a, type: 2}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8118313440081017282, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8711e26ee15b5924e93d9d36c93134a0, type: 3}
