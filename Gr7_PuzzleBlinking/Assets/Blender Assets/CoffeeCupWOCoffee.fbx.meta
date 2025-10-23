@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-guid: 3e8ac8997a1504542b82b58b3e8a80b7
+guid: fc4ba59ce92e14069b7b64d8b859b6fd
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Seamless-Wood-Texture-3
-    second: {fileID: 2800000, guid: 3fdb29ad9a4654623891c32077015682, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Seamless-Wood-Texture-5
-    second: {fileID: 2800000, guid: 7cf6c12f52e814f9e85de5f1251aea4d, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
