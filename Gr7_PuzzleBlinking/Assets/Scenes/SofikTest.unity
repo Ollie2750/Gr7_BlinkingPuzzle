@@ -3664,6 +3664,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 93179f4390ccd854cafcdcfd6c8353e0, type: 3}
   m_PrefabInstance: {fileID: 2144973512}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &39724476316464044
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 29599412837637180, guid: 695cbd364084747c0aa8d43031c22162, type: 3}
+      propertyPath: m_Name
+      value: FlyttekasseMedFlapperNew
+      objectReference: {fileID: 0}
+    - target: {fileID: 802476563517867654, guid: 695cbd364084747c0aa8d43031c22162, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 802476563517867654, guid: 695cbd364084747c0aa8d43031c22162, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 802476563517867654, guid: 695cbd364084747c0aa8d43031c22162, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 802476563517867654, guid: 695cbd364084747c0aa8d43031c22162, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 802476563517867654, guid: 695cbd364084747c0aa8d43031c22162, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 802476563517867654, guid: 695cbd364084747c0aa8d43031c22162, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 802476563517867654, guid: 695cbd364084747c0aa8d43031c22162, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 802476563517867654, guid: 695cbd364084747c0aa8d43031c22162, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 802476563517867654, guid: 695cbd364084747c0aa8d43031c22162, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 802476563517867654, guid: 695cbd364084747c0aa8d43031c22162, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 695cbd364084747c0aa8d43031c22162, type: 3}
 --- !u!1001 &2348057542030732346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3778,63 +3835,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31a4f241dafab450a80cf2614a06d242, type: 3}
---- !u!1001 &6745300396573599440
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5842641906170136276, guid: c8bd0af16e61246f386780f7473bb16e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.962
-      objectReference: {fileID: 0}
-    - target: {fileID: 5842641906170136276, guid: c8bd0af16e61246f386780f7473bb16e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 5842641906170136276, guid: c8bd0af16e61246f386780f7473bb16e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.203
-      objectReference: {fileID: 0}
-    - target: {fileID: 5842641906170136276, guid: c8bd0af16e61246f386780f7473bb16e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071067
-      objectReference: {fileID: 0}
-    - target: {fileID: 5842641906170136276, guid: c8bd0af16e61246f386780f7473bb16e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 5842641906170136276, guid: c8bd0af16e61246f386780f7473bb16e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5842641906170136276, guid: c8bd0af16e61246f386780f7473bb16e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5842641906170136276, guid: c8bd0af16e61246f386780f7473bb16e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5842641906170136276, guid: c8bd0af16e61246f386780f7473bb16e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5842641906170136276, guid: c8bd0af16e61246f386780f7473bb16e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6511901008592198766, guid: c8bd0af16e61246f386780f7473bb16e, type: 3}
-      propertyPath: m_Name
-      value: FlyttekasseMedFlap
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c8bd0af16e61246f386780f7473bb16e, type: 3}
 --- !u!1001 &6801975264799668422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4095,7 +4095,7 @@ SceneRoots:
   - {fileID: 2348057542030732346}
   - {fileID: 1056978653}
   - {fileID: 5604041392260340203}
-  - {fileID: 6745300396573599440}
   - {fileID: 6801975264799668422}
   - {fileID: 7577788452199117542}
   - {fileID: 7572564360060424909}
+  - {fileID: 39724476316464044}
