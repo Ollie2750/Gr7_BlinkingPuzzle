@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class MovementScript : MonoBehaviour
 {
@@ -10,8 +11,8 @@ public class MovementScript : MonoBehaviour
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float jumpHeight = 1.5f;
     [SerializeField] private float sprintSpeed = 6f;
-    [SerializeField] private float crouchSpeed = 1.5f;
     [SerializeField] private float currentSpeed;
+    [SerializeField] private float interactDistance = 3;
     private Vector3 velocity;
     private Vector2 moveInput;
 
@@ -20,7 +21,8 @@ public class MovementScript : MonoBehaviour
     [SerializeField] private Transform playerCamera;
     private float xRotation = 0f;
     private bool isCrouching = false;
-    
+    private Interactable currentInteractable;
+
     void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -32,6 +34,7 @@ public class MovementScript : MonoBehaviour
     {
         Move();
         ApplyGravity();
+        HandleHover();
     }
 
     private void Move()
@@ -77,6 +80,45 @@ public class MovementScript : MonoBehaviour
         currentSpeed = sprint ? sprintSpeed : moveSpeed;
     }
 
+    private void HandleHover()
+    {
+        Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
+        RaycastHit hit;
+        Debug.DrawRay(playerCamera.position, playerCamera.forward * interactDistance, Color.red);
+
+        Interactable newInteractable = null;
+
+        if (Physics.Raycast(ray, out hit, interactDistance))
+        {
+            newInteractable = hit.collider.GetComponent<Interactable>();
+        }
+
+        if (currentInteractable != null && currentInteractable.Equals(null))
+        {
+            currentInteractable = null;
+        }
+
+        if (newInteractable != currentInteractable)
+        {
+            if (currentInteractable != null && !currentInteractable.Equals(null))
+                currentInteractable.OnHoverExit();
+
+            currentInteractable = newInteractable;
+
+            if (currentInteractable != null)
+                currentInteractable.OnHoverEnter();
+        }
+    }
+
+    private void Interaction()
+    {
+        Debug.Log("Interact pressed");
+        if (currentInteractable != null)
+        {
+            currentInteractable.Interact();
+        }
+    }
+
     private void OnEnable()
     {
         inputActions.Enable();
@@ -89,5 +131,6 @@ public class MovementScript : MonoBehaviour
         inputActions.Player.Jump.performed += _ => Jump();
         inputActions.Player.Sprint.performed += _ => Sprint(true);
         inputActions.Player.Sprint.canceled += _ => Sprint(false);
+        inputActions.Player.Interact.performed += _ => Interaction();
     }
 }
