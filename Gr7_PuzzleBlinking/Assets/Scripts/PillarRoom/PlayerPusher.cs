@@ -8,7 +8,9 @@ public class PlayerPusher : MonoBehaviour
     [Tooltip("Only push along the ground, not upward.")]
     public bool horizontalOnly = true;
 
-    void OnControllerColliderHit(ControllerColliderHit hit)
+  // Only runs if your player uses a CharacterController.
+  // It adds an impulse to any non-kinematic Rigidbody we collide with.
+  void OnControllerColliderHit(ControllerColliderHit hit)
     {
         var rb = hit.rigidbody;
         if (!rb || rb.isKinematic) return;

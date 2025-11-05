@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class PlayerInteractor : MonoBehaviour
 {
-    public Camera cam;                    // assign your player camera (or left empty to auto-grab)
+    public Camera cam;                    // assign your player camera (defaults to main camera)
     public KeyCode useKey = KeyCode.E;
     public float useDistance = 4f;        // how far you can “use” a button
     public LayerMask interactMask = ~0;   // set to "Interactable" layer if you make one
-    public bool showDebugRay = false;
+    public bool showDebugRay = false;     // Draws a yellow ray for a moment when pressing E
 
     void Awake()
     {
@@ -15,11 +15,13 @@ public class PlayerInteractor : MonoBehaviour
 
     void Update()
     {
+        // Optional visual aid in Scene/Game view
         if (showDebugRay)
             Debug.DrawRay(cam.transform.position, cam.transform.forward * useDistance, Color.yellow);
 
         if (Input.GetKeyDown(useKey))
         {
+            // Ray from the camera forward
             Ray ray = new Ray(cam.transform.position, cam.transform.forward);
             if (Physics.Raycast(ray, out RaycastHit hit, useDistance, interactMask, QueryTriggerInteraction.Ignore))
             {
@@ -27,7 +29,7 @@ public class PlayerInteractor : MonoBehaviour
                 var pad = hit.collider.GetComponentInParent<ButtonPad>();
                 if (pad != null)
                 {
-                    pad.Activate();
+                    pad.Activate();     // Delegate the actual spawn/respawn to the button
                 }
             }
         }
