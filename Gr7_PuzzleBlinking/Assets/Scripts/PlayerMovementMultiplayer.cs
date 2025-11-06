@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using Unity.Netcode;
+using UnityEditor;
 
 public class PlayerMovementMultiplayer : MonoBehaviour
 {
@@ -38,6 +39,9 @@ public class PlayerMovementMultiplayer : MonoBehaviour
 
     private void Start()
     {
+        playerCamera.gameObject.GetComponent<NetworkObject>().
+        
+
         isOwner = _transform.IsOwner;
         Debug.Log(isOwner);
     }
