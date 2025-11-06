@@ -1,14 +1,23 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Death : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public int maxHP = 100;
+    public int playerHP;
+
+    private void Start()
     {
-        
+        playerHP = maxHP;
     }
 
-    // Update is called once per frame
+    private void OnTriggerEnter(Collider target)
+    {
+        if (target.tag == "Player")
+        {
+            playerHP = playerHP - maxHP;
+        }
+    }
     void Update()
     {
         
