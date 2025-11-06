@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 6226231251343965340}
   - component: {fileID: -1100492400721657197}
   - component: {fileID: 40021873217349624}
-  - component: {fileID: -3129019200331844977}
+  - component: {fileID: -3453637291667826881}
   m_Layer: 0
   m_Name: MultiplayerPlayer
   m_TagString: Untagged
@@ -360,7 +360,7 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
---- !u!114 &-3129019200331844977
+--- !u!114 &-3453637291667826881
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -369,11 +369,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8285474711326974092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da52bf8bbc1de48cfb221a6ff30f7972, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e872dc3a936e1f4db785192ee847d8b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Multiplayer.Center.NetcodeForGameObjectsExample::Unity.Multiplayer.Center.NetcodeForGameObjectsExample.ClientNetworkTransform
+  m_EditorClassIdentifier: Assembly-CSharp::ClientNetworkTransform
   ShowTopMostFoldoutHeaderGroup: 1
-  NetworkTransformExpanded: 0
+  NetworkTransformExpanded: 1
   AutoOwnerAuthorityTickOffset: 1
   PositionInterpolationType: 0
   RotationInterpolationType: 0

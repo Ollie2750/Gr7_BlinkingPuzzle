@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using Unity.Netcode;
 
-public class PlayerMovement_Multiplayer : MonoBehaviour
+public class PlayerMovementMultiplayer : MonoBehaviour
 {
     private CharacterController controller;
     private InputSystem_Actions inputActions;
@@ -25,22 +25,26 @@ public class PlayerMovement_Multiplayer : MonoBehaviour
     private Interactable currentInteractable;
 
     private ClientNetworkTransform _transform;
-    private bool IsOwner;
+    private bool isOwner;
 
     void Awake()
     {
-        _transform = GetComponent<ClientNetworkTransform>();
-        Debug.Log(_transform);
-        IsOwner = _transform.IsOwner;
+        _transform = gameObject.GetComponent<ClientNetworkTransform>();
 
         controller = GetComponent<CharacterController>();
         inputActions = new InputSystem_Actions();
         currentSpeed = moveSpeed;
     }
 
+    private void Start()
+    {
+        isOwner = _transform.IsOwner;
+        Debug.Log(isOwner);
+    }
+
     private void FixedUpdate()
     {
-        if (!IsOwner) return;
+        if (!isOwner) return;
         Move();
         ApplyGravity();
         HandleHover();
@@ -130,8 +134,6 @@ public class PlayerMovement_Multiplayer : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log("ENABLED");
-
         inputActions.Enable();
         inputActions.Player.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
         inputActions.Player.Move.canceled += ctx => moveInput = Vector2.zero;
@@ -144,4 +146,5 @@ public class PlayerMovement_Multiplayer : MonoBehaviour
         inputActions.Player.Sprint.canceled += _ => Sprint(false);
         inputActions.Player.Interact.performed += _ => Interaction();
     }
+
 }
