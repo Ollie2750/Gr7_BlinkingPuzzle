@@ -1054,6 +1054,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1482097056239540828, guid: 9073682db81c012458ef148bbb7c036f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3676122570577849122, guid: 9073682db81c012458ef148bbb7c036f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -13327,7 +13331,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800155649}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1800155654
 Camera:
   m_ObjectHideFlags: 0
