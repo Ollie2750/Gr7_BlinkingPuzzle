@@ -39,11 +39,7 @@ public class PlayerMovementMultiplayer : MonoBehaviour
 
     private void Start()
     {
-        playerCamera.gameObject.GetComponent<NetworkObject>().
-        
-
         isOwner = _transform.IsOwner;
-        Debug.Log(isOwner);
     }
 
     private void FixedUpdate()
