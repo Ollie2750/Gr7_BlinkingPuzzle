@@ -5,11 +5,11 @@ public class Death : MonoBehaviour
 {
     public int maxHP = 100;
     public int playerHP;
-    public Vector3 spawnLocation = new Vector3(0, 0, 0);
+    public Vector3 spawnLocation;
 
     private void Start()
     {
-        playerHP =+ maxHP;
+        playerHP = maxHP;
     }
 
     private void OnTriggerEnter(Collider target)
@@ -22,9 +22,13 @@ public class Death : MonoBehaviour
     }
     void Update()
     {
-        if (playerHP < 0)
+        if (playerHP <= 0)
         {
-            transform.position = transform.position + spawnLocation;
+            gameObject.GetComponent<CharacterController>().enabled = false;
+            transform.position = (spawnLocation);
+            playerHP = maxHP;
+            gameObject.GetComponent<CharacterController>().enabled = true;
+
         }
     }
 }
