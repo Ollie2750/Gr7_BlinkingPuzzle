@@ -1,0 +1,12 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/button.uss?fileID=7433441132597879392&amp;guid=98950d864ca7ec54984998170e886a5d&amp;type=3#button" />
+    <ui:VisualElement style="flex-grow: 1; height: 20%;">
+        <ui:Label text="Chronolink" name="Titel" style="align-self: center; align-content: center; align-items: stretch; font-size: 400%;" />
+    </ui:VisualElement>
+    <ui:VisualElement name="Buttons" style="flex-grow: 1; height: 80%; justify-content: center;">
+        <ui:Button text="Start" class="button" />
+        <ui:Button text="Tutorial" class="button" />
+        <ui:Button text="Settings" class="button" />
+        <ui:Button text="Exit" class="button" />
+    </ui:VisualElement>
+</ui:UXML>
