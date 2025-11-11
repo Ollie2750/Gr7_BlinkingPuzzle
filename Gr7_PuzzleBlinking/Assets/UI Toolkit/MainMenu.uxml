@@ -4,7 +4,7 @@
         <ui:Label name="Titel" style="align-self: center; align-content: center; align-items: stretch; font-size: 400%;" />
     </ui:VisualElement>
     <ui:VisualElement name="Buttons" style="flex-grow: 1; height: 80%; justify-content: center;">
-        <ui:Button text="Start" class="button" />
+        <ui:Button text="Start" name="StartButton" class="button" />
         <ui:Button text="Tutorial" class="button" />
         <ui:Button text="Settings" class="button" />
         <ui:Button text="Exit" class="button" />
