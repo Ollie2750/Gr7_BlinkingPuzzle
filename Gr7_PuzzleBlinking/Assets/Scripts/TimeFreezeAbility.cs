@@ -9,9 +9,6 @@ public class TimeFreezeAbility : MonoBehaviour
     [SerializeField] private float freezeDuration = 5f;
     [SerializeField] private float cooldownDuration = 5f;
 
-    [Header("Player Reference")]
-    [SerializeField] private Rigidbody playerRigidbody;
-
     private bool isOnCooldown = false;
     private bool isFreezeActive = false;
     private List<RigidbodyState> frozenRigidbodies = new List<RigidbodyState>();
@@ -62,7 +59,7 @@ public class TimeFreezeAbility : MonoBehaviour
         foreach (Rigidbody rb in allRigidbodies)
         {
             // Skip the player's rigidbody
-            if (rb == playerRigidbody)
+            if (rb.gameObject.tag == "Player")
                 continue;
 
             // ===== MOMENTUM STORAGE: Save current velocities before freezing =====

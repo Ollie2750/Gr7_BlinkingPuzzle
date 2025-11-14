@@ -16,8 +16,8 @@ public class TimeTravelAbility : MonoBehaviour
     [SerializeField] private CharacterController player2CharController;  // If using Character Controller
 
     [Header("Map Location Settings")]
-    [SerializeField] private Transform oldMapCenter;  // Center of the old/past map
-    [SerializeField] private Transform newMapCenter;  // Center of the new/future map
+    [SerializeField] private Vector3 oldMapCenter;  // Center position of the old/past map
+    [SerializeField] private Vector3 newMapCenter;  // Center position of the new/future map
 
     [Header("Starting Positions")]
     [SerializeField] private bool player1StartsInOldMap = true;  // Which map Player 1 starts in
@@ -27,13 +27,38 @@ public class TimeTravelAbility : MonoBehaviour
     private bool player2IsInOldMap;  // Track which map Player 2 is in
     private bool isOnCooldown = false;
 
-    void Start()
+    void OnEnable()
     {
         player1IsInOldMap = player1StartsInOldMap;
         player2IsInOldMap = player2StartsInOldMap;
 
         Debug.Log($"Player 1 spawned in: {(player1IsInOldMap ? "Old Map" : "New Map")}");
         Debug.Log($"Player 2 spawned in: {(player2IsInOldMap ? "Old Map" : "New Map")}");
+
+        player2Transform = transform;
+        player2Rigidbody = GetComponent<Rigidbody>();
+        player2CharController = GetComponent<CharacterController>();
+
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject player in players)
+        {
+            if (player.GetComponent<ClientNetworkTransform>().IsOwnedByServer)
+            {
+                player1Transform = player.transform;
+                player1Rigidbody = player.GetComponent<Rigidbody>();
+                player1CharController = player.GetComponent<CharacterController>();
+                return;
+            }
+        }
+
+        TeleportPlayer(
+            player2Transform,
+            player2Rigidbody,
+            player2CharController,
+            player2IsInOldMap,
+            out player2IsInOldMap
+        );
+
     }
 
     void Update()
@@ -46,12 +71,6 @@ public class TimeTravelAbility : MonoBehaviour
 
     void ActivateTimeTravel()
     {
-        if (oldMapCenter == null || newMapCenter == null)
-        {
-            Debug.LogError("Map centers not assigned! Please set Old Map Center and New Map Center.");
-            return;
-        }
-
         if (player1Transform == null || player2Transform == null)
         {
             Debug.LogError("Player transforms not assigned!");
@@ -88,16 +107,16 @@ public class TimeTravelAbility : MonoBehaviour
     void TeleportPlayer(Transform playerTransform, Rigidbody playerRigidbody, CharacterController charController, bool isInOldMap, out bool newMapStatus)
     {
         // Determine source and destination based on current location
-        Transform sourceMapCenter = isInOldMap ? oldMapCenter : newMapCenter;
-        Transform destMapCenter = isInOldMap ? newMapCenter : oldMapCenter;
+        Vector3 sourceMapCenter = isInOldMap ? oldMapCenter : newMapCenter;
+        Vector3 destMapCenter = isInOldMap ? newMapCenter : oldMapCenter;
 
         // ===== POSITION CALCULATION: Convert relative position between maps =====
 
         // Get player's offset from source map center
-        Vector3 playerOffset = playerTransform.position - sourceMapCenter.position;
+        Vector3 playerOffset = playerTransform.position - sourceMapCenter;
 
         // Calculate new position in destination map (same relative position)
-        Vector3 newPlayerPos = destMapCenter.position + playerOffset;
+        Vector3 newPlayerPos = destMapCenter + playerOffset;
 
         // ===== MOMENTUM PRESERVATION: Store velocity before teleport =====
         Vector3 playerVelocity = Vector3.zero;
@@ -186,46 +205,33 @@ public class TimeTravelAbility : MonoBehaviour
     // Visualize the two map centers in the editor
     void OnDrawGizmos()
     {
-        if (oldMapCenter != null)
-        {
-            Gizmos.color = new Color(0.6f, 0.4f, 0.2f, 0.5f); // Brown for old map
-            Gizmos.DrawWireSphere(oldMapCenter.position, 2f);
-            Gizmos.DrawWireCube(oldMapCenter.position, new Vector3(20f, 0.5f, 20f));
-        }
+        // Draw old map center
+        Gizmos.color = new Color(0.6f, 0.4f, 0.2f, 0.5f); // Brown for old map
+        Gizmos.DrawWireSphere(oldMapCenter, 2f);
+        Gizmos.DrawWireCube(oldMapCenter, new Vector3(20f, 0.5f, 20f));
 
-        if (newMapCenter != null)
-        {
-            Gizmos.color = new Color(0.2f, 0.8f, 1f, 0.5f); // Cyan for new map
-            Gizmos.DrawWireSphere(newMapCenter.position, 2f);
-            Gizmos.DrawWireCube(newMapCenter.position, new Vector3(20f, 0.5f, 20f));
-        }
+        // Draw new map center
+        Gizmos.color = new Color(0.2f, 0.8f, 1f, 0.5f); // Cyan for new map
+        Gizmos.DrawWireSphere(newMapCenter, 2f);
+        Gizmos.DrawWireCube(newMapCenter, new Vector3(20f, 0.5f, 20f));
 
         // Draw arrow between maps
-        if (oldMapCenter != null && newMapCenter != null)
-        {
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawLine(oldMapCenter.position, newMapCenter.position);
-        }
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(oldMapCenter, newMapCenter);
 
         // Show starting positions
         if (player1Transform != null)
         {
-            Transform startMap = player1StartsInOldMap ? oldMapCenter : newMapCenter;
-            if (startMap != null)
-            {
-                Gizmos.color = Color.green;
-                Gizmos.DrawLine(player1Transform.position, startMap.position);
-            }
+            Vector3 startMap = player1StartsInOldMap ? oldMapCenter : newMapCenter;
+            Gizmos.color = Color.green;
+            Gizmos.DrawLine(player1Transform.position, startMap);
         }
 
         if (player2Transform != null)
         {
-            Transform startMap = player2StartsInOldMap ? oldMapCenter : newMapCenter;
-            if (startMap != null)
-            {
-                Gizmos.color = Color.blue;
-                Gizmos.DrawLine(player2Transform.position, startMap.position);
-            }
+            Vector3 startMap = player2StartsInOldMap ? oldMapCenter : newMapCenter;
+            Gizmos.color = Color.blue;
+            Gizmos.DrawLine(player2Transform.position, startMap);
         }
     }
 }
