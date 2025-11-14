@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 4147810975
+  GlobalObjectIdHash: 4092365882
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -494,14 +494,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c95479866b9d47448a72c15c56d0967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimeTravelAbility
+  ShowTopMostFoldoutHeaderGroup: 1
   travelKey: 113
   cooldownDuration: 5
-  player1Transform: {fileID: 0}
-  player2Transform: {fileID: 0}
-  player1Rigidbody: {fileID: 0}
-  player2Rigidbody: {fileID: 0}
-  player1CharController: {fileID: 0}
-  player2CharController: {fileID: 0}
   oldMapCenter: {x: 0, y: 0, z: 0}
   newMapCenter: {x: 50, y: 0, z: 0}
   player1StartsInOldMap: 1

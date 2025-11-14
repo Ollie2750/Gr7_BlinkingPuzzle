@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
+using Unity.Netcode;
 
-public class TimeTravelAbility : MonoBehaviour
+public class TimeTravelAbility : NetworkBehaviour
 {
     [Header("Settings")]
     [SerializeField] private KeyCode travelKey = KeyCode.Q;
@@ -27,8 +28,12 @@ public class TimeTravelAbility : MonoBehaviour
     private bool player2IsInOldMap;  // Track which map Player 2 is in
     private bool isOnCooldown = false;
 
-    void OnEnable()
+    private bool player2LocationFixed = false;
+
+    public override void OnNetworkSpawn()
     {
+        base.OnNetworkSpawn();
+
         player1IsInOldMap = player1StartsInOldMap;
         player2IsInOldMap = player2StartsInOldMap;
 
@@ -42,7 +47,8 @@ public class TimeTravelAbility : MonoBehaviour
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject player in players)
         {
-            if (player.GetComponent<ClientNetworkTransform>().IsOwnedByServer)
+            var clientNetTransform = player.GetComponent<ClientNetworkTransform>();
+            if (clientNetTransform != null && clientNetTransform.IsOwnedByServer)
             {
                 player1Transform = player.transform;
                 player1Rigidbody = player.GetComponent<Rigidbody>();
@@ -50,19 +56,25 @@ public class TimeTravelAbility : MonoBehaviour
                 return;
             }
         }
-
-        TeleportPlayer(
-            player2Transform,
-            player2Rigidbody,
-            player2CharController,
-            player2IsInOldMap,
-            out player2IsInOldMap
-        );
-
     }
 
     void Update()
     {
+        if (!IsOwner) return; // Only the owner of this script (Player 2) can activate
+
+        if (!player2LocationFixed)
+        {
+            Vector3 newPos = CalculateNewPosition(
+                player2Transform.position,
+                player2IsInOldMap,
+                out bool newMapStatus
+            );
+
+            // Request server to move Player 2 to starting position
+            RequestTeleportServerRpc(NetworkObjectId, newPos, Vector3.zero, Vector3.zero, newMapStatus);
+            player2LocationFixed = true;
+        }
+
         if (Input.GetKeyDown(travelKey) && !isOnCooldown)
         {
             ActivateTimeTravel();
@@ -71,6 +83,8 @@ public class TimeTravelAbility : MonoBehaviour
 
     void ActivateTimeTravel()
     {
+        if (!IsOwner) return;
+
         if (player1Transform == null || player2Transform == null)
         {
             Debug.LogError("Player transforms not assigned!");
@@ -80,86 +94,117 @@ public class TimeTravelAbility : MonoBehaviour
         Debug.Log($"BEFORE: Player 1 at {player1Transform.position}, Player 2 at {player2Transform.position}");
 
         // ===== PLAYER 1 TELEPORTATION =====
-        TeleportPlayer(
-            player1Transform,
-            player1Rigidbody,
-            player1CharController,
+        Vector3 player1NewPos = CalculateNewPosition(
+            player1Transform.position,
             player1IsInOldMap,
-            out player1IsInOldMap
+            out bool player1NewMapStatus
         );
+
+        Vector3 player1Velocity = Vector3.zero;
+        Vector3 player1AngularVel = Vector3.zero;
+
+        if (player1Rigidbody != null && !player1Rigidbody.isKinematic)
+        {
+            player1Velocity = player1Rigidbody.linearVelocity;
+            player1AngularVel = player1Rigidbody.angularVelocity;
+        }
 
         // ===== PLAYER 2 TELEPORTATION =====
-        TeleportPlayer(
-            player2Transform,
-            player2Rigidbody,
-            player2CharController,
+        Vector3 player2NewPos = CalculateNewPosition(
+            player2Transform.position,
             player2IsInOldMap,
-            out player2IsInOldMap
+            out bool player2NewMapStatus
         );
 
-        Debug.Log($"AFTER: Player 1 at {player1Transform.position}, Player 2 at {player2Transform.position}");
-        Debug.Log($"Time Travel activated! Player 1 → {(player1IsInOldMap ? "Old Map" : "New Map")}, Player 2 → {(player2IsInOldMap ? "Old Map" : "New Map")}");
+        Vector3 player2Velocity = Vector3.zero;
+        Vector3 player2AngularVel = Vector3.zero;
+
+        if (player2Rigidbody != null && !player2Rigidbody.isKinematic)
+        {
+            player2Velocity = player2Rigidbody.linearVelocity;
+            player2AngularVel = player2Rigidbody.angularVelocity;
+        }
+
+        // Request server to teleport both players
+        var player1NetObj = player1Transform.GetComponent<NetworkObject>();
+        if (player1NetObj != null)
+        {
+            RequestTeleportServerRpc(player1NetObj.NetworkObjectId, player1NewPos, player1Velocity, player1AngularVel, player1NewMapStatus);
+        }
+
+        RequestTeleportServerRpc(NetworkObjectId, player2NewPos, player2Velocity, player2AngularVel, player2NewMapStatus);
+
+        Debug.Log($"AFTER: Player 1 at {player1NewPos}, Player 2 at {player2NewPos}");
+        Debug.Log($"Time Travel activated! Player 1 → {(player1NewMapStatus ? "Old Map" : "New Map")}, Player 2 → {(player2NewMapStatus ? "Old Map" : "New Map")}");
 
         // Start cooldown
         StartCoroutine(Cooldown());
     }
 
-    void TeleportPlayer(Transform playerTransform, Rigidbody playerRigidbody, CharacterController charController, bool isInOldMap, out bool newMapStatus)
+    Vector3 CalculateNewPosition(Vector3 currentPos, bool isInOldMap, out bool newMapStatus)
     {
         // Determine source and destination based on current location
         Vector3 sourceMapCenter = isInOldMap ? oldMapCenter : newMapCenter;
         Vector3 destMapCenter = isInOldMap ? newMapCenter : oldMapCenter;
 
-        // ===== POSITION CALCULATION: Convert relative position between maps =====
-
         // Get player's offset from source map center
-        Vector3 playerOffset = playerTransform.position - sourceMapCenter;
+        Vector3 playerOffset = currentPos - sourceMapCenter;
 
         // Calculate new position in destination map (same relative position)
         Vector3 newPlayerPos = destMapCenter + playerOffset;
 
-        // ===== MOMENTUM PRESERVATION: Store velocity before teleport =====
-        Vector3 playerVelocity = Vector3.zero;
-        Vector3 playerAngularVelocity = Vector3.zero;
-        bool isKinematic = false;
+        // Toggle which map the player is in
+        newMapStatus = !isInOldMap;
 
-        if (playerRigidbody != null)
+        return newPlayerPos;
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    void RequestTeleportServerRpc(ulong networkObjectId, Vector3 newPosition, Vector3 velocity, Vector3 angularVelocity, bool newMapStatus)
+    {
+        // Server executes the teleport for the specified player
+        if (NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(networkObjectId, out NetworkObject netObj))
         {
-            isKinematic = playerRigidbody.isKinematic;
+            Transform playerTransform = netObj.transform;
+            Rigidbody playerRigidbody = netObj.GetComponent<Rigidbody>();
+            CharacterController charController = netObj.GetComponent<CharacterController>();
 
-            // Only store velocity if not kinematic
-            if (!isKinematic)
+            // Teleport the player
+            if (charController != null && charController.enabled)
             {
-                playerVelocity = playerRigidbody.linearVelocity;
-                playerAngularVelocity = playerRigidbody.angularVelocity;
+                charController.enabled = false;
+                playerTransform.position = newPosition;
+                charController.enabled = true;
             }
+            else
+            {
+                playerTransform.position = newPosition;
+            }
+
+            // Restore momentum
+            if (playerRigidbody != null && !playerRigidbody.isKinematic)
+            {
+                playerRigidbody.linearVelocity = velocity;
+                playerRigidbody.angularVelocity = angularVelocity;
+            }
+
+            // Update map status on all clients
+            UpdateMapStatusClientRpc(networkObjectId, newMapStatus);
         }
+    }
 
-        // ===== TELEPORTATION: Move player to destination map =====
-
-        // If using Character Controller, disable it temporarily for teleport
-        if (charController != null && charController.enabled)
+    [ClientRpc]
+    void UpdateMapStatusClientRpc(ulong networkObjectId, bool newMapStatus)
+    {
+        // Update the map status for the correct player
+        if (networkObjectId == NetworkObjectId)
         {
-            charController.enabled = false;
-            playerTransform.position = newPlayerPos;
-            charController.enabled = true;
+            player2IsInOldMap = newMapStatus;
         }
         else
         {
-            // Standard transform teleport
-            playerTransform.position = newPlayerPos;
+            player1IsInOldMap = newMapStatus;
         }
-
-        // ===== MOMENTUM RESTORATION: Reapply velocity after teleport =====
-        if (playerRigidbody != null && !isKinematic)
-        {
-            // Only restore velocity if not kinematic
-            playerRigidbody.linearVelocity = playerVelocity;
-            playerRigidbody.angularVelocity = playerAngularVelocity;
-        }
-
-        // Toggle which map the player is in
-        newMapStatus = !isInOldMap;
     }
 
     IEnumerator Cooldown()

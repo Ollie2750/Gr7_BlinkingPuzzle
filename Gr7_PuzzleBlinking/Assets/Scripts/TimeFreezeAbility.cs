@@ -84,6 +84,8 @@ public class TimeFreezeAbility : MonoBehaviour
 
     void UnfreezeAllRigidbodies()
     {
+        if (GetComponent<ClientNetworkTransform>().IsOwner == false) return;
+
         foreach (RigidbodyState state in frozenRigidbodies)
         {
             if (state.rb != null)
