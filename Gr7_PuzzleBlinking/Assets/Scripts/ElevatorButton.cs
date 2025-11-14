@@ -3,7 +3,7 @@ using UnityEngine;
 public class ElevatorButton : Interactable
 {
    
-    private bool isPressed = false;
+    //private bool isPressed = false;
     public GameObject elevator;
 
 
