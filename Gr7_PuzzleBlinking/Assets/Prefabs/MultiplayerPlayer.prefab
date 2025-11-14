@@ -157,6 +157,9 @@ GameObject:
   - component: {fileID: 4417485101276421173}
   - component: {fileID: 6583969717755612847}
   - component: {fileID: 9191305799228924224}
+  - component: {fileID: 6268217372282195994}
+  - component: {fileID: 6993944939849440191}
+  - component: {fileID: 2395078911702410173}
   m_Layer: 0
   m_Name: MultiplayerPlayer
   m_TagString: Player
@@ -173,7 +176,7 @@ Transform:
   m_GameObject: {fileID: 8285474711326974092}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.586, y: 0.879, z: -0.007}
+  m_LocalPosition: {x: 2, y: 0.5, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -451,7 +454,50 @@ MonoBehaviour:
   cam: {fileID: 7315001242268055230}
   useKey: 101
   useDistance: 4
-  interactMask:
-    serializedVersion: 2
-    m_Bits: 8
   showDebugRay: 0
+--- !u!114 &6268217372282195994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8285474711326974092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6f1cc502bf1de48990360e372b22d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAbilitiesSwitch
+--- !u!114 &6993944939849440191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8285474711326974092}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce097f28ee6630844abd13265cf97680, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeFreezeAbility
+  freezeKey: 113
+  freezeDuration: 5
+  cooldownDuration: 5
+--- !u!114 &2395078911702410173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8285474711326974092}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c95479866b9d47448a72c15c56d0967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeTravelAbility
+  ShowTopMostFoldoutHeaderGroup: 1
+  travelKey: 113
+  cooldownDuration: 5
+  oldMapCenter: {x: 0, y: 0, z: 0}
+  newMapCenter: {x: 50, y: 0, z: 0}
+  player1StartsInOldMap: 1
+  player2StartsInOldMap: 1
