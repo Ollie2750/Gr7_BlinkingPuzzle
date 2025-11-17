@@ -2508,10 +2508,8 @@ MonoBehaviour:
   cam: {fileID: 0}
   useKey: 101
   useDistance: 4
-  interactMask:
-    serializedVersion: 2
-    m_Bits: 8
   showDebugRay: 0
+  uiPrompt: {fileID: 0}
 --- !u!65 &745156885
 BoxCollider:
   m_ObjectHideFlags: 0

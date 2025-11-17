@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Death
+  - Button
+  - Floor
   layers:
   - Default
   - TransparentFX
