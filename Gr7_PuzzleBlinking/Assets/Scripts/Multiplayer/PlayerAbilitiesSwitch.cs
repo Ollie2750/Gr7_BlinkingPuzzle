@@ -4,13 +4,13 @@ public class PlayerAbilitiesSwitch : MonoBehaviour
 {
     ClientNetworkTransform clientTransform;
     TimeFreezeAbility timeFreeze;
-    TimeTravelAbility timeTravel;
+    TimeTravel timeTravel;
 
     void Start()
     {
         clientTransform = GetComponent<ClientNetworkTransform>();
         timeFreeze = GetComponent<TimeFreezeAbility>();
-        timeTravel = GetComponent<TimeTravelAbility>();
+        timeTravel = GetComponent<TimeTravel>();
 
         if (clientTransform.IsOwnedByServer)
         {

@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 9191305799228924224}
   - component: {fileID: 6268217372282195994}
   - component: {fileID: 6993944939849440191}
-  - component: {fileID: 2395078911702410173}
+  - component: {fileID: 4237137640271501463}
   m_Layer: 0
   m_Name: MultiplayerPlayer
   m_TagString: Player
@@ -455,6 +455,7 @@ MonoBehaviour:
   useKey: 101
   useDistance: 4
   showDebugRay: 0
+  uiPrompt: {fileID: 0}
 --- !u!114 &6268217372282195994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -482,7 +483,7 @@ MonoBehaviour:
   freezeKey: 113
   freezeDuration: 5
   cooldownDuration: 5
---- !u!114 &2395078911702410173
+--- !u!114 &4237137640271501463
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -491,13 +492,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 8285474711326974092}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c95479866b9d47448a72c15c56d0967, type: 3}
+  m_Script: {fileID: 11500000, guid: a6a0e29952fff7c4886f1bed9f5251b9, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TimeTravelAbility
+  m_EditorClassIdentifier: Assembly-CSharp::TimeTravel
   ShowTopMostFoldoutHeaderGroup: 1
   travelKey: 113
   cooldownDuration: 5
+  player1Transform: {fileID: 0}
+  player2Transform: {fileID: 0}
+  player1Rigidbody: {fileID: 0}
+  player2Rigidbody: {fileID: 0}
+  player1CharController: {fileID: 0}
+  player2CharController: {fileID: 0}
   oldMapCenter: {x: 0, y: 0, z: 0}
   newMapCenter: {x: 50, y: 0, z: 0}
   player1StartsInOldMap: 1
-  player2StartsInOldMap: 1
+  player2StartsInOldMap: 0
