@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5826131782263538439
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2498502493998018254, guid: 213435661c5034137822cfe9a68f2775, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6812695
+      objectReference: {fileID: 0}
+    - target: {fileID: 2498502493998018254, guid: 213435661c5034137822cfe9a68f2775, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.851
+      objectReference: {fileID: 0}
+    - target: {fileID: 2870824988683615245, guid: 213435661c5034137822cfe9a68f2775, type: 3}
+      propertyPath: m_Name
+      value: LampWithLightLong Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3512937303487945160, guid: 213435661c5034137822cfe9a68f2775, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.045
+      objectReference: {fileID: 0}
+    - target: {fileID: 5857095472852670044, guid: 213435661c5034137822cfe9a68f2775, type: 3}
+      propertyPath: m_Range
+      value: 16.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 5857095472852670044, guid: 213435661c5034137822cfe9a68f2775, type: 3}
+      propertyPath: m_Intensity
+      value: 5.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 5857095472852670044, guid: 213435661c5034137822cfe9a68f2775, type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 117.5232
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356501635751589774, guid: 213435661c5034137822cfe9a68f2775, type: 3}
+      propertyPath: m_Range
+      value: 4.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356501635751589774, guid: 213435661c5034137822cfe9a68f2775, type: 3}
+      propertyPath: m_Intensity
+      value: 3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098782055015174940, guid: 213435661c5034137822cfe9a68f2775, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.377
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098782055015174940, guid: 213435661c5034137822cfe9a68f2775, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.063
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098782055015174940, guid: 213435661c5034137822cfe9a68f2775, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098782055015174940, guid: 213435661c5034137822cfe9a68f2775, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098782055015174940, guid: 213435661c5034137822cfe9a68f2775, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098782055015174940, guid: 213435661c5034137822cfe9a68f2775, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098782055015174940, guid: 213435661c5034137822cfe9a68f2775, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098782055015174940, guid: 213435661c5034137822cfe9a68f2775, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098782055015174940, guid: 213435661c5034137822cfe9a68f2775, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098782055015174940, guid: 213435661c5034137822cfe9a68f2775, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 213435661c5034137822cfe9a68f2775, type: 3}
