@@ -123,7 +123,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1603265530949403620, guid: ffeadb752e387416390d3b41ba23cc53, type: 3}
       propertyPath: m_Name
-      value: LampWithLightFlicker Variant Variant
+      value: LampWithLightFlickerLong Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2282780020523892794, guid: ffeadb752e387416390d3b41ba23cc53, type: 3}
       propertyPath: m_IsActive
@@ -170,7 +170,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2282780020523892794, guid: ffeadb752e387416390d3b41ba23cc53, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5741411737181351157, guid: ffeadb752e387416390d3b41ba23cc53, type: 3}
       insertIndex: 2
