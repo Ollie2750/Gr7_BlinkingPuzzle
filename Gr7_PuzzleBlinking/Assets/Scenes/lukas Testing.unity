@@ -302,6 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c95479866b9d47448a72c15c56d0967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimeTravelAbility
+  ShowTopMostFoldoutHeaderGroup: 1
   travelKey: 113
   cooldownDuration: 5
   player1Transform: {fileID: 1510005750}
@@ -310,8 +311,8 @@ MonoBehaviour:
   player2Rigidbody: {fileID: 268119776}
   player1CharController: {fileID: 1510005753}
   player2CharController: {fileID: 0}
-  oldMapCenter: {fileID: 1754090246}
-  newMapCenter: {fileID: 1439676181}
+  oldMapCenter: {x: 0, y: 0, z: 0}
+  newMapCenter: {x: 0, y: 0, z: 0}
   player1StartsInOldMap: 1
   player2StartsInOldMap: 0
 --- !u!1001 &708306410
@@ -324,15 +325,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3676122570577849122, guid: 9073682db81c012458ef148bbb7c036f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.42
+      value: -0.243
       objectReference: {fileID: 0}
     - target: {fileID: 3676122570577849122, guid: 9073682db81c012458ef148bbb7c036f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.508
+      value: 14.011
       objectReference: {fileID: 0}
     - target: {fileID: 3676122570577849122, guid: 9073682db81c012458ef148bbb7c036f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.3
+      value: 58.64
       objectReference: {fileID: 0}
     - target: {fileID: 3676122570577849122, guid: 9073682db81c012458ef148bbb7c036f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -424,7 +425,6 @@ MonoBehaviour:
   freezeKey: 113
   freezeDuration: 5
   cooldownDuration: 0
-  playerRigidbody: {fileID: 1510005744}
 --- !u!1001 &1158621482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -498,11 +498,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02b956a6b2b3ddf4eb755da8a24fdee2, type: 3}
---- !u!4 &1439676181 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6313998766814700548, guid: 09d29ea3695d41946aec738152496bf1, type: 3}
-  m_PrefabInstance: {fileID: 2103670009}
-  m_PrefabAsset: {fileID: 0}
 --- !u!54 &1510005744 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 6226231251343965340, guid: 9073682db81c012458ef148bbb7c036f, type: 3}
@@ -517,11 +512,6 @@ Transform:
 CharacterController:
   m_CorrespondingSourceObject: {fileID: 3732100910081497830, guid: 9073682db81c012458ef148bbb7c036f, type: 3}
   m_PrefabInstance: {fileID: 708306410}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1754090246 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6313998766814700548, guid: 09d29ea3695d41946aec738152496bf1, type: 3}
-  m_PrefabInstance: {fileID: 2134076908}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2103670009
 PrefabInstance:
