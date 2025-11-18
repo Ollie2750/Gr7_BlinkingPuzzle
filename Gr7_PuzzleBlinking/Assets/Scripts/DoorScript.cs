@@ -5,7 +5,7 @@ public class DoorScript : MonoBehaviour
 {
     private Transform target;
     [SerializeField] private float doorDistance = 3;
-    [SerializeField] private float speed = 2.5f;
+    [SerializeField] private float speed = 3.5f;
     [SerializeField] private float slideDistance = 1;
     private Vector3 closed;
     private Vector3 open;
