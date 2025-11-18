@@ -6196,7 +6196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1041814739682771770, guid: 10c70454bbf737544a18f857fb620e1f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.05142
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 1041814739682771770, guid: 10c70454bbf737544a18f857fb620e1f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6248,14 +6248,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10c70454bbf737544a18f857fb620e1f, type: 3}
---- !u!1 &403931080 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 490770175181596465, guid: 10c70454bbf737544a18f857fb620e1f, type: 3}
-  m_PrefabInstance: {fileID: 403931079}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &403931081 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1041814739682771770, guid: 10c70454bbf737544a18f857fb620e1f, type: 3}
+  m_PrefabInstance: {fileID: 403931079}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &403931087 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: -8763595588985349041, guid: 10c70454bbf737544a18f857fb620e1f, type: 3}
   m_PrefabInstance: {fileID: 403931079}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &423462327
@@ -11476,7 +11476,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 749083787}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &749083792
 Camera:
   m_ObjectHideFlags: 0
@@ -17600,11 +17600,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10c70454bbf737544a18f857fb620e1f, type: 3}
---- !u!1 &1111326088 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 490770175181596465, guid: 10c70454bbf737544a18f857fb620e1f, type: 3}
-  m_PrefabInstance: {fileID: 1111326087}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1111326089 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1041814739682771770, guid: 10c70454bbf737544a18f857fb620e1f, type: 3}
@@ -18809,11 +18804,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef98424d89b8b664587575edd3f7ed3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BridgeController
-  upDuration: 5
-  toToggle: {fileID: 403931080}
-  useSetActive: 0
-  retriggerRestartsTimer: 1
-  startHidden: 1
+  bridgeRb: {fileID: 403931087}
+  upForce: 310
+  buttomHeight: 3
 --- !u!4 &1187920484
 Transform:
   m_ObjectHideFlags: 0
@@ -20568,7 +20561,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimedButton
   bridge: {fileID: 2136615317}
-  customDuration: -1
 --- !u!65 &1303396069
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23979,7 +23971,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimedButton
   bridge: {fileID: 2136615317}
-  customDuration: -1
 --- !u!65 &1510856455
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29858,7 +29849,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimedButton
   bridge: {fileID: 1187920483}
-  customDuration: -1
 --- !u!65 &1932301028
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31028,7 +31018,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimedButton
   bridge: {fileID: 1187920483}
-  customDuration: -1
 --- !u!65 &2012390600
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33529,11 +33518,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef98424d89b8b664587575edd3f7ed3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BridgeController
-  upDuration: 1
-  toToggle: {fileID: 1111326088}
-  useSetActive: 0
-  retriggerRestartsTimer: 1
-  startHidden: 1
+  bridgeRb: {fileID: 0}
+  upForce: 0
+  buttomHeight: 0
 --- !u!4 &2136615318
 Transform:
   m_ObjectHideFlags: 0
