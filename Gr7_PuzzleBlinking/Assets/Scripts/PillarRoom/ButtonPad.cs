@@ -11,6 +11,13 @@ public class ButtonPad : MonoBehaviour
     [Tooltip("Spawn the new pillar at the old pillar's XZ if possible.")]
     public bool respawnAtSamePlace = false;
 
+    [Header("Fixed spawn (per button/pillar)")]
+    [Tooltip("If true, this button will always spawn its pillar at this fixed point.")]
+    public bool useFixedSpawnPoint = false;
+
+    [Tooltip("World-space point where THIS button's pillar should spawn (use an empty GameObject here).")]
+    public Transform fixedSpawnPoint;
+
     // keep track of the pillar this pad spawned last time
     // so we can despawn/replace it on subsequent presses.
     GameObject current;
@@ -24,6 +31,12 @@ public class ButtonPad : MonoBehaviour
 
         if (current) manager.Despawn(current);                       // Remove prior pillar (if any) from the scene and manager’s tracking list
 
+        if (useFixedSpawnPoint && fixedSpawnPoint != null)
+        {
+            // Always spawn at this button's dedicated spot
+            current = manager.SpawnAtExactPosition(pillarPrefab, fixedSpawnPoint.position);
+            return;
+        }
 
         // Spawn a fresh pillar either at same XZ or at a random valid point
         current = respawnAtSamePlace
