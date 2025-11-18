@@ -8,6 +8,9 @@ public class PlayerInteractor : MonoBehaviour
     public float useDistance = 4f;        // how far you can “use” a button
     public bool showDebugRay = false;     // Draws a yellow ray for a moment when pressing E
 
+    public UIPromt uiPrompt;
+    private Interactable currentInteractable;
+
     void Awake()
     {
         if (!cam) cam = Camera.main;
@@ -15,29 +18,72 @@ public class PlayerInteractor : MonoBehaviour
 
     void Update()
     {
-        // Optional visual aid in Scene/Game view
-        if (showDebugRay)
-            Debug.DrawRay(cam.transform.position, cam.transform.forward * useDistance, Color.yellow);
+    // Debug ray so you can see where you're aiming
+    if (showDebugRay)
+        Debug.DrawRay(cam.transform.position, cam.transform.forward * useDistance, Color.yellow);
 
-        if (Input.GetKeyDown(useKey))
+    Ray ray = new Ray(cam.transform.position, cam.transform.forward);
+    bool canInteract = false;
+
+    ButtonPad pad = null;
+    TimedButton timedButton = null;
+    Interactable interactable = null;
+
+    if (Physics.Raycast(ray, out RaycastHit hit, useDistance))
+    {
+        // Only interact with objects tagged "Button"
+        if (hit.collider.CompareTag("Button"))
         {
-            // Ray from the camera forward
-            Ray ray = new Ray(cam.transform.position, cam.transform.forward);
-            if (Physics.Raycast(ray, out RaycastHit hit, useDistance))
-            {
-                // Button can be on the hit collider or a parent object
-                var pad = hit.collider.GetComponentInParent<ButtonPad>();
-                if (pad != null)
-                {
-                    pad.Activate();     // Delegate the actual spawn/respawn to the button
-                }
+            pad = hit.collider.GetComponentInParent<ButtonPad>();
+            timedButton = hit.collider.GetComponentInParent<TimedButton>();
+            interactable = hit.collider.GetComponentInParent<Interactable>();
 
-                var button = hit.collider.GetComponentInParent<TimedButton>();
-                if(button != null)
-                {
-                    button.activateBridge();
-                }
+            if (pad != null || timedButton != null || interactable != null)
+            {
+                canInteract = true;
             }
         }
     }
+
+    // -------- HANDLE HOVER for Interactable system --------
+    if (interactable != currentInteractable)
+    {
+        // Stop hovering the old one
+        if (currentInteractable != null)
+            currentInteractable.OnHoverExit();
+
+        // Start hovering the new one
+        if (interactable != null)
+            interactable.OnHoverEnter();
+
+        currentInteractable = interactable;
+    }
+
+    // -------- UI Prompt --------
+    if (uiPrompt != null)
+    {
+        if (canInteract)
+            uiPrompt.Show("Press E to interact");
+        else
+            uiPrompt.Hide();
+    }
+
+    // -------- Handle interaction when pressing E --------
+    if (canInteract && Input.GetKeyDown(useKey))
+    {
+        // First priority: Interactable system
+        if (interactable != null)
+        {
+            interactable.Interact();
+            return;
+        }
+
+        // Legacy systems
+        if (pad != null)
+            pad.Activate();
+
+        if (timedButton != null)
+            timedButton.activateBridge();
+    }
+}
 }
