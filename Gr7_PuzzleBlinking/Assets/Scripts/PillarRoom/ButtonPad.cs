@@ -1,52 +1,100 @@
 using UnityEngine;
+using System.Collections;
 
 // A floor/wall button. When the player looks at it and presses E (via PlayerInteractor),
 // we call Activate(): despawn the current pillar (if any) and spawn a new one.
 public class ButtonPad : MonoBehaviour
 {
-    public PillarManager manager;                                                // Spawner that knows the room bounds + spacing rules
-    public GameObject pillarPrefab;                                              // Prefab to instantiate when this button is activated
-    public KeyCode useKey = KeyCode.E;
-
-    [SerializeField] private AudioClip pressAudio;
-    [SerializeField] private float volume = 0.8f;
-    // (Unused here—interaction happens via PlayerInteractor calling Activate())
-
-    [Tooltip("Spawn the new pillar at the old pillar's XZ if possible.")]
+    [Header("Pillar spawning")]
+    public PillarManager manager;
+    public GameObject pillarPrefab;
     public bool respawnAtSamePlace = false;
 
-    [Header("Fixed spawn (per button/pillar)")]
     [Tooltip("If true, this button will always spawn its pillar at this fixed point.")]
     public bool useFixedSpawnPoint = false;
-
-    [Tooltip("World-space point where THIS button's pillar should spawn (use an empty GameObject here).")]
     public Transform fixedSpawnPoint;
 
-    // keep track of the pillar this pad spawned last time
-    // so we can despawn/replace it on subsequent presses.
+    [Header("Button visuals")]
+    public Renderer buttonRenderer;
+    public Color idleColor = Color.red;
+    public Color pressedColor = Color.green;
+    public float cooldownTime = 2f;
+
+    [Header("Button movement")]
+    public Transform buttonTop;          // top piece that moves down
+    public float pressDepth = 0.02f;     // how far it moves down in local Y
+
+    bool isOnCooldown = false;
+    Vector3 initialTopLocalPos;
     GameObject current;
 
-    public void Activate()                                           // Called by PlayerInteractor when the player looks at this button and presses E.
+    void Start()
     {
-        if (!manager || !pillarPrefab) return;                       // Safety: if not wired in the Inspector, do nothing.
+        if (!buttonRenderer)
+            buttonRenderer = GetComponent<Renderer>();
 
-        SoundManager.Instance.PlaySoundClip(pressAudio, gameObject.transform, volume);
+        if (buttonRenderer)
+            buttonRenderer.material.color = idleColor;
 
-        Vector3 oldXZ = Vector3.zero;
-        if (current) oldXZ = new Vector3(current.transform.position.x, 0f, current.transform.position.z);    // Remember the old XZ so we can optionally respawn at (roughly) the same place.(we dont really use that)
+        if (buttonTop)
+            initialTopLocalPos = buttonTop.localPosition;
+    }
 
-        if (current) manager.Despawn(current);                       // Remove prior pillar (if any) from the scene and manager’s tracking list
-
-        if (useFixedSpawnPoint && fixedSpawnPoint != null)
-        {
-            // Always spawn at this button's dedicated spot
-            current = manager.SpawnAtExactPosition(pillarPrefab, fixedSpawnPoint.position);
+    // Called by PlayerInteractor
+    public void Activate()
+    {
+        if (isOnCooldown || !manager || !pillarPrefab)
             return;
-        }
 
-        // Spawn a fresh pillar either at same XZ or at a random valid point
-        current = respawnAtSamePlace
-            ? manager.SpawnAtSameXZ(pillarPrefab, oldXZ)
-            : manager.SpawnPillar(pillarPrefab);
+        StartCoroutine(ButtonCooldownRoutine());
+
+        // remember old XZ before despawn (for respawnAtSamePlace)
+        bool hadOldPos = current != null;
+        Vector3 oldXZ = Vector3.zero;
+        if (hadOldPos)
+            oldXZ = new Vector3(current.transform.position.x, 0f, current.transform.position.z);
+
+        if (current)
+            manager.Despawn(current);
+
+        if (useFixedSpawnPoint && fixedSpawnPoint)
+        {
+            current = manager.SpawnAtExactPosition(pillarPrefab, fixedSpawnPoint.position);
+        }
+        else if (respawnAtSamePlace && hadOldPos)
+        {
+            current = manager.SpawnAtSameXZ(pillarPrefab, oldXZ);
+        }
+        else
+        {
+            current = manager.SpawnPillar(pillarPrefab);
+        }
+    }
+
+    IEnumerator ButtonCooldownRoutine()
+    {
+        isOnCooldown = true;
+
+        if (buttonRenderer)
+            buttonRenderer.material.color = pressedColor;
+
+        if (buttonTop)
+            buttonTop.localPosition = initialTopLocalPos + Vector3.down * pressDepth;
+
+        yield return new WaitForSeconds(cooldownTime);
+
+        if (buttonRenderer)
+            buttonRenderer.material.color = idleColor;
+
+        if (buttonTop)
+            buttonTop.localPosition = initialTopLocalPos;
+
+        isOnCooldown = false;
+    }
+
+    // Interactable calls this
+    public void Interact()
+    {
+        Activate();
     }
 }
