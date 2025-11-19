@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Rendering.VirtualTexturing;
 using UnityEngine.SocialPlatforms.GameCenter;
+using Unity.Netcode;
 
 public class PillarManager : MonoBehaviour
 {
@@ -101,6 +102,9 @@ public class PillarManager : MonoBehaviour
         var rot = UnityEngine.Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
         var go = Instantiate(pillarPrefab, target + UnityEngine.Vector3.up * dropHeight, rot);
         spawned.Add(go.transform);
+
+        var instanceNetworkObject = go.GetComponent<NetworkObject>();
+        instanceNetworkObject.Spawn();
 
         var drop = go.GetComponent<PillarDrop>();
         if (drop) drop.Kick(1f);
