@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0.15
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -33217,6 +33217,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8285474711326974092, guid: 9073682db81c012458ef148bbb7c036f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1375214673}
+    - targetCorrespondingSourceObject: {fileID: 8285474711326974092, guid: 9073682db81c012458ef148bbb7c036f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1375214677}
   m_SourcePrefab: {fileID: 100100000, guid: 9073682db81c012458ef148bbb7c036f, type: 3}
 --- !u!1 &1375214669 stripped
 GameObject:
@@ -33309,6 +33312,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerPusher
   pushPower: 3.5
   horizontalOnly: 1
+--- !u!114 &1375214677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375214669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
+  GlobalObjectIdHash: 1846547431
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 0
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!1001 &1380894641
 PrefabInstance:
   m_ObjectHideFlags: 0
