@@ -14,44 +14,26 @@ public class ButtonPad : MonoBehaviour
     public bool useFixedSpawnPoint = false;
     public Transform fixedSpawnPoint;
 
-    [Header("Button visuals (materials)")]
-    public Renderer buttonRenderer;      // drag MeshRenderer here
-    public Material idleMaterial;        // drag idle material here
-    public Material pressedMaterial;     // drag pressed material here
-    public float cooldownTime = 2f;
+    [Header("Visual & animation")]
+    public ButtonVisual visual;          // reference to shared visual script
 
-    [Header("Button movement")]
-    public Transform buttonTop;          // top piece that moves down
-    public float pressDepth = 0.02f;     // how far it moves down in local Y
+    private GameObject current;
 
-    bool isOnCooldown = false;
-    Vector3 initialTopLocalPos;
-    GameObject current;
-
-    void Start()
-    {
-        if (!buttonRenderer)
-            buttonRenderer = GetComponent<Renderer>();
-
-        if (buttonTop)
-            initialTopLocalPos = buttonTop.localPosition;
-
-        // set starting material
-        if (buttonRenderer && idleMaterial)
-            buttonRenderer.material = idleMaterial;
-    }
-
-    // Called by PlayerInteractor
+    // Called by PlayerInteractor when the player presses E on this button
     public void Activate()
     {
-        if (isOnCooldown || !manager || !pillarPrefab)
+        // Play visual & respect cooldown
+        if (visual != null && !visual.TryPress())
             return;
 
-        StartCoroutine(ButtonCooldownRoutine());
+        if (!manager || !pillarPrefab)
+            return;
 
-        // remember old XZ before despawn (for respawnAtSamePlace)
+        // --- PILLAR LOGIC ---
+
         bool hadOldPos = current != null;
         Vector3 oldXZ = Vector3.zero;
+
         if (hadOldPos)
             oldXZ = new Vector3(current.transform.position.x, 0f, current.transform.position.z);
 
@@ -72,30 +54,7 @@ public class ButtonPad : MonoBehaviour
         }
     }
 
-    IEnumerator ButtonCooldownRoutine()
-    {
-        isOnCooldown = true;
-
-        // pressed look
-        if (buttonRenderer && pressedMaterial)
-            buttonRenderer.material = pressedMaterial;
-
-        if (buttonTop)
-            buttonTop.localPosition = initialTopLocalPos + Vector3.down * pressDepth;
-
-        yield return new WaitForSeconds(cooldownTime);
-
-        // back to idle look
-        if (buttonRenderer && idleMaterial)
-            buttonRenderer.material = idleMaterial;
-
-        if (buttonTop)
-            buttonTop.localPosition = initialTopLocalPos;
-
-        isOnCooldown = false;
-    }
-
-    // Interactable calls this
+    // Interactable system calls this
     public void Interact()
     {
         Activate();
