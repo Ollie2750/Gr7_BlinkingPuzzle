@@ -79,6 +79,35 @@ public class PillarManager : MonoBehaviour
         if (drop) drop.Kick(1f);
         return go;
     }
+
+    public GameObject SpawnAtExactPosition(GameObject pillarPrefab, UnityEngine.Vector3 worldPos)
+    {
+        if (!roomBounds || !pillarPrefab) { Debug.LogWarning("PillarManager not set up"); return null; }
+
+        Bounds b = roomBounds.bounds;
+        float xmin = b.min.x + edgeMargin, xmax = b.max.x - edgeMargin;
+        float zmin = b.min.z + edgeMargin, zmax = b.max.z - edgeMargin;
+
+        // Clamp inside the room and set Y to floor
+        UnityEngine.Vector3 target = new UnityEngine.Vector3(
+            Mathf.Clamp(worldPos.x, xmin, xmax),
+            b.min.y,
+            Mathf.Clamp(worldPos.z, zmin, zmax)
+        );
+
+        // Optional: if you still want spacing checks against others, you can add IsFree() here.
+        // For now we assume you've placed the four spawn points with enough space.
+
+        var rot = UnityEngine.Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
+        var go = Instantiate(pillarPrefab, target + UnityEngine.Vector3.up * dropHeight, rot);
+        spawned.Add(go.transform);
+
+        var drop = go.GetComponent<PillarDrop>();
+        if (drop) drop.Kick(1f);
+
+        return go;
+    }
+
     
     // Pick a random valid floor point inside the bounds (respecting margins and spacing)
     bool TryPickSpot(out UnityEngine.Vector3 spot)
