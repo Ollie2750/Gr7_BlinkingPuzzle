@@ -6,7 +6,7 @@ public class ButtonSpawner : Interactable
     [SerializeField] private GameObject boxPrefab;
     [SerializeField] private GameObject spawner;
     [SerializeField] private AudioClip press;
-    public float volume = 2;
+    [SerializeField] private float volume = 0.8f;
 
     public override void Interact()
     {

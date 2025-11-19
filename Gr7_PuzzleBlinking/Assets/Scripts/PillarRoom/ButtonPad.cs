@@ -6,7 +6,11 @@ public class ButtonPad : MonoBehaviour
 {
     public PillarManager manager;                                                // Spawner that knows the room bounds + spacing rules
     public GameObject pillarPrefab;                                              // Prefab to instantiate when this button is activated
-    public KeyCode useKey = KeyCode.E;                                           // (Unused here—interaction happens via PlayerInteractor calling Activate())
+    public KeyCode useKey = KeyCode.E;
+
+    [SerializeField] private AudioClip pressAudio;
+    [SerializeField] private float volume = 0.8f;
+    // (Unused here—interaction happens via PlayerInteractor calling Activate())
 
     [Tooltip("Spawn the new pillar at the old pillar's XZ if possible.")]
     public bool respawnAtSamePlace = false;
@@ -25,6 +29,8 @@ public class ButtonPad : MonoBehaviour
     public void Activate()                                           // Called by PlayerInteractor when the player looks at this button and presses E.
     {
         if (!manager || !pillarPrefab) return;                       // Safety: if not wired in the Inspector, do nothing.
+
+        SoundManager.Instance.PlaySoundClip(pressAudio, gameObject.transform, volume);
 
         Vector3 oldXZ = Vector3.zero;
         if (current) oldXZ = new Vector3(current.transform.position.x, 0f, current.transform.position.z);    // Remember the old XZ so we can optionally respawn at (roughly) the same place.(we dont really use that)
