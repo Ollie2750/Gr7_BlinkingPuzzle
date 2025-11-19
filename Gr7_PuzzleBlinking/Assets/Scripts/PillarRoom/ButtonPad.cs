@@ -14,10 +14,10 @@ public class ButtonPad : MonoBehaviour
     public bool useFixedSpawnPoint = false;
     public Transform fixedSpawnPoint;
 
-    [Header("Button visuals")]
-    public Renderer buttonRenderer;
-    public Color idleColor = Color.red;
-    public Color pressedColor = Color.green;
+    [Header("Button visuals (materials)")]
+    public Renderer buttonRenderer;      // drag MeshRenderer here
+    public Material idleMaterial;        // drag idle material here
+    public Material pressedMaterial;     // drag pressed material here
     public float cooldownTime = 2f;
 
     [Header("Button movement")]
@@ -33,11 +33,12 @@ public class ButtonPad : MonoBehaviour
         if (!buttonRenderer)
             buttonRenderer = GetComponent<Renderer>();
 
-        if (buttonRenderer)
-            buttonRenderer.material.color = idleColor;
-
         if (buttonTop)
             initialTopLocalPos = buttonTop.localPosition;
+
+        // set starting material
+        if (buttonRenderer && idleMaterial)
+            buttonRenderer.material = idleMaterial;
     }
 
     // Called by PlayerInteractor
@@ -75,16 +76,18 @@ public class ButtonPad : MonoBehaviour
     {
         isOnCooldown = true;
 
-        if (buttonRenderer)
-            buttonRenderer.material.color = pressedColor;
+        // pressed look
+        if (buttonRenderer && pressedMaterial)
+            buttonRenderer.material = pressedMaterial;
 
         if (buttonTop)
             buttonTop.localPosition = initialTopLocalPos + Vector3.down * pressDepth;
 
         yield return new WaitForSeconds(cooldownTime);
 
-        if (buttonRenderer)
-            buttonRenderer.material.color = idleColor;
+        // back to idle look
+        if (buttonRenderer && idleMaterial)
+            buttonRenderer.material = idleMaterial;
 
         if (buttonTop)
             buttonTop.localPosition = initialTopLocalPos;

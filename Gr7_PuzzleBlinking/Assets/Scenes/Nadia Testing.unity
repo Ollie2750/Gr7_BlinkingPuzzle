@@ -828,6 +828,10 @@ PrefabInstance:
       value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
+      propertyPath: idleMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
+    - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
       propertyPath: pillarPrefab
       value: 
       objectReference: {fileID: 3856110847351375535, guid: 240a93b3745a1d744a1fd644559a8064, type: 3}
@@ -839,6 +843,10 @@ PrefabInstance:
       propertyPath: fixedSpawnPoint
       value: 
       objectReference: {fileID: 276022558}
+    - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
+      propertyPath: pressedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 327b78704ccad4c5f9cda4af1cb9e1ac, type: 2}
     - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
       propertyPath: useFixedSpawnPoint
       value: 1
@@ -2463,11 +2471,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3676122570577849122, guid: 9073682db81c012458ef148bbb7c036f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.33
+      value: 0.41
       objectReference: {fileID: 0}
     - target: {fileID: 3676122570577849122, guid: 9073682db81c012458ef148bbb7c036f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 32.609
+      value: 4.17
       objectReference: {fileID: 0}
     - target: {fileID: 3676122570577849122, guid: 9073682db81c012458ef148bbb7c036f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2776,8 +2784,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimedButton
   bridge: {fileID: 924848396}
   buttonRenderer: {fileID: 0}
-  idleColor: {r: 1, g: 0, b: 0, a: 1}
-  pressedColor: {r: 0, g: 1, b: 0, a: 1}
+  idleMaterial: {fileID: 0}
+  pressedMaterial: {fileID: 0}
   cooldownTime: 2
   buttonTop: {fileID: 0}
   pressDepth: 0.02
@@ -6462,6 +6470,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ElevatorButton
   elevator: {fileID: 0}
+  buttonRenderer: {fileID: 0}
+  idleMaterial: {fileID: 0}
+  pressedMaterial: {fileID: 0}
+  cooldownTime: 2
+  buttonTop: {fileID: 0}
+  pressDepth: 0.02
 --- !u!65 &389046720
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7931,6 +7945,10 @@ PrefabInstance:
       value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
+      propertyPath: idleMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
+    - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
       propertyPath: pillarPrefab
       value: 
       objectReference: {fileID: 3867176217737224119, guid: 4a70201623cd08a439b125a1c7cbc924, type: 3}
@@ -7942,6 +7960,10 @@ PrefabInstance:
       propertyPath: fixedSpawnPoint
       value: 
       objectReference: {fileID: 1483433507}
+    - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
+      propertyPath: pressedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 327b78704ccad4c5f9cda4af1cb9e1ac, type: 2}
     - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
       propertyPath: useFixedSpawnPoint
       value: 1
@@ -13893,7 +13915,7 @@ Transform:
   - {fileID: 680935691}
   - {fileID: 649299688}
   - {fileID: 268603053}
-  - {fileID: 1312531663}
+  - {fileID: 1562152211}
   m_Father: {fileID: 759795807}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1012266544
@@ -18457,121 +18479,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 93179f4390ccd854cafcdcfd6c8353e0, type: 3}
   m_PrefabInstance: {fileID: 1304315430}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1312531662
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1010263376}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 766c704d24b8a7b41b73b18d05520627, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -28.384981
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 766c704d24b8a7b41b73b18d05520627, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.548
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 766c704d24b8a7b41b73b18d05520627, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 24.394737
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 766c704d24b8a7b41b73b18d05520627, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071067
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 766c704d24b8a7b41b73b18d05520627, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 766c704d24b8a7b41b73b18d05520627, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 766c704d24b8a7b41b73b18d05520627, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 766c704d24b8a7b41b73b18d05520627, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 766c704d24b8a7b41b73b18d05520627, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 766c704d24b8a7b41b73b18d05520627, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: 766c704d24b8a7b41b73b18d05520627, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 1f7dcc522e0ee4deaab24b95884e6cb6, type: 2}
-    - target: {fileID: 919132149155446097, guid: 766c704d24b8a7b41b73b18d05520627, type: 3}
-      propertyPath: m_Name
-      value: PillarButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 766c704d24b8a7b41b73b18d05520627, type: 3}
-      propertyPath: m_TagString
-      value: Button
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 766c704d24b8a7b41b73b18d05520627, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1312531666}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 766c704d24b8a7b41b73b18d05520627, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1312531665}
-  m_SourcePrefab: {fileID: 100100000, guid: 766c704d24b8a7b41b73b18d05520627, type: 3}
---- !u!4 &1312531663 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 766c704d24b8a7b41b73b18d05520627, type: 3}
-  m_PrefabInstance: {fileID: 1312531662}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1312531664 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 766c704d24b8a7b41b73b18d05520627, type: 3}
-  m_PrefabInstance: {fileID: 1312531662}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1312531665
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1312531664}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.004, y: 0.0039999993, z: 0.012296367}
-  m_Center: {x: 0, y: 6.580708e-20, z: 0.00014818434}
---- !u!114 &1312531666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1312531664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d724e6d1a9624bfc9713097410f91de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ElevatorButton
-  elevator: {fileID: 680935688}
 --- !u!1001 &1314131510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20483,9 +20390,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 441597596}
     - target: {fileID: 6670471536053802453, guid: f4013c9f987d67d498b81f001000a73f, type: 3}
+      propertyPath: idleMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
+    - target: {fileID: 6670471536053802453, guid: f4013c9f987d67d498b81f001000a73f, type: 3}
       propertyPath: buttonRenderer
       value: 
       objectReference: {fileID: 441597599}
+    - target: {fileID: 6670471536053802453, guid: f4013c9f987d67d498b81f001000a73f, type: 3}
+      propertyPath: pressedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 327b78704ccad4c5f9cda4af1cb9e1ac, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21519,6 +21434,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4226743017393257537, guid: 0ae78da6803634b209f2b33f583c6ccf, type: 3}
   m_PrefabInstance: {fileID: 1562120070}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1562152211 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4924535051020441461, guid: 1823b9b21a4621f4799b93e9304c8888, type: 3}
+  m_PrefabInstance: {fileID: 7663526418171315544}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1564546542
 PrefabInstance:
@@ -22699,6 +22619,10 @@ PrefabInstance:
       value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
+      propertyPath: idleMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
+    - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
       propertyPath: pillarPrefab
       value: 
       objectReference: {fileID: 3856110847351375535, guid: 240a93b3745a1d744a1fd644559a8064, type: 3}
@@ -22710,6 +22634,10 @@ PrefabInstance:
       propertyPath: fixedSpawnPoint
       value: 
       objectReference: {fileID: 1327991417}
+    - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
+      propertyPath: pressedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 327b78704ccad4c5f9cda4af1cb9e1ac, type: 2}
     - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
       propertyPath: useFixedSpawnPoint
       value: 1
@@ -23800,8 +23728,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimedButton
   bridge: {fileID: 924848396}
   buttonRenderer: {fileID: 0}
-  idleColor: {r: 1, g: 0, b: 0, a: 1}
-  pressedColor: {r: 0, g: 1, b: 0, a: 1}
+  idleMaterial: {fileID: 0}
+  pressedMaterial: {fileID: 0}
   cooldownTime: 2
   buttonTop: {fileID: 0}
   pressDepth: 0.02
@@ -25107,6 +25035,10 @@ PrefabInstance:
       value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
+      propertyPath: idleMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
+    - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
       propertyPath: pillarPrefab
       value: 
       objectReference: {fileID: 1201206820851339048, guid: 3a133634ab95a9340b86d1d3bfc1a299, type: 3}
@@ -25118,6 +25050,10 @@ PrefabInstance:
       propertyPath: fixedSpawnPoint
       value: 
       objectReference: {fileID: 228107078}
+    - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
+      propertyPath: pressedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 327b78704ccad4c5f9cda4af1cb9e1ac, type: 2}
     - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
       propertyPath: useFixedSpawnPoint
       value: 1
@@ -28409,6 +28345,10 @@ PrefabInstance:
       value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
+      propertyPath: idleMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
+    - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
       propertyPath: pillarPrefab
       value: 
       objectReference: {fileID: 1201206820851339048, guid: 3a133634ab95a9340b86d1d3bfc1a299, type: 3}
@@ -28420,6 +28360,10 @@ PrefabInstance:
       propertyPath: fixedSpawnPoint
       value: 
       objectReference: {fileID: 25892361}
+    - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
+      propertyPath: pressedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 327b78704ccad4c5f9cda4af1cb9e1ac, type: 2}
     - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
       propertyPath: useFixedSpawnPoint
       value: 1
@@ -30467,6 +30411,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ElevatorButton
   elevator: {fileID: 0}
+  buttonRenderer: {fileID: 0}
+  idleMaterial: {fileID: 0}
+  pressedMaterial: {fileID: 0}
+  cooldownTime: 2
+  buttonTop: {fileID: 0}
+  pressDepth: 0.02
 --- !u!1001 &2022647769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32714,6 +32664,10 @@ PrefabInstance:
       value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
+      propertyPath: idleMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
+    - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
       propertyPath: pillarPrefab
       value: 
       objectReference: {fileID: 6342974836421886384, guid: 929d8e021bbd9224c94847ce8512fa5f, type: 3}
@@ -32725,6 +32679,10 @@ PrefabInstance:
       propertyPath: fixedSpawnPoint
       value: 
       objectReference: {fileID: 1118763640}
+    - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
+      propertyPath: pressedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 327b78704ccad4c5f9cda4af1cb9e1ac, type: 2}
     - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
       propertyPath: useFixedSpawnPoint
       value: 1
@@ -32804,9 +32762,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1532722758}
     - target: {fileID: 6670471536053802453, guid: f4013c9f987d67d498b81f001000a73f, type: 3}
+      propertyPath: idleMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
+    - target: {fileID: 6670471536053802453, guid: f4013c9f987d67d498b81f001000a73f, type: 3}
       propertyPath: buttonRenderer
       value: 
       objectReference: {fileID: 1532722761}
+    - target: {fileID: 6670471536053802453, guid: f4013c9f987d67d498b81f001000a73f, type: 3}
+      propertyPath: pressedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 327b78704ccad4c5f9cda4af1cb9e1ac, type: 2}
     - target: {fileID: 7414012483384283601, guid: f4013c9f987d67d498b81f001000a73f, type: 3}
       propertyPath: m_TagString
       value: Button
@@ -32950,6 +32916,99 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6313998766814700548, guid: 09d29ea3695d41946aec738152496bf1, type: 3}
   m_PrefabInstance: {fileID: 6912887779299501836}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7663526418171315544
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1010263376}
+    m_Modifications:
+    - target: {fileID: 4924535051020441461, guid: 1823b9b21a4621f4799b93e9304c8888, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -28.394747
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924535051020441461, guid: 1823b9b21a4621f4799b93e9304c8888, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.5730424
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924535051020441461, guid: 1823b9b21a4621f4799b93e9304c8888, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 24.389809
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924535051020441461, guid: 1823b9b21a4621f4799b93e9304c8888, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924535051020441461, guid: 1823b9b21a4621f4799b93e9304c8888, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924535051020441461, guid: 1823b9b21a4621f4799b93e9304c8888, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924535051020441461, guid: 1823b9b21a4621f4799b93e9304c8888, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924535051020441461, guid: 1823b9b21a4621f4799b93e9304c8888, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924535051020441461, guid: 1823b9b21a4621f4799b93e9304c8888, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924535051020441461, guid: 1823b9b21a4621f4799b93e9304c8888, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5483237553407005057, guid: 1823b9b21a4621f4799b93e9304c8888, type: 3}
+      propertyPath: elevator
+      value: 
+      objectReference: {fileID: 680935688}
+    - target: {fileID: 5483237553407005057, guid: 1823b9b21a4621f4799b93e9304c8888, type: 3}
+      propertyPath: idleColor.b
+      value: 0.21568629
+      objectReference: {fileID: 0}
+    - target: {fileID: 5483237553407005057, guid: 1823b9b21a4621f4799b93e9304c8888, type: 3}
+      propertyPath: idleColor.g
+      value: 0.21568629
+      objectReference: {fileID: 0}
+    - target: {fileID: 5483237553407005057, guid: 1823b9b21a4621f4799b93e9304c8888, type: 3}
+      propertyPath: idleColor.r
+      value: 0.21568629
+      objectReference: {fileID: 0}
+    - target: {fileID: 5483237553407005057, guid: 1823b9b21a4621f4799b93e9304c8888, type: 3}
+      propertyPath: idleMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
+    - target: {fileID: 5483237553407005057, guid: 1823b9b21a4621f4799b93e9304c8888, type: 3}
+      propertyPath: pressedColor.b
+      value: 0.20000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5483237553407005057, guid: 1823b9b21a4621f4799b93e9304c8888, type: 3}
+      propertyPath: pressedColor.g
+      value: 0.20000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5483237553407005057, guid: 1823b9b21a4621f4799b93e9304c8888, type: 3}
+      propertyPath: pressedColor.r
+      value: 0.20000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5483237553407005057, guid: 1823b9b21a4621f4799b93e9304c8888, type: 3}
+      propertyPath: pressedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 327b78704ccad4c5f9cda4af1cb9e1ac, type: 2}
+    - target: {fileID: 5700613907173395919, guid: 1823b9b21a4621f4799b93e9304c8888, type: 3}
+      propertyPath: m_Name
+      value: PillarButton
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1823b9b21a4621f4799b93e9304c8888, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
