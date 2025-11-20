@@ -17,7 +17,6 @@ public class MovementScript : MonoBehaviour
     [Header("Jump Settings")]
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float jumpHeight = 1.5f;
-    [SerializeField] private float coyoteTime = 0.2f;
     [SerializeField] private float jumpBufferTime = 0.2f;
     [SerializeField] private float headBumpCheckDistance = 0.1f;
 
@@ -39,10 +38,6 @@ public class MovementScript : MonoBehaviour
     private bool isCrouching = false;
     private Interactable currentInteractable;
 
-    // Coyote time variables
-    private float coyoteTimeCounter;
-    private bool wasGroundedLastFrame;
-
     // Jump buffer variables
     private float jumpBufferCounter;
     
@@ -59,9 +54,14 @@ public class MovementScript : MonoBehaviour
 
     private void Update()
     {
-        UpdateCoyoteTime();
         UpdateJumpBuffer();
         HandleJump();
+        
+        // Reset jump state when grounded
+        if (controller.isGrounded && velocity.y <= 0)
+        {
+            hasJumped = false;
+        }
     }
 
     private void FixedUpdate()
@@ -70,29 +70,6 @@ public class MovementScript : MonoBehaviour
         ApplyGravity();
         HandleHover();
         HandleCrouchTransition();
-    }
-
-    private void UpdateCoyoteTime()
-    {
-        if (controller.isGrounded)
-        {
-            coyoteTimeCounter = coyoteTime;
-            wasGroundedLastFrame = true;
-            // Reset jump state when grounded
-            hasJumped = false;
-        }
-        else
-        {
-            if (wasGroundedLastFrame)
-            {
-                coyoteTimeCounter = coyoteTime;
-                wasGroundedLastFrame = false;
-            }
-            else
-            {
-                coyoteTimeCounter -= Time.deltaTime;
-            }
-        }
     }
 
     private void UpdateJumpBuffer()
@@ -105,14 +82,12 @@ public class MovementScript : MonoBehaviour
 
     private void HandleJump()
     {
-        // Check if we should jump (either from buffer or coyote time)
-        // Added hasJumped check to prevent double jumping
-        if (jumpBufferCounter > 0 && coyoteTimeCounter > 0 && !hasJumped)
+        // Can only jump when grounded and haven't jumped yet
+        if (jumpBufferCounter > 0 && controller.isGrounded && !hasJumped)
         {
             PerformJump();
             jumpBufferCounter = 0;
-            coyoteTimeCounter = 0;
-            hasJumped = true; // Mark that we've used our jump
+            hasJumped = true;
         }
     }
 
