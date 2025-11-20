@@ -8751,6 +8751,8 @@ MonoBehaviour:
   speed: 3.5
   slideDistance: 1
   reversed: 0
+  doorOpenSound: {fileID: 0}
+  doorCloseSound: {fileID: 0}
 --- !u!1001 &220445497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10921,10 +10923,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ButtonPad
   manager: {fileID: 975333398}
   pillarPrefab: {fileID: 3867176217737224119, guid: 4a70201623cd08a439b125a1c7cbc924, type: 3}
-  useKey: 101
   respawnAtSamePlace: 0
   useFixedSpawnPoint: 1
   fixedSpawnPoint: {fileID: 548262751}
+  visual: {fileID: 0}
 --- !u!65 &333781201
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12820,6 +12822,8 @@ MonoBehaviour:
   speed: 3.5
   slideDistance: 1
   reversed: 1
+  doorOpenSound: {fileID: 0}
+  doorCloseSound: {fileID: 0}
 --- !u!1 &441256781
 GameObject:
   m_ObjectHideFlags: 0
@@ -13015,6 +13019,8 @@ MonoBehaviour:
   speed: 3.5
   slideDistance: 1
   reversed: 0
+  doorOpenSound: {fileID: 0}
+  doorCloseSound: {fileID: 0}
 --- !u!1001 &450275531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15014,10 +15020,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ButtonPad
   manager: {fileID: 0}
   pillarPrefab: {fileID: 6342974836421886384, guid: 929d8e021bbd9224c94847ce8512fa5f, type: 3}
-  useKey: 101
   respawnAtSamePlace: 0
   useFixedSpawnPoint: 1
   fixedSpawnPoint: {fileID: 879727437}
+  visual: {fileID: 0}
 --- !u!65 &575892986
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17042,6 +17048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimedButton
   bridge: {fileID: 129519713}
+  visual: {fileID: 0}
 --- !u!65 &679319128
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17283,10 +17290,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ButtonPad
   manager: {fileID: 0}
   pillarPrefab: {fileID: 3867176217737224119, guid: 4a70201623cd08a439b125a1c7cbc924, type: 3}
-  useKey: 101
   respawnAtSamePlace: 0
   useFixedSpawnPoint: 1
   fixedSpawnPoint: {fileID: 1293705759}
+  visual: {fileID: 0}
 --- !u!65 &680202680
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23511,6 +23518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ElevatorButton
   elevator: {fileID: 0}
+  visual: {fileID: 0}
 --- !u!1001 &1085420346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30237,6 +30245,8 @@ MonoBehaviour:
   speed: 3.5
   slideDistance: 1
   reversed: 0
+  doorOpenSound: {fileID: 0}
+  doorCloseSound: {fileID: 0}
 --- !u!1 &1186524957
 GameObject:
   m_ObjectHideFlags: 0
@@ -30375,6 +30385,8 @@ MonoBehaviour:
   speed: 3.5
   slideDistance: 1
   reversed: 0
+  doorOpenSound: {fileID: 0}
+  doorCloseSound: {fileID: 0}
 --- !u!1 &1191582911
 GameObject:
   m_ObjectHideFlags: 0
@@ -31407,6 +31419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ElevatorButton
   elevator: {fileID: 385208994}
+  visual: {fileID: 0}
 --- !u!1001 &1269834315
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32063,6 +32076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimedButton
   bridge: {fileID: 1802053334}
+  visual: {fileID: 0}
 --- !u!65 &1303688600
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32418,6 +32432,8 @@ MonoBehaviour:
   speed: 3.5
   slideDistance: 1
   reversed: 0
+  doorOpenSound: {fileID: 0}
+  doorCloseSound: {fileID: 0}
 --- !u!1 &1316541717 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: afeca0e8c1f647849a94e7e613ae33a6, type: 3}
@@ -32439,6 +32455,8 @@ MonoBehaviour:
   speed: 3.5
   slideDistance: 1
   reversed: 0
+  doorOpenSound: {fileID: 0}
+  doorCloseSound: {fileID: 0}
 --- !u!1001 &1321752039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32733,10 +32751,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ButtonPad
   manager: {fileID: 975333398}
   pillarPrefab: {fileID: 6342974836421886384, guid: 929d8e021bbd9224c94847ce8512fa5f, type: 3}
-  useKey: 101
   respawnAtSamePlace: 0
   useFixedSpawnPoint: 1
   fixedSpawnPoint: {fileID: 33209458}
+  visual: {fileID: 0}
 --- !u!65 &1340864916
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33268,13 +33286,13 @@ PrefabInstance:
       addedObject: {fileID: 1375214675}
     - targetCorrespondingSourceObject: {fileID: 8285474711326974092, guid: 9073682db81c012458ef148bbb7c036f, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1375214677}
+    - targetCorrespondingSourceObject: {fileID: 8285474711326974092, guid: 9073682db81c012458ef148bbb7c036f, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1375214674}
     - targetCorrespondingSourceObject: {fileID: 8285474711326974092, guid: 9073682db81c012458ef148bbb7c036f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1375214673}
-    - targetCorrespondingSourceObject: {fileID: 8285474711326974092, guid: 9073682db81c012458ef148bbb7c036f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1375214677}
   m_SourcePrefab: {fileID: 100100000, guid: 9073682db81c012458ef148bbb7c036f, type: 3}
 --- !u!1 &1375214669 stripped
 GameObject:
@@ -35225,6 +35243,8 @@ MonoBehaviour:
   speed: 3.5
   slideDistance: 1
   reversed: 1
+  doorOpenSound: {fileID: 0}
+  doorCloseSound: {fileID: 0}
 --- !u!65 &1503742320
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36227,6 +36247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ElevatorButton
   elevator: {fileID: 930116826}
+  visual: {fileID: 0}
 --- !u!65 &1554092595
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37881,6 +37902,8 @@ MonoBehaviour:
   speed: 3.5
   slideDistance: 1
   reversed: 0
+  doorOpenSound: {fileID: 0}
+  doorCloseSound: {fileID: 0}
 --- !u!1001 &1638024873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45589,6 +45612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimedButton
   bridge: {fileID: 1802053334}
+  visual: {fileID: 0}
 --- !u!65 &1775954506
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45720,6 +45744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ElevatorButton
   elevator: {fileID: 0}
+  visual: {fileID: 0}
 --- !u!65 &1781779644
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45960,6 +45985,8 @@ MonoBehaviour:
   speed: 3.5
   slideDistance: 1
   reversed: 0
+  doorOpenSound: {fileID: 0}
+  doorCloseSound: {fileID: 0}
 --- !u!1001 &1792155549
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46711,10 +46738,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ButtonPad
   manager: {fileID: 0}
   pillarPrefab: {fileID: 1201206820851339048, guid: 3a133634ab95a9340b86d1d3bfc1a299, type: 3}
-  useKey: 101
   respawnAtSamePlace: 0
   useFixedSpawnPoint: 1
   fixedSpawnPoint: {fileID: 370087500}
+  visual: {fileID: 0}
 --- !u!65 &1821982838
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46829,6 +46856,8 @@ MonoBehaviour:
   speed: 3.5
   slideDistance: 1
   reversed: 0
+  doorOpenSound: {fileID: 0}
+  doorCloseSound: {fileID: 0}
 --- !u!1001 &1829724006
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47410,10 +47439,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ButtonPad
   manager: {fileID: 975333398}
   pillarPrefab: {fileID: 1201206820851339048, guid: 3a133634ab95a9340b86d1d3bfc1a299, type: 3}
-  useKey: 101
   respawnAtSamePlace: 0
   useFixedSpawnPoint: 1
   fixedSpawnPoint: {fileID: 382987299}
+  visual: {fileID: 0}
 --- !u!65 &1865560672
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47728,10 +47757,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ButtonPad
   manager: {fileID: 975333398}
   pillarPrefab: {fileID: 3856110847351375535, guid: 240a93b3745a1d744a1fd644559a8064, type: 3}
-  useKey: 101
   respawnAtSamePlace: 0
   useFixedSpawnPoint: 1
   fixedSpawnPoint: {fileID: 36686119}
+  visual: {fileID: 0}
 --- !u!65 &1884950201
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48032,6 +48061,8 @@ MonoBehaviour:
   speed: 3.5
   slideDistance: 1
   reversed: 0
+  doorOpenSound: {fileID: 0}
+  doorCloseSound: {fileID: 0}
 --- !u!1001 &1893988999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48117,6 +48148,8 @@ MonoBehaviour:
   speed: 3.5
   slideDistance: 1
   reversed: 0
+  doorOpenSound: {fileID: 0}
+  doorCloseSound: {fileID: 0}
 --- !u!1001 &1893993077
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48417,6 +48450,8 @@ MonoBehaviour:
   speed: 3.5
   slideDistance: 1
   reversed: 0
+  doorOpenSound: {fileID: 0}
+  doorCloseSound: {fileID: 0}
 --- !u!1001 &1900244228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50766,6 +50801,8 @@ MonoBehaviour:
   speed: 3.5
   slideDistance: 1
   reversed: 0
+  doorOpenSound: {fileID: 0}
+  doorCloseSound: {fileID: 0}
 --- !u!1001 &1989432020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50986,10 +51023,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ButtonPad
   manager: {fileID: 0}
   pillarPrefab: {fileID: 3856110847351375535, guid: 240a93b3745a1d744a1fd644559a8064, type: 3}
-  useKey: 101
   respawnAtSamePlace: 0
   useFixedSpawnPoint: 1
   fixedSpawnPoint: {fileID: 612350222}
+  visual: {fileID: 0}
 --- !u!65 &1989432026
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51096,6 +51133,8 @@ MonoBehaviour:
   speed: 3.5
   slideDistance: 1
   reversed: 0
+  doorOpenSound: {fileID: 0}
+  doorCloseSound: {fileID: 0}
 --- !u!1001 &2012978344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51830,6 +51869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimedButton
   bridge: {fileID: 129519713}
+  visual: {fileID: 0}
 --- !u!65 &2044883180
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -53182,6 +53222,8 @@ MonoBehaviour:
   speed: 3.5
   slideDistance: 1
   reversed: 0
+  doorOpenSound: {fileID: 0}
+  doorCloseSound: {fileID: 0}
 --- !u!1001 &2123280610
 PrefabInstance:
   m_ObjectHideFlags: 0
