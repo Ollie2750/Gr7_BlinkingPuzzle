@@ -45,6 +45,9 @@ public class MovementScript : MonoBehaviour
 
     // Jump buffer variables
     private float jumpBufferCounter;
+    
+    // Jump state tracking
+    private bool hasJumped = false;
 
     void Awake()
     {
@@ -75,6 +78,8 @@ public class MovementScript : MonoBehaviour
         {
             coyoteTimeCounter = coyoteTime;
             wasGroundedLastFrame = true;
+            // Reset jump state when grounded
+            hasJumped = false;
         }
         else
         {
@@ -101,11 +106,13 @@ public class MovementScript : MonoBehaviour
     private void HandleJump()
     {
         // Check if we should jump (either from buffer or coyote time)
-        if (jumpBufferCounter > 0 && coyoteTimeCounter > 0)
+        // Added hasJumped check to prevent double jumping
+        if (jumpBufferCounter > 0 && coyoteTimeCounter > 0 && !hasJumped)
         {
             PerformJump();
             jumpBufferCounter = 0;
             coyoteTimeCounter = 0;
+            hasJumped = true; // Mark that we've used our jump
         }
     }
 
