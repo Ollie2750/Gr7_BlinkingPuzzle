@@ -1,20 +1,14 @@
     using UnityEngine;
     using System.Collections;
 
-public class TimedButton : MonoBehaviour
+public class TimedButton : Interactable
 {
     [Header("Bridge")]
     [SerializeField] private BridgeController bridge;
 
-    [Header("Visual & animation")]
-    public ButtonVisual visual;      // shared visual script
 
-    public void activateBridge()
+    public override void Interact()
     {
-        // play visual; if on cooldown, ignore
-        if (visual != null && !visual.TryPress())
-            return;
-
         if (bridge != null)
         {
             bridge.bounceBridge();
