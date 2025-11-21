@@ -81,9 +81,6 @@ public class PlayerInteractor : MonoBehaviour
         // Legacy systems
         if (pad != null)
             pad.Activate();
-
-        if (timedButton != null)
-            timedButton.activateBridge();
     }
 }
 }
