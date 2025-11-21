@@ -943,7 +943,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimedButton
   bridge: {fileID: 1058435315}
-  visual: {fileID: 0}
 --- !u!65 &28530090
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19215,7 +19214,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimedButton
   bridge: {fileID: 1058435315}
-  visual: {fileID: 0}
 --- !u!65 &199642891
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40969,7 +40967,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimedButton
   bridge: {fileID: 2092926221}
-  visual: {fileID: 0}
 --- !u!65 &759740553
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47313,7 +47310,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimedButton
   bridge: {fileID: 2092926221}
-  visual: {fileID: 0}
 --- !u!65 &1139968461
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -65978,6 +65974,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.19999999, y: 0.19999999, z: 0.0019999975}
   m_Center: {x: -0.000003900379, y: 0.0007660742, z: 3.4924594e-10}
+--- !u!54 &1886074011 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: -8763595588985349041, guid: 10c70454bbf737544a18f857fb620e1f, type: 3}
+  m_PrefabInstance: {fileID: 1209160948}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1888665428
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69530,7 +69531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef98424d89b8b664587575edd3f7ed3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BridgeController
-  bridgeRb: {fileID: 0}
+  bridgeRb: {fileID: 1886074011}
   upForce: 310
   buttomHeight: 3
 --- !u!4 &2092926222
