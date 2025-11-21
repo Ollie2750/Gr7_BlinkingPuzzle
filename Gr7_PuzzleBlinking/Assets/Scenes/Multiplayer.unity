@@ -31081,6 +31081,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 766c704d24b8a7b41b73b18d05520627, type: 3}
       insertIndex: -1
       addedObject: {fileID: 752679321}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 766c704d24b8a7b41b73b18d05520627, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 752679324}
   m_SourcePrefab: {fileID: 100100000, guid: 766c704d24b8a7b41b73b18d05520627, type: 3}
 --- !u!4 &752679315 stripped
 Transform:
@@ -31202,7 +31205,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPiller
   piller: {fileID: 1051754844}
-  spawnPosition: {x: 5.603671, y: 7.36, z: 4.1691236}
+  spawnPosition: {x: 5.603671, y: 6.72, z: 4.1691236}
+--- !u!65 &752679324
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752679316}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.004, y: 0.0039999993, z: 0.012296367}
+  m_Center: {x: 0, y: 0, z: 0.00014818428}
 --- !u!1001 &759740549
 PrefabInstance:
   m_ObjectHideFlags: 0
