@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
 public class TimeFreezeAbility : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class TimeFreezeAbility : MonoBehaviour
 
     void Update()
     {
+        if (!IsOwner) return;
+
         if (Input.GetKeyDown(freezeKey) && !isOnCooldown && !isFreezeActive)
         {
             StartCoroutine(FreezeTime());
@@ -51,6 +54,8 @@ public class TimeFreezeAbility : MonoBehaviour
 
     void FreezeAllRigidbodies()
     {
+        if (!IsOwner) return;
+
         frozenRigidbodies.Clear();
 
         // Find all rigidbodies in the scene (using newer Unity API)
