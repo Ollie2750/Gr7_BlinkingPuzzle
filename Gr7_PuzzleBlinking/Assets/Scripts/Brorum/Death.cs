@@ -8,7 +8,11 @@ public class Death : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            collision.gameObject.transform.position = respawnLocation; 
+            GameObject player = collision.gameObject;
+            player.GetComponent<CharacterController>().enabled = false;
+            collision.gameObject.transform.position = respawnLocation;
+
+            player.GetComponent<CharacterController>().enabled = true;
         }
     }
 }
