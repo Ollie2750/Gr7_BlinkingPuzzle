@@ -1,44 +1,48 @@
-using UnityEngine;
 using Unity.Netcode;
+using UnityEngine;
 
-public class SpawnPiller : Interactable
+public class SpawnPiller : NetworkBehaviour
 {
     [SerializeField] private GameObject piller;
     [SerializeField] private Vector3 spawnPosition;
 
-    public override void Interact()
+    public void Interact()
     {
-        // Request the server to move the pillar
-        if (NetworkManager.Singleton != null)
+        if (!IsServer)
         {
-            // Get the NetworkObject component from the pillar
-            NetworkObject pillerNetworkObject = piller.GetComponent<NetworkObject>();
-
-            if (pillerNetworkObject != null)
-            {
-                // Call the server RPC to move the pillar
-                RequestMovePillerServerRpc(pillerNetworkObject.NetworkObjectId);
-            }
-            else
-            {
-                Debug.LogError("Pillar does not have a NetworkObject component!");
-            }
+            // Client requests the server to move the pillar
+            RequestMovePillarServerRpc();
         }
         else
         {
-            // Fallback for single-player or testing
-            piller.transform.localPosition = spawnPosition;
+            // Server moves the pillar directly
+            MovePillar();
         }
     }
 
     [ServerRpc(RequireOwnership = false)]
-    private void RequestMovePillerServerRpc(ulong pillerNetworkId)
+    private void RequestMovePillarServerRpc()
     {
-        // Find the pillar's NetworkObject
-        if (NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(pillerNetworkId, out NetworkObject pillerNetObj))
+        // Server executes the movement
+        MovePillar();
+    }
+
+    private void MovePillar()
+    {
+        // Move the pillar locally on the server
+        piller.transform.localPosition = spawnPosition;
+
+        // Notify all clients to update their pillar position
+        UpdatePillarClientRpc(spawnPosition);
+    }
+
+    [ClientRpc]
+    private void UpdatePillarClientRpc(Vector3 newPosition)
+    {
+        if (!IsServer)
         {
-            // Move the pillar on the server
-            pillerNetObj.transform.localPosition = spawnPosition;
+            // Only clients update (server already moved it)
+            piller.transform.localPosition = newPosition;
         }
     }
 }
