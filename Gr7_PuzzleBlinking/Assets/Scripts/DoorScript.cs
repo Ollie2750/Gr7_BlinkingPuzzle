@@ -5,9 +5,9 @@ using static UnityEngine.GraphicsBuffer;
 public class DoorScript : MonoBehaviour
 {
     private Transform target;
-    [SerializeField] private float doorDistance = 3;
-    [SerializeField] private float speed = 3.5f;
-    [SerializeField] private float slideDistance = 1;
+    private float doorDistance = 3;
+    private float speed = 3.5f;
+    private float slideDistance = 1;
     private Vector3 closed;
     private Vector3 open;
     [SerializeField] private bool reversed;
@@ -31,11 +31,35 @@ public class DoorScript : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        float dist = Vector3.Distance(transform.position, target.position);
 
-        if (dist <= doorDistance)
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+
+        if (players.Length == 0)
+            return;
+
+        float closestDist = Mathf.Infinity;
+        Transform closestPlayer = null;
+
+        foreach (GameObject i in players)
+        {
+            float dist = Vector3.Distance(transform.position, target.position);
+            if (dist < closestDist)
+            {
+                closestDist = dist;
+                closestPlayer = i.transform;
+            }
+        }
+
+        if (closestPlayer == null)
+            return;
+
+
+        
+
+
+        if (closestDist <= doorDistance)
         {
             if (!isOpen) // Only play sound when transitioning to open
             {
@@ -51,10 +75,10 @@ public class DoorScript : MonoBehaviour
         {
             if (isOpen) // Only play sound when transitioning to closed
             {
-                if (doorCloseSound != null)
-                {
-                    SoundManager.Instance.PlaySoundClip(doorCloseSound, transform, 0.5f);
-                }
+                //if (doorCloseSound != null)
+                //{
+                //    SoundManager.Instance.PlaySoundClip(doorCloseSound, transform, 0.5f);
+                //}
                 isOpen = false;
             }
             transform.position = Vector3.Lerp(transform.position, closed, Time.deltaTime * speed);
