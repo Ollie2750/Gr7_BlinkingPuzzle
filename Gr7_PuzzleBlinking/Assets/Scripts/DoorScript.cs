@@ -5,9 +5,9 @@ using static UnityEngine.GraphicsBuffer;
 public class DoorScript : MonoBehaviour
 {
     private Transform target;
-    [SerializeField] private float doorDistance = 3;
-    [SerializeField] private float speed = 3.5f;
-    [SerializeField] private float slideDistance = 1;
+    private float doorDistance = 3;
+    private float speed = 3.5f;
+    private float slideDistance = 1;
     private Vector3 closed;
     private Vector3 open;
     [SerializeField] private bool reversed;
@@ -31,7 +31,7 @@ public class DoorScript : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         float dist = Vector3.Distance(transform.position, target.position);
 
@@ -51,10 +51,10 @@ public class DoorScript : MonoBehaviour
         {
             if (isOpen) // Only play sound when transitioning to closed
             {
-                if (doorCloseSound != null)
-                {
-                    SoundManager.Instance.PlaySoundClip(doorCloseSound, transform, 0.5f);
-                }
+                //if (doorCloseSound != null)
+                //{
+                //    SoundManager.Instance.PlaySoundClip(doorCloseSound, transform, 0.5f);
+                //}
                 isOpen = false;
             }
             transform.position = Vector3.Lerp(transform.position, closed, Time.deltaTime * speed);
