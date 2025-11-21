@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
-public class TimeFreezeAbility : MonoBehaviour
+public class TimeFreezeAbility : NetworkBehaviour
 {
     [Header("Settings")]
     [SerializeField] private KeyCode freezeKey = KeyCode.Space;
