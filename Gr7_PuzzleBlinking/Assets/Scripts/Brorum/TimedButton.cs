@@ -1,12 +1,14 @@
     using UnityEngine;
+    using System.Collections;
 
-public class TimedButton : MonoBehaviour
+public class TimedButton : Interactable
 {
-	[SerializeField] private BridgeController bridge;
+    [Header("Bridge")]
+    [SerializeField] private BridgeController bridge;
 
 
-	public void activateBridge()
-	{
+    public override void Interact()
+    {
         if (bridge != null)
         {
             bridge.bounceBridge();

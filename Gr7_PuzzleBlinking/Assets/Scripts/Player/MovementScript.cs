@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class PlayerMovementMultiplayer : MonoBehaviour
+public class MovementScript : MonoBehaviour
 {
     private CharacterController controller;
     private InputSystem_Actions inputActions;
@@ -45,31 +45,20 @@ public class PlayerMovementMultiplayer : MonoBehaviour
 
     // Jump buffer variables
     private float jumpBufferCounter;
-
+    
     // Jump state tracking
     private bool hasJumped = false;
 
-    private ClientNetworkTransform _transform;
-    private bool isOwner;
-
     void Awake()
     {
-        _transform = GetComponent<ClientNetworkTransform>();
-
         controller = GetComponent<CharacterController>();
         inputActions = new InputSystem_Actions();
         currentSpeed = moveSpeed;
         standingHeight = controller.height;
     }
 
-    private void Start()
-    {
-        isOwner = _transform.IsOwner;
-    }
-
     private void Update()
     {
-        if (!isOwner) return;
         UpdateCoyoteTime();
         UpdateJumpBuffer();
         HandleJump();
@@ -77,7 +66,6 @@ public class PlayerMovementMultiplayer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!isOwner) return;
         Move();
         ApplyGravity();
         HandleHover();
@@ -131,10 +119,10 @@ public class PlayerMovementMultiplayer : MonoBehaviour
     private void Move()
     {
         Vector3 moveDirection = transform.right * moveInput.x + transform.forward * moveInput.y;
-
+        
         // Apply air control if not grounded
         float speedMultiplier = controller.isGrounded ? 1f : airControlMultiplier;
-
+        
         controller.Move(moveDirection * currentSpeed * speedMultiplier * Time.deltaTime);
     }
 
@@ -200,7 +188,7 @@ public class PlayerMovementMultiplayer : MonoBehaviour
     private void Crouch(bool crouch)
     {
         isCrouching = crouch;
-
+        
         // Update speed based on crouch state
         if (isCrouching)
         {
@@ -226,19 +214,19 @@ public class PlayerMovementMultiplayer : MonoBehaviour
         // Raycast upward to check if there's space to stand
         float checkDistance = standingHeight - crouchHeight;
         Vector3 rayStart = transform.position + Vector3.up * (controller.height / 2);
-
+        
         return !Physics.Raycast(rayStart, Vector3.up, checkDistance);
     }
 
     private void HandleCrouchTransition()
     {
         float targetHeight = isCrouching ? crouchHeight : standingHeight;
-
+        
         if (Mathf.Abs(controller.height - targetHeight) > 0.01f)
         {
             float previousHeight = controller.height;
             controller.height = Mathf.Lerp(controller.height, targetHeight, Time.deltaTime * crouchTransitionSpeed);
-
+            
             // Adjust position to keep feet on ground
             float heightDifference = controller.height - previousHeight;
             controller.Move(Vector3.up * (heightDifference / 2));

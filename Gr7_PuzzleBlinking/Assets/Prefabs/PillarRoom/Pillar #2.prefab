@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: 5544223758005184801}
   - component: {fileID: -747757172190808966}
   - component: {fileID: -7356465638129374837}
-  - component: {fileID: -3575437752815105209}
-  - component: {fileID: 5880754253971681072}
+  - component: {fileID: -4565635404785870973}
+  - component: {fileID: -230987392380191016}
   m_Layer: 0
   m_Name: Pillar #2
   m_TagString: Untagged
@@ -267,7 +267,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-3575437752815105209
+--- !u!114 &-4565635404785870973
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -279,20 +279,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 1315449143
+  GlobalObjectIdHash: 3238147268
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
-  ActiveSceneSynchronization: 1
+  ActiveSceneSynchronization: 0
   SceneMigrationSynchronization: 1
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
---- !u!114 &5880754253971681072
+--- !u!114 &-230987392380191016
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
