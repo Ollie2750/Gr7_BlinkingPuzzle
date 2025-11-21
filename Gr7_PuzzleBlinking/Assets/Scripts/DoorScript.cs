@@ -33,9 +33,33 @@ public class DoorScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        float dist = Vector3.Distance(transform.position, target.position);
 
-        if (dist <= doorDistance)
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+
+        if (players.Length == 0)
+            return;
+
+        float closestDist = Mathf.Infinity;
+        Transform closestPlayer = null;
+
+        foreach (GameObject i in players)
+        {
+            float dist = Vector3.Distance(transform.position, target.position);
+            if (dist < closestDist)
+            {
+                closestDist = dist;
+                closestPlayer = i.transform;
+            }
+        }
+
+        if (closestPlayer == null)
+            return;
+
+
+        
+
+
+        if (closestDist <= doorDistance)
         {
             if (!isOpen) // Only play sound when transitioning to open
             {
