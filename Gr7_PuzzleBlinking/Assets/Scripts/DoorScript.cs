@@ -43,7 +43,7 @@ public class DoorScript : MonoBehaviour
 
         foreach (GameObject player in players)
         {
-            float dist = Vector3.Distance(transform.position, player.transform.position);
+            float dist = Vector3.Distance(closed, player.transform.position);
             if (dist < closestDist)
             {
                 closestDist = dist;
