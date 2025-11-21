@@ -17,7 +17,6 @@ public class DoorScript : MonoBehaviour
     private bool isOpen;
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
         closed = transform.position;
 
         if (reversed)
@@ -42,13 +41,13 @@ public class DoorScript : MonoBehaviour
         float closestDist = Mathf.Infinity;
         Transform closestPlayer = null;
 
-        foreach (GameObject i in players)
+        foreach (GameObject player in players)
         {
-            float dist = Vector3.Distance(transform.position, target.position);
+            float dist = Vector3.Distance(transform.position, player.transform.position);
             if (dist < closestDist)
             {
                 closestDist = dist;
-                closestPlayer = i.transform;
+                closestPlayer = player.transform;
             }
         }
 
