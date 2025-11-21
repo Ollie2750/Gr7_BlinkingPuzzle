@@ -16471,8 +16471,8 @@ MonoBehaviour:
   speed: 3.5
   slideDistance: 1
   reversed: 0
-  doorOpenSound: {fileID: 0}
-  doorCloseSound: {fileID: 0}
+  doorOpenSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
+  doorCloseSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
 --- !u!1 &312858275
 GameObject:
   m_ObjectHideFlags: 0
@@ -28237,8 +28237,8 @@ MonoBehaviour:
   speed: 3.5
   slideDistance: 1
   reversed: 0
-  doorOpenSound: {fileID: 0}
-  doorCloseSound: {fileID: 0}
+  doorOpenSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
+  doorCloseSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
 --- !u!1001 &618124819
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31799,8 +31799,8 @@ MonoBehaviour:
   speed: 3.5
   slideDistance: 1
   reversed: 0
-  doorOpenSound: {fileID: 0}
-  doorCloseSound: {fileID: 0}
+  doorOpenSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
+  doorCloseSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
 --- !u!1001 &781063731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34436,18 +34436,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1436882991}
     m_Modifications:
-    - target: {fileID: -6185031730004568397, guid: 929d8e021bbd9224c94847ce8512fa5f, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 1979246581
-      objectReference: {fileID: 0}
-    - target: {fileID: -6185031730004568397, guid: 929d8e021bbd9224c94847ce8512fa5f, type: 3}
-      propertyPath: SceneMigrationSynchronization
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -6185031730004568397, guid: 929d8e021bbd9224c94847ce8512fa5f, type: 3}
-      propertyPath: InScenePlacedSourceGlobalObjectIdHash
-      value: 2363056439
-      objectReference: {fileID: 0}
     - target: {fileID: 166647333065657108, guid: 929d8e021bbd9224c94847ce8512fa5f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.375
@@ -35744,8 +35732,8 @@ MonoBehaviour:
   speed: 3.5
   slideDistance: 1
   reversed: 0
-  doorOpenSound: {fileID: 0}
-  doorCloseSound: {fileID: 0}
+  doorOpenSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
+  doorCloseSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
 --- !u!1001 &1041843876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36101,18 +36089,6 @@ PrefabInstance:
     - target: {fileID: 7471403566093141335, guid: 3a133634ab95a9340b86d1d3bfc1a299, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8694921889053315490, guid: 3a133634ab95a9340b86d1d3bfc1a299, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 3039324049
-      objectReference: {fileID: 0}
-    - target: {fileID: 8694921889053315490, guid: 3a133634ab95a9340b86d1d3bfc1a299, type: 3}
-      propertyPath: SceneMigrationSynchronization
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8694921889053315490, guid: 3a133634ab95a9340b86d1d3bfc1a299, type: 3}
-      propertyPath: InScenePlacedSourceGlobalObjectIdHash
-      value: 919896730
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -39183,18 +39159,6 @@ PrefabInstance:
     - target: {fileID: 3867176217737224119, guid: 4a70201623cd08a439b125a1c7cbc924, type: 3}
       propertyPath: m_Name
       value: Pillar #4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4214329781831788805, guid: 4a70201623cd08a439b125a1c7cbc924, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 1497738242
-      objectReference: {fileID: 0}
-    - target: {fileID: 4214329781831788805, guid: 4a70201623cd08a439b125a1c7cbc924, type: 3}
-      propertyPath: SceneMigrationSynchronization
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4214329781831788805, guid: 4a70201623cd08a439b125a1c7cbc924, type: 3}
-      propertyPath: InScenePlacedSourceGlobalObjectIdHash
-      value: 3230905111
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -47549,8 +47513,8 @@ MonoBehaviour:
   speed: 3.5
   slideDistance: 1
   reversed: 1
-  doorOpenSound: {fileID: 0}
-  doorCloseSound: {fileID: 0}
+  doorOpenSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
+  doorCloseSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
 --- !u!1 &1365717433
 GameObject:
   m_ObjectHideFlags: 0
@@ -49806,8 +49770,8 @@ MonoBehaviour:
   speed: 3.5
   slideDistance: 1
   reversed: 0
-  doorOpenSound: {fileID: 0}
-  doorCloseSound: {fileID: 0}
+  doorOpenSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
+  doorCloseSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
 --- !u!1001 &1519862202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53938,18 +53902,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1147384994}
     m_Modifications:
-    - target: {fileID: -3575437752815105209, guid: 240a93b3745a1d744a1fd644559a8064, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 3641778293
-      objectReference: {fileID: 0}
-    - target: {fileID: -3575437752815105209, guid: 240a93b3745a1d744a1fd644559a8064, type: 3}
-      propertyPath: SceneMigrationSynchronization
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -3575437752815105209, guid: 240a93b3745a1d744a1fd644559a8064, type: 3}
-      propertyPath: InScenePlacedSourceGlobalObjectIdHash
-      value: 1315449143
-      objectReference: {fileID: 0}
     - target: {fileID: 2662077419140164159, guid: 240a93b3745a1d744a1fd644559a8064, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.6353714
@@ -57968,8 +57920,8 @@ MonoBehaviour:
   speed: 3.5
   slideDistance: 1
   reversed: 0
-  doorOpenSound: {fileID: 0}
-  doorCloseSound: {fileID: 0}
+  doorOpenSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
+  doorCloseSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
 --- !u!1001 &1967685453
 PrefabInstance:
   m_ObjectHideFlags: 0
