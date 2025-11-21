@@ -19168,7 +19168,7 @@ MonoBehaviour:
   piller: {fileID: 119620996}
   spawnPosition: {x: 5.603671, y: 5, z: 4.1691236}
   clickSound: {fileID: 8300000, guid: 86ecfd55ea78d1540933d96560455d15, type: 3}
-  volume: 0
+  volume: 0.5
 --- !u!114 &202803308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47784,7 +47784,7 @@ PrefabInstance:
     - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
       propertyPath: visual
       value: 
-      objectReference: {fileID: 1183623858}
+      objectReference: {fileID: 0}
     - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
       propertyPath: manager
       value: 
@@ -47813,13 +47813,11 @@ PrefabInstance:
       propertyPath: useFixedSpawnPoint
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8717152813854189965, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1183623858}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
 --- !u!4 &1183623854 stripped
 Transform:
@@ -47831,34 +47829,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6006967283169319535, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
   m_PrefabInstance: {fileID: 1183623853}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1183623856 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8717152813854189965, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
-  m_PrefabInstance: {fileID: 1183623853}
-  m_PrefabAsset: {fileID: 0}
 --- !u!23 &1183623857 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 7854034618225123332, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
   m_PrefabInstance: {fileID: 1183623853}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1183623858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1183623856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a3dc06b154685742a8dd32f6f6fb683, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ButtonVisual
-  buttonRenderer: {fileID: 1183623857}
-  idleMaterial: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
-  pressedMaterial: {fileID: 2100000, guid: 327b78704ccad4c5f9cda4af1cb9e1ac, type: 2}
-  cooldownTime: 2
-  buttonTop: {fileID: 0}
-  pressDepth: 0.02
 --- !u!1001 &1189429482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49353,7 +49328,7 @@ PrefabInstance:
     - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
       propertyPath: visual
       value: 
-      objectReference: {fileID: 1233720048}
+      objectReference: {fileID: 0}
     - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
       propertyPath: manager
       value: 
@@ -49394,13 +49369,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8717152813854189965, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1233720048}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
 --- !u!4 &1233720044 stripped
 Transform:
@@ -49412,34 +49385,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6006967283169319535, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
   m_PrefabInstance: {fileID: 1233720043}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1233720046 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8717152813854189965, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
-  m_PrefabInstance: {fileID: 1233720043}
-  m_PrefabAsset: {fileID: 0}
 --- !u!23 &1233720047 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 7854034618225123332, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
   m_PrefabInstance: {fileID: 1233720043}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1233720048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1233720046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a3dc06b154685742a8dd32f6f6fb683, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ButtonVisual
-  buttonRenderer: {fileID: 1233720047}
-  idleMaterial: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
-  pressedMaterial: {fileID: 2100000, guid: 327b78704ccad4c5f9cda4af1cb9e1ac, type: 2}
-  cooldownTime: 2
-  buttonTop: {fileID: 0}
-  pressDepth: 0.02
 --- !u!1001 &1236740320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57086,7 +57036,7 @@ PrefabInstance:
     - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
       propertyPath: visual
       value: 
-      objectReference: {fileID: 1392360675}
+      objectReference: {fileID: 0}
     - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
       propertyPath: manager
       value: 
@@ -57115,13 +57065,11 @@ PrefabInstance:
       propertyPath: useFixedSpawnPoint
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8717152813854189965, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1392360675}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
 --- !u!4 &1392360671 stripped
 Transform:
@@ -57133,34 +57081,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6006967283169319535, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
   m_PrefabInstance: {fileID: 1392360670}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1392360673 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8717152813854189965, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
-  m_PrefabInstance: {fileID: 1392360670}
-  m_PrefabAsset: {fileID: 0}
 --- !u!23 &1392360674 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 7854034618225123332, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
   m_PrefabInstance: {fileID: 1392360670}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1392360675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1392360673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a3dc06b154685742a8dd32f6f6fb683, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ButtonVisual
-  buttonRenderer: {fileID: 1392360674}
-  idleMaterial: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
-  pressedMaterial: {fileID: 2100000, guid: 327b78704ccad4c5f9cda4af1cb9e1ac, type: 2}
-  cooldownTime: 2
-  buttonTop: {fileID: 0}
-  pressDepth: 0.02
 --- !u!1001 &1398337246
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68332,7 +68257,7 @@ MonoBehaviour:
   piller: {fileID: 1761967349}
   spawnPosition: {x: 1.6353714, y: 5, z: 4.2620325}
   clickSound: {fileID: 8300000, guid: 86ecfd55ea78d1540933d96560455d15, type: 3}
-  volume: 0
+  volume: 0.5
 --- !u!114 &2029871739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68877,7 +68802,7 @@ PrefabInstance:
     - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
       propertyPath: visual
       value: 
-      objectReference: {fileID: 2068993075}
+      objectReference: {fileID: 0}
     - target: {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
       propertyPath: manager
       value: 
@@ -68914,13 +68839,11 @@ PrefabInstance:
       propertyPath: useFixedSpawnPoint
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3531228403495641294, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8717152813854189965, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2068993075}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
 --- !u!4 &2068993071 stripped
 Transform:
@@ -68932,34 +68855,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6006967283169319535, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
   m_PrefabInstance: {fileID: 2068993070}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2068993073 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8717152813854189965, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
-  m_PrefabInstance: {fileID: 2068993070}
-  m_PrefabAsset: {fileID: 0}
 --- !u!23 &2068993074 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 7854034618225123332, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
   m_PrefabInstance: {fileID: 2068993070}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2068993075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2068993073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a3dc06b154685742a8dd32f6f6fb683, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ButtonVisual
-  buttonRenderer: {fileID: 2068993074}
-  idleMaterial: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
-  pressedMaterial: {fileID: 2100000, guid: 327b78704ccad4c5f9cda4af1cb9e1ac, type: 2}
-  cooldownTime: 2
-  buttonTop: {fileID: 0}
-  pressDepth: 0.02
 --- !u!1001 &2069727184
 PrefabInstance:
   m_ObjectHideFlags: 0
