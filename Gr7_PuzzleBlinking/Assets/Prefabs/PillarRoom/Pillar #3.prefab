@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7126730985934757901}
   - component: {fileID: 5503539524248816247}
   - component: {fileID: 2113225062122177281}
-  - component: {fileID: 8922122683706722041}
+  - component: {fileID: 4849132518124805680}
   m_Layer: 0
   m_Name: Pillar #3
   m_TagString: Untagged
@@ -266,7 +266,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8922122683706722041
+--- !u!114 &4849132518124805680
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -275,9 +275,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1201206820851339048}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e872dc3a936e1f4db785192ee847d8b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.Components.NetworkTransform
+  m_EditorClassIdentifier: Assembly-CSharp::ClientNetworkTransform
   ShowTopMostFoldoutHeaderGroup: 1
   NetworkTransformExpanded: 0
   AutoOwnerAuthorityTickOffset: 1

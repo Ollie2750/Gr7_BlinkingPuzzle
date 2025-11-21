@@ -31059,10 +31059,10 @@ PrefabInstance:
       addedObject: {fileID: 752679318}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 766c704d24b8a7b41b73b18d05520627, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 752679321}
+      addedObject: {fileID: 752679324}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 766c704d24b8a7b41b73b18d05520627, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 752679324}
+      addedObject: {fileID: 752679321}
   m_SourcePrefab: {fileID: 100100000, guid: 766c704d24b8a7b41b73b18d05520627, type: 3}
 --- !u!4 &752679315 stripped
 Transform:
@@ -31184,7 +31184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPiller
   piller: {fileID: 1051754844}
-  spawnPosition: {x: 5.603671, y: 5, z: 4.1691236}
+  spawnPosition: {x: 5.603671, y: 4, z: 4.1691236}
 --- !u!65 &752679324
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40895,6 +40895,51 @@ Transform:
   - {fileID: 140702539}
   m_Father: {fileID: 1147384994}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1281120855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1281120857}
+  - component: {fileID: 1281120856}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1281120856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281120855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 873896e32971841409c0b94ce2b26480, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundManager
+  audioSourceObject: {fileID: 2943040258158465666, guid: 2ae8911f757d85541be4659b387370cd, type: 3}
+--- !u!4 &1281120857
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281120855}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.43851, y: -0.08788, z: 20.32954}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1282170747
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46386,7 +46431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPiller
   piller: {fileID: 1761967349}
-  spawnPosition: {x: 1.6353714, y: 5, z: 4.2620325}
+  spawnPosition: {x: 1.6353714, y: 4, z: 4.2620325}
 --- !u!1001 &1307264101
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47157,7 +47202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPiller
   piller: {fileID: 939187131}
-  spawnPosition: {x: -1.375, y: 5, z: 4.217}
+  spawnPosition: {x: -1.375, y: 4, z: 4.217}
 --- !u!1001 &1332104985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51051,7 +51096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPiller
   piller: {fileID: 1213405944}
-  spawnPosition: {x: 8.619245, y: 5, z: 4.264306}
+  spawnPosition: {x: 8.619245, y: 4, z: 4.264306}
 --- !u!1001 &1568629229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60304,3 +60349,4 @@ SceneRoots:
   - {fileID: 701145506}
   - {fileID: 1510573629}
   - {fileID: 658636990}
+  - {fileID: 1281120857}
