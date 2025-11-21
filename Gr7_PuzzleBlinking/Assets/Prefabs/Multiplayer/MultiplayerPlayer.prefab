@@ -65,7 +65,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -334,13 +334,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement_Multiplayer
   moveSpeed: 3
+  sprintSpeed: 6
+  crouchSpeed: 1.5
+  airControlMultiplier: 0.5
+  currentSpeed: 0
   gravity: -9.81
   jumpHeight: 1.5
-  sprintSpeed: 6
-  currentSpeed: 0
-  interactDistance: 3
+  coyoteTime: 0.2
+  jumpBufferTime: 0.2
+  headBumpCheckDistance: 0.1
+  standingHeight: 2
+  crouchHeight: 1
+  crouchTransitionSpeed: 10
   lookSensitivity: 0.25
   playerCamera: {fileID: 1865531910715048671}
+  interactDistance: 3
 --- !u!114 &40021873217349624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,6 +488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce097f28ee6630844abd13265cf97680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimeFreezeAbility
+  ShowTopMostFoldoutHeaderGroup: 1
   freezeKey: 113
   freezeDuration: 5
   cooldownDuration: 5
