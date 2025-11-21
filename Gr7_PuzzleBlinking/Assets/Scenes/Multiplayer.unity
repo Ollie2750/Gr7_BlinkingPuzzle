@@ -1189,12 +1189,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 1
-  doorOpenSound: {fileID: 0}
-  doorCloseSound: {fileID: 0}
+  doorOpenSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
+  doorCloseSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
 --- !u!65 &40007429
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7001,12 +6998,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
-  doorOpenSound: {fileID: 0}
-  doorCloseSound: {fileID: 0}
+  doorOpenSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
+  doorCloseSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
 --- !u!65 &102921730
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12144,12 +12138,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
-  doorOpenSound: {fileID: 0}
-  doorCloseSound: {fileID: 0}
+  doorOpenSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
+  doorCloseSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
 --- !u!1001 &123651986
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16467,9 +16458,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
   doorOpenSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
   doorCloseSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
@@ -24294,12 +24282,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
-  doorOpenSound: {fileID: 0}
-  doorCloseSound: {fileID: 0}
+  doorOpenSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
+  doorCloseSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
 --- !u!1001 &454898674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28233,9 +28218,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
   doorOpenSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
   doorCloseSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
@@ -30517,12 +30499,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
-  doorOpenSound: {fileID: 0}
-  doorCloseSound: {fileID: 0}
+  doorOpenSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
+  doorCloseSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
 --- !u!1001 &738368970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31205,7 +31184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPiller
   piller: {fileID: 1051754844}
-  spawnPosition: {x: 5.603671, y: 6.72, z: 4.1691236}
+  spawnPosition: {x: 5.603671, y: 5, z: 4.1691236}
 --- !u!65 &752679324
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31795,9 +31774,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
   doorOpenSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
   doorCloseSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
@@ -34166,12 +34142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
-  doorOpenSound: {fileID: 0}
-  doorCloseSound: {fileID: 0}
+  doorOpenSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
+  doorCloseSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
 --- !u!1001 &930529304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35728,9 +35701,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
   doorOpenSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
   doorCloseSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
@@ -35820,12 +35790,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
-  doorOpenSound: {fileID: 0}
-  doorCloseSound: {fileID: 0}
+  doorOpenSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
+  doorCloseSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
 --- !u!64 &1044944639
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -46419,7 +46386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPiller
   piller: {fileID: 1761967349}
-  spawnPosition: {x: 1.6353714, y: 7.52, z: 4.2620325}
+  spawnPosition: {x: 1.6353714, y: 5, z: 4.2620325}
 --- !u!1001 &1307264101
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47190,7 +47157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPiller
   piller: {fileID: 939187131}
-  spawnPosition: {x: -1.375, y: 7.63, z: 4.217}
+  spawnPosition: {x: -1.375, y: 5, z: 4.217}
 --- !u!1001 &1332104985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47509,9 +47476,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 1
   doorOpenSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
   doorCloseSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
@@ -49766,9 +49730,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
   doorOpenSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
   doorCloseSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
@@ -51090,7 +51051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPiller
   piller: {fileID: 1213405944}
-  spawnPosition: {x: 8.619245, y: 6.86, z: 4.264306}
+  spawnPosition: {x: 8.619245, y: 5, z: 4.264306}
 --- !u!1001 &1568629229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51918,12 +51879,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
-  doorOpenSound: {fileID: 0}
-  doorCloseSound: {fileID: 0}
+  doorOpenSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
+  doorCloseSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
 --- !u!1001 &1601187515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56087,12 +56045,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
-  doorOpenSound: {fileID: 0}
-  doorCloseSound: {fileID: 0}
+  doorOpenSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
+  doorCloseSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
 --- !u!1001 &1877463132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56800,12 +56755,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
-  doorOpenSound: {fileID: 0}
-  doorCloseSound: {fileID: 0}
+  doorOpenSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
+  doorCloseSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
 --- !u!1001 &1904045811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57916,9 +57868,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
   doorOpenSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
   doorCloseSound: {fileID: 8300000, guid: f516f2131c3714c46a6d84781c7e7723, type: 3}
