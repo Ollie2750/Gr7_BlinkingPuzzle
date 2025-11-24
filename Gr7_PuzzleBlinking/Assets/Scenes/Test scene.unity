@@ -8816,9 +8816,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
   doorOpenSound: {fileID: 0}
   doorCloseSound: {fileID: 0}
@@ -12887,9 +12884,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 1
   doorOpenSound: {fileID: 0}
   doorCloseSound: {fileID: 0}
@@ -13084,9 +13078,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
   doorOpenSound: {fileID: 0}
   doorCloseSound: {fileID: 0}
@@ -14523,9 +14514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4906fd9484c66147adadba316f011d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Death
-  maxHP: 100
-  playerHP: 0
-  spawnLocation: {x: 0, y: 0, z: 0}
+  respawnLocation: {x: 0, y: 0, z: 0}
 --- !u!114 &542053689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16622,6 +16611,75 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 93179f4390ccd854cafcdcfd6c8353e0, type: 3}
   m_PrefabInstance: {fileID: 659485028}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &663952244
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.74
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.077
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 22.731
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_Name
+      value: trappeindicator Venstre
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: adbe9ab057859854a822cc70338e9450, type: 3}
 --- !u!1001 &664548929
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17121,7 +17179,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimedButton
   bridge: {fileID: 129519713}
-  visual: {fileID: 0}
 --- !u!65 &679319128
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30314,9 +30371,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
   doorOpenSound: {fileID: 0}
   doorCloseSound: {fileID: 0}
@@ -30454,9 +30508,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
   doorOpenSound: {fileID: 0}
   doorCloseSound: {fileID: 0}
@@ -32074,7 +32125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimedButton
   bridge: {fileID: 1802053334}
-  visual: {fileID: 0}
 --- !u!65 &1303688600
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32426,9 +32476,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
   doorOpenSound: {fileID: 0}
   doorCloseSound: {fileID: 0}
@@ -32449,9 +32496,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
   doorOpenSound: {fileID: 0}
   doorCloseSound: {fileID: 0}
@@ -33328,9 +33372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4906fd9484c66147adadba316f011d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Death
-  maxHP: 100
-  playerHP: 0
-  spawnLocation: {x: 0, y: 0, z: 0}
+  respawnLocation: {x: 0, y: 0, z: 0}
 --- !u!114 &1375214674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35241,9 +35283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 1
   doorOpenSound: {fileID: 0}
   doorCloseSound: {fileID: 0}
@@ -37900,9 +37939,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
   doorOpenSound: {fileID: 0}
   doorCloseSound: {fileID: 0}
@@ -43863,6 +43899,75 @@ Transform:
   - {fileID: 1933250014}
   m_Father: {fileID: 345883255}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1698622095
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.33302
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.077
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 22.731
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: adbe9ab057859854a822cc70338e9450, type: 3}
+      propertyPath: m_Name
+      value: "trappeindicator H\xF8jre"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: adbe9ab057859854a822cc70338e9450, type: 3}
 --- !u!1 &1699582047
 GameObject:
   m_ObjectHideFlags: 0
@@ -45613,7 +45718,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimedButton
   bridge: {fileID: 1802053334}
-  visual: {fileID: 0}
 --- !u!65 &1775954506
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45982,9 +46086,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
   doorOpenSound: {fileID: 0}
   doorCloseSound: {fileID: 0}
@@ -46853,9 +46954,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
   doorOpenSound: {fileID: 0}
   doorCloseSound: {fileID: 0}
@@ -48058,9 +48156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
   doorOpenSound: {fileID: 0}
   doorCloseSound: {fileID: 0}
@@ -48145,9 +48240,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
   doorOpenSound: {fileID: 0}
   doorCloseSound: {fileID: 0}
@@ -48447,9 +48539,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
   doorOpenSound: {fileID: 0}
   doorCloseSound: {fileID: 0}
@@ -50798,9 +50887,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
   doorOpenSound: {fileID: 0}
   doorCloseSound: {fileID: 0}
@@ -51130,9 +51216,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
   doorOpenSound: {fileID: 0}
   doorCloseSound: {fileID: 0}
@@ -51870,7 +51953,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimedButton
   bridge: {fileID: 129519713}
-  visual: {fileID: 0}
 --- !u!65 &2044883180
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -53219,9 +53301,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045181e615f6eeb458c418b980348d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorScript
-  doorDistance: 3
-  speed: 3.5
-  slideDistance: 1
   reversed: 0
   doorOpenSound: {fileID: 0}
   doorCloseSound: {fileID: 0}
@@ -58363,3 +58442,5 @@ SceneRoots:
   - {fileID: 725465873}
   - {fileID: 1113839122}
   - {fileID: 182984956}
+  - {fileID: 663952244}
+  - {fileID: 1698622095}
