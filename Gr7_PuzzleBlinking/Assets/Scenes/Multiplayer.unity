@@ -1048,8 +1048,8 @@ MonoBehaviour:
   speed: 1
   startpoint: 0
   points:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1815244793}
+  - {fileID: 277418978}
 --- !u!65 &53653480
 BoxCollider:
   m_ObjectHideFlags: 0
