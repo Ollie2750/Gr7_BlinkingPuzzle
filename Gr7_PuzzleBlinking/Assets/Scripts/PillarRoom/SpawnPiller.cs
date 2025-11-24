@@ -11,6 +11,7 @@ public class SpawnPiller : Interactable
     public override void Interact()
     {
         piller.transform.localPosition = spawnPosition;
+        piller.transform.localRotation = Quaternion.identity;
         SoundManager.Instance.PlaySoundClip(clickSound, transform, volume);
 
         GetComponent<ButtonVisual>().TryPress();
