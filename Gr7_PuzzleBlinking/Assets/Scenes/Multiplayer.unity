@@ -19150,6 +19150,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PillarButton #3
       objectReference: {fileID: 0}
+    - target: {fileID: 153025970487571951, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
+      propertyPath: m_TagString
+      value: Button
+      objectReference: {fileID: 0}
     - target: {fileID: 627996311609272937, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
       propertyPath: manager
       value: 
@@ -33357,6 +33361,10 @@ PrefabInstance:
     - target: {fileID: 153025970487571951, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
       propertyPath: m_Name
       value: PillarButton #1
+      objectReference: {fileID: 0}
+    - target: {fileID: 153025970487571951, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
+      propertyPath: m_TagString
+      value: Button
       objectReference: {fileID: 0}
     - target: {fileID: 627996311609272937, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
       propertyPath: manager
@@ -57884,6 +57892,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PillarButton #4
       objectReference: {fileID: 0}
+    - target: {fileID: 153025970487571951, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
+      propertyPath: m_TagString
+      value: Button
+      objectReference: {fileID: 0}
     - target: {fileID: 627996311609272937, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
       propertyPath: manager
       value: 
@@ -63753,6 +63765,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PillarButton
       objectReference: {fileID: 0}
+    - target: {fileID: 5700613907173395919, guid: 1823b9b21a4621f4799b93e9304c8888, type: 3}
+      propertyPath: m_TagString
+      value: Button
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -68489,6 +68505,10 @@ PrefabInstance:
     - target: {fileID: 153025970487571951, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
       propertyPath: m_Name
       value: PillarButton #2
+      objectReference: {fileID: 0}
+    - target: {fileID: 153025970487571951, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
+      propertyPath: m_TagString
+      value: Button
       objectReference: {fileID: 0}
     - target: {fileID: 627996311609272937, guid: 174f8318ed50e994e81d6201183421ed, type: 3}
       propertyPath: manager
