@@ -7,7 +7,7 @@ public class TimedButton : Interactable
     [SerializeField] private BridgeController bridge;
 
 
-    public override void Interact()
+    public override void Interact(bool isHost)
     {
         if (bridge != null)
         {

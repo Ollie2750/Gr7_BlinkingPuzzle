@@ -19228,8 +19228,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonVisual
   buttonRenderer: {fileID: 202803306}
-  idleMaterial: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
+  idleMaterial: {fileID: 2100000, guid: 762bda07c54b23b4fbe0b9381b5ad03e, type: 2}
   pressedMaterial: {fileID: 2100000, guid: 327b78704ccad4c5f9cda4af1cb9e1ac, type: 2}
+  errorMaterial: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
   cooldownTime: 2
   buttonTop: {fileID: 0}
   pressDepth: 0.02
@@ -27309,6 +27310,7 @@ MonoBehaviour:
   buttonRenderer: {fileID: 390855807}
   idleMaterial: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
   pressedMaterial: {fileID: 2100000, guid: 327b78704ccad4c5f9cda4af1cb9e1ac, type: 2}
+  errorMaterial: {fileID: 0}
   cooldownTime: 2
   buttonTop: {fileID: 0}
   pressDepth: 0.02
@@ -30739,6 +30741,7 @@ MonoBehaviour:
   buttonRenderer: {fileID: 537194954}
   idleMaterial: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
   pressedMaterial: {fileID: 2100000, guid: 327b78704ccad4c5f9cda4af1cb9e1ac, type: 2}
+  errorMaterial: {fileID: 0}
   cooldownTime: 2
   buttonTop: {fileID: 0}
   pressDepth: 0.02
@@ -33186,8 +33189,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonVisual
   buttonRenderer: {fileID: 641801627}
-  idleMaterial: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
+  idleMaterial: {fileID: 2100000, guid: 762bda07c54b23b4fbe0b9381b5ad03e, type: 2}
   pressedMaterial: {fileID: 2100000, guid: 327b78704ccad4c5f9cda4af1cb9e1ac, type: 2}
+  errorMaterial: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
   cooldownTime: 2
   buttonTop: {fileID: 641801625}
   pressDepth: 0.02
@@ -57641,8 +57645,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonVisual
   buttonRenderer: {fileID: 1419900238}
-  idleMaterial: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
+  idleMaterial: {fileID: 2100000, guid: 762bda07c54b23b4fbe0b9381b5ad03e, type: 2}
   pressedMaterial: {fileID: 2100000, guid: 327b78704ccad4c5f9cda4af1cb9e1ac, type: 2}
+  errorMaterial: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
   cooldownTime: 2
   buttonTop: {fileID: 0}
   pressDepth: 0.02
@@ -63307,6 +63312,7 @@ MonoBehaviour:
   buttonRenderer: {fileID: 1781654747}
   idleMaterial: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
   pressedMaterial: {fileID: 2100000, guid: 327b78704ccad4c5f9cda4af1cb9e1ac, type: 2}
+  errorMaterial: {fileID: 0}
   cooldownTime: 2
   buttonTop: {fileID: 0}
   pressDepth: 0.02
@@ -68032,8 +68038,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonVisual
   buttonRenderer: {fileID: 2029871737}
-  idleMaterial: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
+  idleMaterial: {fileID: 2100000, guid: 762bda07c54b23b4fbe0b9381b5ad03e, type: 2}
   pressedMaterial: {fileID: 2100000, guid: 327b78704ccad4c5f9cda4af1cb9e1ac, type: 2}
+  errorMaterial: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
   cooldownTime: 2
   buttonTop: {fileID: 0}
   pressDepth: 0.02

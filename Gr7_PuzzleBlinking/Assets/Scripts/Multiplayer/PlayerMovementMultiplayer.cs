@@ -6,6 +6,7 @@ public class PlayerMovementMultiplayer : MonoBehaviour
 {
     private CharacterController controller;
     private InputSystem_Actions inputActions;
+    [SerializeField] private ClientNetworkTransform clientTransform;
 
     [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 3f;
@@ -280,7 +281,7 @@ public class PlayerMovementMultiplayer : MonoBehaviour
         Debug.Log("Interact pressed");
         if (currentInteractable != null)
         {
-            currentInteractable.Interact();
+            currentInteractable.Interact(clientTransform.IsOwnedByServer);
         }
     }
 

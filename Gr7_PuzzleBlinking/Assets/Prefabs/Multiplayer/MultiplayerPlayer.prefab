@@ -334,6 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb32718012d0114b846adf4ee29c206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement_Multiplayer
+  clientTransform: {fileID: 0}
   moveSpeed: 3
   sprintSpeed: 6
   crouchSpeed: 1.5
@@ -362,7 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 4147810975
+  GlobalObjectIdHash: 4092365882
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -465,6 +466,7 @@ MonoBehaviour:
   useDistance: 4
   showDebugRay: 0
   uiPrompt: {fileID: 6334125063501011222}
+  clientTransform: {fileID: 0}
 --- !u!114 &6268217372282195994
 MonoBehaviour:
   m_ObjectHideFlags: 0

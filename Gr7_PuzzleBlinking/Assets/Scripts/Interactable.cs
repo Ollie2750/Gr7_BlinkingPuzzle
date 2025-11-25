@@ -21,5 +21,5 @@ public abstract class Interactable : MonoBehaviour
             outline.DisableOutline();
     }
 
-    public abstract void Interact();
+    public abstract void Interact(bool isHost);
 }
