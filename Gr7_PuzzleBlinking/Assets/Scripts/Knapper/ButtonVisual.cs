@@ -77,10 +77,7 @@ public class ButtonVisual : MonoBehaviour
 
         // pressed look
         if (buttonRenderer && pressedMaterial)
-            buttonRenderer.material = pressedMaterial;
-
-        if (buttonTop)
-            buttonTop.localPosition = initialTopLocalPos + Vector3.down * pressDepth;
+            buttonRenderer.material = errorMaterial;
 
         // wait
         yield return new WaitForSeconds(cooldownTime);
@@ -88,9 +85,6 @@ public class ButtonVisual : MonoBehaviour
         // back to idle
         if (buttonRenderer && idleMaterial)
             buttonRenderer.material = idleMaterial;
-
-        if (buttonTop)
-            buttonTop.localPosition = initialTopLocalPos;
 
         isOnCooldown = false;
     }
