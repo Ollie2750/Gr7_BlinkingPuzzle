@@ -268,7 +268,7 @@ public class MovementScript : MonoBehaviour
         Debug.Log("Interact pressed");
         if (currentInteractable != null)
         {
-            currentInteractable.Interact();
+            currentInteractable.Interact(true);
         }
     }
 

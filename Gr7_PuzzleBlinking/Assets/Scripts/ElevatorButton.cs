@@ -9,10 +9,10 @@ public class ElevatorButton : Interactable
     [Header("Visual & animation")]
     public ButtonVisual visual;      // shared visual script
 
-    public override void Interact()
+    public override void Interact(bool isHost)
     {
         // play visual; if on cooldown, ignore
-        if (visual != null && !visual.TryPress())
+        if (visual != null && !visual.TryPress(isHost))
             return;
 
         Debug.Log("Elevator button pressed!");

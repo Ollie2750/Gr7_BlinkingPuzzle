@@ -1,45 +1,79 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using Unity.Netcode;
-using UnityEditor;
 
 public class PlayerMovementMultiplayer : MonoBehaviour
 {
     private CharacterController controller;
     private InputSystem_Actions inputActions;
+    [SerializeField] private ClientNetworkTransform clientTransform;
 
+    [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 3f;
+    [SerializeField] private float sprintSpeed = 6f;
+    [SerializeField] private float crouchSpeed = 1.5f;
+    [SerializeField] private float airControlMultiplier = 0.5f;
+    [SerializeField] private float currentSpeed;
+
+    [Header("Jump Settings")]
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float jumpHeight = 1.5f;
-    [SerializeField] private float sprintSpeed = 6f;
-    [SerializeField] private float currentSpeed;
+    [SerializeField] private float coyoteTime = 0.2f;
+    [SerializeField] private float jumpBufferTime = 0.2f;
+    [SerializeField] private float headBumpCheckDistance = 0.1f;
+
+    [Header("Crouch Settings")]
+    [SerializeField] private float standingHeight = 2f;
+    [SerializeField] private float crouchHeight = 1f;
+    [SerializeField] private float crouchTransitionSpeed = 10f;
+
+    [Header("Look Settings")]
+    [SerializeField] private float lookSensitivity = 0.25f;
+    [SerializeField] private Transform playerCamera;
+
+    [Header("Interaction")]
     [SerializeField] private float interactDistance = 3;
+
     private Vector3 velocity;
     private Vector2 moveInput;
-
-    [SerializeField] private float lookSensitivity = 0.25f;
-
-    [SerializeField] private Transform playerCamera;
     private float xRotation = 0f;
     private bool isCrouching = false;
     private Interactable currentInteractable;
+
+    // Coyote time variables
+    private float coyoteTimeCounter;
+    private bool wasGroundedLastFrame;
+
+    // Jump buffer variables
+    private float jumpBufferCounter;
+
+    // Jump state tracking
+    private bool hasJumped = false;
 
     private ClientNetworkTransform _transform;
     private bool isOwner;
 
     void Awake()
     {
-        _transform = gameObject.GetComponent<ClientNetworkTransform>();
+        _transform = GetComponent<ClientNetworkTransform>();
 
         controller = GetComponent<CharacterController>();
         inputActions = new InputSystem_Actions();
         currentSpeed = moveSpeed;
+        standingHeight = controller.height;
     }
 
     private void Start()
     {
         isOwner = _transform.IsOwner;
+    }
+
+    private void Update()
+    {
+        if (!isOwner) return;
+        UpdateCoyoteTime();
+        UpdateJumpBuffer();
+        HandleJump();
     }
 
     private void FixedUpdate()
@@ -48,12 +82,61 @@ public class PlayerMovementMultiplayer : MonoBehaviour
         Move();
         ApplyGravity();
         HandleHover();
+        HandleCrouchTransition();
+    }
+
+    private void UpdateCoyoteTime()
+    {
+        if (controller.isGrounded)
+        {
+            coyoteTimeCounter = coyoteTime;
+            wasGroundedLastFrame = true;
+            // Reset jump state when grounded
+            hasJumped = false;
+        }
+        else
+        {
+            if (wasGroundedLastFrame)
+            {
+                coyoteTimeCounter = coyoteTime;
+                wasGroundedLastFrame = false;
+            }
+            else
+            {
+                coyoteTimeCounter -= Time.deltaTime;
+            }
+        }
+    }
+
+    private void UpdateJumpBuffer()
+    {
+        if (jumpBufferCounter > 0)
+        {
+            jumpBufferCounter -= Time.deltaTime;
+        }
+    }
+
+    private void HandleJump()
+    {
+        // Check if we should jump (either from buffer or coyote time)
+        // Added hasJumped check to prevent double jumping
+        if (jumpBufferCounter > 0 && coyoteTimeCounter > 0 && !hasJumped)
+        {
+            PerformJump();
+            jumpBufferCounter = 0;
+            coyoteTimeCounter = 0;
+            hasJumped = true; // Mark that we've used our jump
+        }
     }
 
     private void Move()
     {
         Vector3 moveDirection = transform.right * moveInput.x + transform.forward * moveInput.y;
-        controller.Move(moveDirection * currentSpeed * Time.deltaTime);
+
+        // Apply air control if not grounded
+        float speedMultiplier = controller.isGrounded ? 1f : airControlMultiplier;
+
+        controller.Move(moveDirection * currentSpeed * speedMultiplier * Time.deltaTime);
     }
 
     private void Look(Vector2 input)
@@ -75,22 +158,92 @@ public class PlayerMovementMultiplayer : MonoBehaviour
         {
             velocity.y = -2f;
         }
+
+        // Check for head bump and stop upward velocity
+        if (velocity.y > 0 && CheckHeadBump())
+        {
+            velocity.y = 0f;
+        }
+
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
 
-    private void Jump()
+    private bool CheckHeadBump()
     {
-        if (controller.isGrounded)
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        }
+        // Cast a ray upward from the top of the character controller
+        Vector3 rayStart = transform.position + Vector3.up * (controller.height / 2);
+        float rayDistance = headBumpCheckDistance;
+
+        // Debug visualization
+        Debug.DrawRay(rayStart, Vector3.up * rayDistance, Color.blue);
+
+        return Physics.Raycast(rayStart, Vector3.up, rayDistance);
+    }
+
+    private void PerformJump()
+    {
+        velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+    }
+
+    private void OnJumpInput()
+    {
+        // Set jump buffer when jump is pressed
+        jumpBufferCounter = jumpBufferTime;
     }
 
     private void Sprint(bool sprint)
     {
         if (isCrouching || !controller.isGrounded) return;
         currentSpeed = sprint ? sprintSpeed : moveSpeed;
+    }
+
+    private void Crouch(bool crouch)
+    {
+        isCrouching = crouch;
+
+        // Update speed based on crouch state
+        if (isCrouching)
+        {
+            currentSpeed = crouchSpeed;
+        }
+        else
+        {
+            // Check if there's enough space to stand up
+            if (CanStandUp())
+            {
+                currentSpeed = moveSpeed;
+            }
+            else
+            {
+                // Force crouch if can't stand up
+                isCrouching = true;
+            }
+        }
+    }
+
+    private bool CanStandUp()
+    {
+        // Raycast upward to check if there's space to stand
+        float checkDistance = standingHeight - crouchHeight;
+        Vector3 rayStart = transform.position + Vector3.up * (controller.height / 2);
+
+        return !Physics.Raycast(rayStart, Vector3.up, checkDistance);
+    }
+
+    private void HandleCrouchTransition()
+    {
+        float targetHeight = isCrouching ? crouchHeight : standingHeight;
+
+        if (Mathf.Abs(controller.height - targetHeight) > 0.01f)
+        {
+            float previousHeight = controller.height;
+            controller.height = Mathf.Lerp(controller.height, targetHeight, Time.deltaTime * crouchTransitionSpeed);
+
+            // Adjust position to keep feet on ground
+            float heightDifference = controller.height - previousHeight;
+            controller.Move(Vector3.up * (heightDifference / 2));
+        }
     }
 
     private void HandleHover()
@@ -128,7 +281,7 @@ public class PlayerMovementMultiplayer : MonoBehaviour
         Debug.Log("Interact pressed");
         if (currentInteractable != null)
         {
-            currentInteractable.Interact();
+            currentInteractable.Interact(clientTransform.IsOwnedByServer);
         }
     }
 
@@ -141,10 +294,16 @@ public class PlayerMovementMultiplayer : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         inputActions.Player.Look.performed += ctx => Look(ctx.ReadValue<Vector2>());
-        inputActions.Player.Jump.performed += _ => Jump();
+        inputActions.Player.Jump.performed += _ => OnJumpInput();
         inputActions.Player.Sprint.performed += _ => Sprint(true);
         inputActions.Player.Sprint.canceled += _ => Sprint(false);
         inputActions.Player.Interact.performed += _ => Interaction();
+        inputActions.Player.Crouch.performed += _ => Crouch(true);
+        inputActions.Player.Crouch.canceled += _ => Crouch(false);
     }
 
+    private void OnDisable()
+    {
+        inputActions.Disable();
+    }
 }

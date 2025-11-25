@@ -10,10 +10,12 @@ public class PlayerInteractor : MonoBehaviour
 
     public UIPromt uiPrompt;
     private Interactable currentInteractable;
+    [SerializeField] ClientNetworkTransform clientTransform;
 
     void Awake()
     {
         if (!cam) cam = Camera.main;
+        clientTransform = GetComponent<ClientNetworkTransform>();
     }
 
     void Update()
@@ -74,16 +76,13 @@ public class PlayerInteractor : MonoBehaviour
         // First priority: Interactable system
         if (interactable != null)
         {
-            interactable.Interact();
+            interactable.Interact(clientTransform.IsOwnedByServer);
             return;
         }
 
         // Legacy systems
         if (pad != null)
-            pad.Activate();
-
-        if (timedButton != null)
-            timedButton.activateBridge();
+            pad.Activate(clientTransform.IsOwnedByServer);
     }
 }
 }

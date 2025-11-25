@@ -20,10 +20,10 @@ public class ButtonPad : MonoBehaviour
     private GameObject current;
 
     // Called by PlayerInteractor when the player presses E on this button
-    public void Activate()
+    public void Activate(bool isHost)
     {
         // Play visual & respect cooldown
-        if (visual != null && !visual.TryPress())
+        if (visual != null && !visual.TryPress(isHost))
             return;
 
         if (!manager || !pillarPrefab)
@@ -55,8 +55,8 @@ public class ButtonPad : MonoBehaviour
     }
 
     // Interactable system calls this
-    public void Interact()
+    public void Interact(bool isHost)
     {
-        Activate();
+        Activate(isHost);
     }
 }
