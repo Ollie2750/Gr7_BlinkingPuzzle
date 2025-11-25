@@ -15,6 +15,8 @@ public class DoorScript : MonoBehaviour
     [SerializeField] private AudioClip doorOpenSound;
     [SerializeField] private AudioClip doorCloseSound;
     private bool isOpen;
+
+    private float volume = 0.2f;
     void Start()
     {
         closed = transform.position;
@@ -64,7 +66,7 @@ public class DoorScript : MonoBehaviour
             {
                 if (doorOpenSound != null)
                 {
-                    SoundManager.Instance.PlaySoundClip(doorOpenSound, transform, 0.5f);
+                    SoundManager.Instance.PlaySoundClip(doorOpenSound, transform, volume);
                 }
                 isOpen = true;
             }
