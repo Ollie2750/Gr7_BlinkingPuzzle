@@ -281,7 +281,7 @@ public class PlayerMovementMultiplayer : MonoBehaviour
         Debug.Log("Interact pressed");
         if (currentInteractable != null)
         {
-            currentInteractable.Interact(clientTransform.IsOwnedByServer);
+            currentInteractable.Interact(_transform.IsOwnedByServer);
         }
     }
 
