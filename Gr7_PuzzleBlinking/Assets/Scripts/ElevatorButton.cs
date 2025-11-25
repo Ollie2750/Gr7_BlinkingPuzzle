@@ -22,7 +22,7 @@ public class ElevatorButton : Interactable
             var platform = elevator.GetComponent<PlatformMove>();
             if (platform != null)
             {
-                platform.canMove = true;
+                platform.Activate();
             }
             else
             {
