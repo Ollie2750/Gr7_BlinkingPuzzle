@@ -9,17 +9,20 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/OliverTesting.unity
-    guid: 1b01b97bceda65240982877ed915cd6e
-  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 0ae9b1ea71a824244b61a4e1e8ec0cd3
   - enabled: 1
-    path: Assets/Scenes/Test scene.unity
-    guid: 5f866dfa1029a7343970aa7d40ae0f1f
+    path: Assets/Scenes/HowToPlay.unity
+    guid: 857ec4735f811f64896b4478fa1d4391
   - enabled: 1
     path: Assets/Scenes/Multiplayer.unity
     guid: 5000ed9b74b782045b7043a7525ee6d7
+  - enabled: 1
+    path: Assets/Scenes/OliverTesting.unity
+    guid: 1b01b97bceda65240982877ed915cd6e
+  - enabled: 1
+    path: Assets/Scenes/Test scene.unity
+    guid: 5f866dfa1029a7343970aa7d40ae0f1f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
