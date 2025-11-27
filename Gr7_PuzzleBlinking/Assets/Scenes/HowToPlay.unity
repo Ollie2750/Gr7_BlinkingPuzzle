@@ -393,7 +393,7 @@ GameObject:
   - component: {fileID: 126933264}
   - component: {fileID: 126933263}
   m_Layer: 5
-  m_Name: Q
+  m_Name: Ability
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -438,9 +438,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'To Enable Your Ability Use
+  m_text: 'To Enable Your Ability
 
-    Q'
+    Blink for 0.5 seconds'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1720,7 +1720,7 @@ GameObject:
   - component: {fileID: 1198475873}
   - component: {fileID: 1198475872}
   m_Layer: 5
-  m_Name: What Q do
+  m_Name: What ability do
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1765,8 +1765,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: When the key "Q" has been pressed, the players ability will be enabled.
-    The abilities consists of Freezing time and traveling in time
+  m_text: When Blinking for 0.5 seconds, the players ability will be enabled. The
+    abilities consists of Freezing time and traveling in time
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
