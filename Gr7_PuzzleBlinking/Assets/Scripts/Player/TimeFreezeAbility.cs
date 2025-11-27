@@ -25,9 +25,18 @@ public class TimeFreezeAbility : NetworkBehaviour
 
     void Update()
     {
+
+        if (Input.GetKeyDown(freezeKey))
+        {
+            ActivateFreeze();    
+        }
+    }
+
+    public void ActivateFreeze()
+    {
         if (!IsOwner) return;
 
-        if (Input.GetKeyDown(freezeKey) && !isOnCooldown && !isFreezeActive)
+        if (!isOnCooldown && !isFreezeActive)
         {
             StartCoroutine(FreezeTime());
         }
