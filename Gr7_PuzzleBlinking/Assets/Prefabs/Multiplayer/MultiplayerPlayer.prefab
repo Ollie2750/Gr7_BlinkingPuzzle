@@ -543,7 +543,7 @@ MonoBehaviour:
   OnLongBlink:
     m_PersistentCalls:
       m_Calls: []
-  showDebugLogs: 0
+  showDebugLogs: 1
   timeTravel: {fileID: 0}
   timeFreezeAbility: {fileID: 0}
 --- !u!1001 &4223480556328449424
