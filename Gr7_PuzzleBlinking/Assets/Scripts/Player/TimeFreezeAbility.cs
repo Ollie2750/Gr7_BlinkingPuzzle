@@ -34,6 +34,23 @@ public class TimeFreezeAbility : NetworkBehaviour
 
     public void ActivateFreeze()
     {
+        Debug.Log($"ActivateFreeze called. IsOwner: {IsOwner}, isOnCooldown: {isOnCooldown}, isFreezeActive: {isFreezeActive}");
+
+        if (!IsOwner)
+        {
+            Debug.Log("ActivateFreeze aborted: not owner.");
+            return;
+        }
+
+        if (!isOnCooldown && !isFreezeActive)
+        {
+            Debug.Log("Starting FreezeTime coroutine.");
+            StartCoroutine(FreezeTime());
+        }
+        else
+        {
+            Debug.Log("Cannot start freeze: either on cooldown or already active.");
+        }
         if (!IsOwner) return;
 
         if (!isOnCooldown && !isFreezeActive)
