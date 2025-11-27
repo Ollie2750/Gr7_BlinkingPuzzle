@@ -90,7 +90,7 @@ public class TimeTravel : NetworkBehaviour
 
         Debug.Log("//////////" + isOnCooldown + "///////////   :)");
 
-        if (!isOnCooldown) return;
+        if (isOnCooldown) return;
 
         Debug.Log("///////////////////// TIME TRAVEL USED ///////////////////////");
 
