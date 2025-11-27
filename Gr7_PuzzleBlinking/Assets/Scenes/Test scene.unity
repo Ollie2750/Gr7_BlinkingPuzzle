@@ -11879,7 +11879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34456b62848a44e1da21481c0b88991a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformMove
-  canMove: 0
+  moving: 0
   speed: 1
   startpoint: 0
   points:
@@ -14532,6 +14532,7 @@ MonoBehaviour:
   useDistance: 2
   showDebugRay: 0
   uiPrompt: {fileID: 1101793881}
+  clientTransform: {fileID: 0}
 --- !u!114 &542053690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24464,7 +24465,19 @@ MonoBehaviour:
       m_Calls: []
   OnLongBlink:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   showDebugLogs: 1
 --- !u!4 &1113839122
 Transform:
@@ -33484,6 +33497,7 @@ MonoBehaviour:
   useDistance: 2
   showDebugRay: 0
   uiPrompt: {fileID: 1101793881}
+  clientTransform: {fileID: 0}
 --- !u!114 &1375214676
 MonoBehaviour:
   m_ObjectHideFlags: 0

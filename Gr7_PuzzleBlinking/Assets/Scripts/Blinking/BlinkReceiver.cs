@@ -27,8 +27,17 @@ public class BlinkReceiver : MonoBehaviour
     private bool hasNewMessage = false;
     private float lastBlinkDuration = 0f;
 
+    [SerializeField] private TimeTravel timeTravel;
+    [SerializeField] private TimeFreezeAbility timeFreezeAbility;
+
+    private ClientNetworkTransform clientNetworkTransform;
+
     void Start()
     {
+        clientNetworkTransform = GetComponent<ClientNetworkTransform>();
+
+        if (!clientNetworkTransform.IsOwner) return;
+
         StartUDPListener();
     }
 
@@ -77,6 +86,8 @@ public class BlinkReceiver : MonoBehaviour
 
     void Update()
     {
+        if (!clientNetworkTransform.IsOwner) return;
+
         // Process messages on the main thread
         if (hasNewMessage)
         {
@@ -88,6 +99,13 @@ public class BlinkReceiver : MonoBehaviour
             }
 
             ProcessMessage(message);
+        }
+        if (!timeTravel || !timeFreezeAbility)
+        {
+            timeTravel = GetComponent<TimeTravel>();
+            Debug.Log("TimeTravel component assigned in Update");
+            timeFreezeAbility = GetComponent<TimeFreezeAbility>();
+            Debug.Log("TimeFreezeAbility component assigned in Update");
         }
     }
 
@@ -121,10 +139,29 @@ public class BlinkReceiver : MonoBehaviour
             {
                 lastBlinkDuration = duration;
                 OnLongBlink?.Invoke();
+                ActivateAbility();
 
                 if (showDebugLogs)
                     Debug.Log($"Long blink detected! Duration: {duration}s");
             }
+        }
+    }
+
+    void ActivateAbility()
+    {
+        if (timeTravel != null && timeTravel.enabled)
+        {
+            Debug.Log("TimeTravel is assigned and enabled");
+            timeTravel.ActivateTimeTravel();
+        }
+        else if (timeFreezeAbility != null && timeFreezeAbility.enabled)
+        {
+            Debug.Log("TimeFreezeAbility is assigned and enabled");
+            timeFreezeAbility.ActivateFreeze();
+        }
+        else
+        {
+            Debug.LogWarning("No enabled ability assigned!");
         }
     }
 
@@ -135,6 +172,9 @@ public class BlinkReceiver : MonoBehaviour
 
     void OnApplicationQuit()
     {
+        if (!clientNetworkTransform.IsOwner) return;
+
+
         isRunning = false;
 
         if (receiveThread != null && receiveThread.IsAlive)
@@ -150,6 +190,9 @@ public class BlinkReceiver : MonoBehaviour
 
     void OnDestroy()
     {
+        if (!clientNetworkTransform.IsOwner) return;
+
+
         OnApplicationQuit();
     }
 }

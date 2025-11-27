@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 6268217372282195994}
   - component: {fileID: 6993944939849440191}
   - component: {fileID: 4237137640271501463}
+  - component: {fileID: -8998542428649877111}
   m_Layer: 0
   m_Name: MultiplayerPlayer
   m_TagString: Player
@@ -176,7 +177,7 @@ Transform:
   m_GameObject: {fileID: 8285474711326974092}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6446142, y: 5.589, z: 60.810375}
+  m_LocalPosition: {x: 2, y: 0.5, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -520,6 +521,31 @@ MonoBehaviour:
   newMapCenter: {x: 50, y: 0, z: 0}
   player1StartsInOldMap: 1
   player2StartsInOldMap: 0
+--- !u!114 &-8998542428649877111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8285474711326974092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0175b4a34905cf14b80cef4b958734bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BlinkReceiver
+  port: 5065
+  OnBlinkStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBlinkEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLongBlink:
+    m_PersistentCalls:
+      m_Calls: []
+  showDebugLogs: 1
+  timeTravel: {fileID: 0}
+  timeFreezeAbility: {fileID: 0}
 --- !u!1001 &4223480556328449424
 PrefabInstance:
   m_ObjectHideFlags: 0
