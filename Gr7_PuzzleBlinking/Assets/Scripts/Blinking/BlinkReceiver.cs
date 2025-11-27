@@ -34,6 +34,8 @@ public class BlinkReceiver : MonoBehaviour
 
     void Start()
     {
+        clientNetworkTransform = GetComponent<ClientNetworkTransform>();
+
         if (!clientNetworkTransform.IsOwner) return;
 
         StartUDPListener();
