@@ -30,8 +30,12 @@ public class BlinkReceiver : MonoBehaviour
     [SerializeField] private TimeTravel timeTravel;
     [SerializeField] private TimeFreezeAbility timeFreezeAbility;
 
+    private ClientNetworkTransform clientNetworkTransform;
+
     void Start()
     {
+        if (!clientNetworkTransform.IsOwner) return;
+
         StartUDPListener();
     }
 
@@ -80,6 +84,8 @@ public class BlinkReceiver : MonoBehaviour
 
     void Update()
     {
+        if (!clientNetworkTransform.IsOwner) return;
+
         // Process messages on the main thread
         if (hasNewMessage)
         {
@@ -164,6 +170,9 @@ public class BlinkReceiver : MonoBehaviour
 
     void OnApplicationQuit()
     {
+        if (!clientNetworkTransform.IsOwner) return;
+
+
         isRunning = false;
 
         if (receiveThread != null && receiveThread.IsAlive)
@@ -179,6 +188,9 @@ public class BlinkReceiver : MonoBehaviour
 
     void OnDestroy()
     {
+        if (!clientNetworkTransform.IsOwner) return;
+
+
         OnApplicationQuit();
     }
 }
