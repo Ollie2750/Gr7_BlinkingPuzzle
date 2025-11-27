@@ -84,10 +84,11 @@ public class TimeTravel : NetworkBehaviour
 
     public void ActivateTimeTravel()
     {
-        if (!IsOwner) return;
+        Debug.Log("///////////////////// TIME TRAVEL USED ///////////////////////");
+
+        if (!IsOwnedByServer) return;
         if (!isOnCooldown) return;
 
-        Debug.Log("///////////////////// TIME TRAVEL USED ///////////////////////");
 
         // ==== PLAYER 1 (SERVER TELEPORTED) ====
         Vector3 player1NewPos = CalculateNewPosition(player1Transform.position, player1IsInOldMap, out bool player1NewMapStatus);
