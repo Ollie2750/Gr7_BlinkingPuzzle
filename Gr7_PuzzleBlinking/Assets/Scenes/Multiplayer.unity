@@ -67327,61 +67327,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 93179f4390ccd854cafcdcfd6c8353e0, type: 3}
   m_PrefabInstance: {fileID: 1986400268}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1987167200
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1987167202}
-  - component: {fileID: 1987167201}
-  m_Layer: 0
-  m_Name: Blinking
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1987167201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1987167200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0175b4a34905cf14b80cef4b958734bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BlinkReceiver
-  port: 5065
-  OnBlinkStart:
-    m_PersistentCalls:
-      m_Calls: []
-  OnBlinkEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  OnLongBlink:
-    m_PersistentCalls:
-      m_Calls: []
-  showDebugLogs: 1
---- !u!4 &1987167202
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1987167200}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.00306, y: 0.35827, z: 14.9464}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1997946001
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69758,7 +69703,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 958628066}
   - {fileID: 1365717437}
-  - {fileID: 1987167202}
   - {fileID: 305358418}
   - {fileID: 701145506}
   - {fileID: 1510573629}
