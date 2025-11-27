@@ -86,7 +86,7 @@ public class TimeTravel : NetworkBehaviour
     {
         Debug.Log("///////////////////// TIME TRAVEL USED ///////////////////////");
 
-        if (!IsOwnedByServer) return;
+        if (!IsOwner) return;
 
         Debug.Log("///////////////////// TIME TRAVEL USED ///////////////////////");
         if (!isOnCooldown) return;
