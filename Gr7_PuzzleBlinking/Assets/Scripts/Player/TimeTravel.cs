@@ -88,6 +88,8 @@ public class TimeTravel : NetworkBehaviour
 
         if (!IsOwner) return;
 
+        Debug.Log("//////////" + isOnCooldown + "///////////   :)");
+
         if (!isOnCooldown) return;
 
         Debug.Log("///////////////////// TIME TRAVEL USED ///////////////////////");
