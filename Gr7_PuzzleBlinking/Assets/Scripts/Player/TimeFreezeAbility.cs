@@ -25,9 +25,35 @@ public class TimeFreezeAbility : NetworkBehaviour
 
     void Update()
     {
+
+        if (Input.GetKeyDown(freezeKey))
+        {
+            ActivateFreeze();    
+        }
+    }
+
+    public void ActivateFreeze()
+    {
+        Debug.Log($"ActivateFreeze called. IsOwner: {IsOwner}, isOnCooldown: {isOnCooldown}, isFreezeActive: {isFreezeActive}");
+
+        if (!IsOwner)
+        {
+            Debug.Log("ActivateFreeze aborted: not owner.");
+            return;
+        }
+
+        if (!isOnCooldown && !isFreezeActive)
+        {
+            Debug.Log("Starting FreezeTime coroutine.");
+            StartCoroutine(FreezeTime());
+        }
+        else
+        {
+            Debug.Log("Cannot start freeze: either on cooldown or already active.");
+        }
         if (!IsOwner) return;
 
-        if (Input.GetKeyDown(freezeKey) && !isOnCooldown && !isFreezeActive)
+        if (!isOnCooldown && !isFreezeActive)
         {
             StartCoroutine(FreezeTime());
         }

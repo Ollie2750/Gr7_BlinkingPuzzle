@@ -23,9 +23,4 @@ public class PlayerAbilitiesSwitch : MonoBehaviour
             timeTravel.enabled = true;
         }
     }
-
-    void Update()
-    {
-        
-    }
 }
