@@ -2,22 +2,23 @@ using UnityEngine;
 
 public class Ambience : MonoBehaviour
 {
-    [SerializeField] private AudioClip pastAmbience;
-    [SerializeField] private AudioClip futureAmbience;
-    [SerializeField] private AudioSource empty;
+    [SerializeField] private AudioSource Past;
+    [SerializeField] private AudioSource Future;
 
+    private float muted = 0f;
+    private float playing = 0.1f;
     private void Awake()
     {
         {
             if (transform.position.x < 25)
             {
-                empty.clip = pastAmbience;
-                empty.Play();
+                Future.volume = muted;
+                Past.volume = playing;
             }
             else
             {
-                empty.clip = futureAmbience;
-                empty.Play();
+                Future.volume = playing;
+                Past.volume = muted;
             }
         }
     }
@@ -25,11 +26,13 @@ public class Ambience : MonoBehaviour
     {
         if (transform.position.x < 25)
         {
-            empty.clip = pastAmbience;
+            Future.volume = muted;
+            Past.volume = playing;
         }
         else
         {
-            empty.clip = futureAmbience;
+            Future.volume = playing;
+            Past.volume = muted;
         }
     }
 }
