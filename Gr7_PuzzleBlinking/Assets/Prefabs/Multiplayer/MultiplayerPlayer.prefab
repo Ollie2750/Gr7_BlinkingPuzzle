@@ -498,7 +498,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   freezeKey: 113
   freezeDuration: 5
-  cooldownDuration: 5
+  cooldownDuration: 3
 --- !u!114 &4237137640271501463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,7 +513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimeTravel
   ShowTopMostFoldoutHeaderGroup: 1
   travelKey: 113
-  cooldownDuration: 5
+  cooldownDuration: 3
   player1Transform: {fileID: 0}
   player2Transform: {fileID: 0}
   player1Rigidbody: {fileID: 0}
