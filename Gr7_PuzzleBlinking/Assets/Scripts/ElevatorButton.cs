@@ -9,11 +9,16 @@ public class ElevatorButton : Interactable
     [Header("Visual & animation")]
     public ButtonVisual visual;      // shared visual script
 
+    private float volume = 0.2f;
+    [SerializeField] private AudioClip ElevatorButtonSound;
+
     public override void Interact(bool isHost)
     {
         // play visual; if on cooldown, ignore
         if (visual != null && !visual.TryPress(isHost))
             return;
+
+        SoundManager.Instance.PlaySoundClip(ElevatorButtonSound, transform, volume);
 
         Debug.Log("Elevator button pressed!");
 
