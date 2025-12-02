@@ -7,7 +7,7 @@ public class ButtonVisual : MonoBehaviour
     public Renderer buttonRenderer;      // drag MeshRenderer here
     public Material idleMaterial;        // drag idle material
     public Material pressedMaterial;     // drag pressed material
-    public Material errorMaterial;
+    public Material errorMaterial;       // drag error material
     public float cooldownTime = 2f;
 
     [Header("Movement")]
