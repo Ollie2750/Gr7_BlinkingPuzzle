@@ -76,15 +76,23 @@ public class TimeTravel : NetworkBehaviour
             player2LocationFixed = true;
         }
 
-        if (Input.GetKeyDown(travelKey) && !isOnCooldown)
+        if (Input.GetKeyDown(travelKey))
         {
             ActivateTimeTravel();
         }
     }
 
-    void ActivateTimeTravel()
+    public void ActivateTimeTravel()
     {
+        
+
         if (!IsOwner) return;
+
+        Debug.Log("//////////" + isOnCooldown + "///////////   :)");
+
+        if (isOnCooldown) return;
+
+        Debug.Log("///////////////////// TIME TRAVEL USED ///////////////////////");
 
         // ==== PLAYER 1 (SERVER TELEPORTED) ====
         Vector3 player1NewPos = CalculateNewPosition(player1Transform.position, player1IsInOldMap, out bool player1NewMapStatus);
