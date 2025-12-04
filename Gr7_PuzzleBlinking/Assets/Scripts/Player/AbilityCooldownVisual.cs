@@ -10,6 +10,12 @@ public class AbilityCooldownVisual : MonoBehaviour
     private bool isOnCooldown = false;
     private float progress = 0f;
 
+    private bool isPlayer1 = true;
+    [SerializeField] private Sprite freezeTimeIcon0;
+    [SerializeField] private Sprite freezeTimeIcon1;
+    [SerializeField] private Sprite changeTimeIcon0;
+    [SerializeField] private Sprite changeTimeIcon1;
+
     void Start()
     {
         ui = GetComponent<UIDocument>();
@@ -86,5 +92,24 @@ public class AbilityCooldownVisual : MonoBehaviour
     {
         if (overlay != null)
             overlay.generateVisualContent -= OnGenerateVisualContent;
+    }
+
+    public void setAbility(bool isServer)
+    {
+        if (!isServer)
+        {
+            isPlayer1 = false;
+        }
+    }
+
+    private void changeIcon(int state)
+    {
+        if (isPlayer1)
+        {
+            if(state == 0)
+            {
+                return;
+            }
+        }
     }
 }
