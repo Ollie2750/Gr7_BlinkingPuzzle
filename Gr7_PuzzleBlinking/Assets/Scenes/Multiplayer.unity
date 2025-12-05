@@ -64808,11 +64808,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aac2413ced189e4a8632f89dabaaf72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AbilityCooldownVisual
-  cooldownTime: 5
-  freezeTimeIcon0: {fileID: -1158966777, guid: 1782a9d30fea8764886774e1d5aa90b8, type: 3}
-  freezeTimeIcon1: {fileID: 1086015688, guid: 7abdf633bf0f4684eb16125ca56e025a, type: 3}
-  changeTimeIcon0: {fileID: -1539090415, guid: 65d68f54ecddcc644aecb8eabb531f28, type: 3}
-  changeTimeIcon1: {fileID: 233312560, guid: ece212f224b99684bb5ffbceaf6071f7, type: 3}
+  freezeTimeIcon0: {fileID: -1539090415, guid: 65d68f54ecddcc644aecb8eabb531f28, type: 3}
+  freezeTimeIcon1: {fileID: 233312560, guid: ece212f224b99684bb5ffbceaf6071f7, type: 3}
+  changeTimeIcon0: {fileID: 1086015688, guid: 7abdf633bf0f4684eb16125ca56e025a, type: 3}
+  changeTimeIcon1: {fileID: -1158966777, guid: 1782a9d30fea8764886774e1d5aa90b8, type: 3}
 --- !u!114 &1832242214
 MonoBehaviour:
   m_ObjectHideFlags: 0
