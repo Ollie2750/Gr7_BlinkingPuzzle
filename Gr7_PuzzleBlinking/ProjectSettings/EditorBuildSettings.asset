@@ -24,8 +24,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Test scene.unity
     guid: 5f866dfa1029a7343970aa7d40ae0f1f
   - enabled: 1
-    path: Assets/Scenes/Multiplayer test.unity
-    guid: 93da4567d320ed5489d506a1da73117a
+    path: Assets/Scenes/IntroVideo.unity
+    guid: 0b5a2553b15c74a5a838623c4a4839c7
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
