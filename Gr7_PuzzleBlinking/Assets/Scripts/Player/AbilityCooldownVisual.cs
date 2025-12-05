@@ -6,6 +6,7 @@ public class AbilityCooldownVisual : MonoBehaviour
     [SerializeField] private float cooldownTime = 5.0f;
     private UIDocument ui;
     private VisualElement overlay;
+    private VisualElement icon;
     private float timer = 0.0f;
     private bool isOnCooldown = false;
     private float progress = 0f;
@@ -20,7 +21,9 @@ public class AbilityCooldownVisual : MonoBehaviour
     {
         ui = GetComponent<UIDocument>();
         overlay = ui.rootVisualElement.Q<VisualElement>("CooldownOverlay");
-        
+        icon = ui.rootVisualElement.Q("AbilityIcon") as Image;
+
+
         if (overlay == null)
         {
             Debug.LogError("CooldownOverlay not found in UXML");
@@ -106,10 +109,7 @@ public class AbilityCooldownVisual : MonoBehaviour
     {
         if (isPlayer1)
         {
-            if(state == 0)
-            {
-                return;
-            }
+
         }
     }
 }
