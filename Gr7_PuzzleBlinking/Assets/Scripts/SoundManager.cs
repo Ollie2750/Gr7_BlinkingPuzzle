@@ -25,4 +25,14 @@ public class SoundManager : MonoBehaviour
 
         Destroy(audioSource.gameObject, clipLength);
     }
+
+    public void PlaySoundClip(AudioClip audioclip, Transform spawnTransform, float volume, float clipLength)
+    {
+        AudioSource audioSource = Instantiate(audioSourceObject, spawnTransform.position, Quaternion.identity);
+        audioSource.clip = audioclip;
+        audioSource.volume = volume;
+        audioSource.Play();
+
+        Destroy(audioSource.gameObject, clipLength);
+    }
 }

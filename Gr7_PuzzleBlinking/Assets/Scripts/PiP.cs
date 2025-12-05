@@ -23,7 +23,7 @@ public class PiP : NetworkBehaviour
         players = GameObject.FindGameObjectsWithTag("Player");
         if (players.Length == 2)
         {
-            DisableLocalOnlyScripts();
+            //DisableLocalOnlyScripts();
             foreach (GameObject p in players)
             {
                 if (p != gameObject)

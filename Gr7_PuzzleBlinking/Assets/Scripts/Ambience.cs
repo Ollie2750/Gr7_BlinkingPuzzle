@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Ambience : MonoBehaviour
 {
-    [SerializeField] private AudioSource Past;
-    [SerializeField] private AudioSource Future;
+    public AudioSource Past;
+    public AudioSource Future;
 
     private float muted = 0f;
     private float playing = 0.1f;
