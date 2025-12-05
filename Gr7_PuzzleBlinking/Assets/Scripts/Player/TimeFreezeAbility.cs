@@ -6,12 +6,13 @@ using Unity.Netcode;
 public class TimeFreezeAbility : NetworkBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private KeyCode freezeKey = KeyCode.Space;
+    [SerializeField] private KeyCode freezeKey = KeyCode.Q;
     [SerializeField] private float freezeDuration = 5f;
     [SerializeField] private float cooldownDuration = 5f;
 
     private bool isOnCooldown = false;
     private bool isFreezeActive = false;
+    private float cooldownTimer = 0f;
     private List<RigidbodyState> frozenRigidbodies = new List<RigidbodyState>();
 
     // Struct to store rigidbody state
@@ -25,37 +26,20 @@ public class TimeFreezeAbility : NetworkBehaviour
 
     void Update()
     {
-
         if (Input.GetKeyDown(freezeKey))
         {
-            ActivateFreeze();    
+            ActivateFreeze();
         }
     }
 
     public void ActivateFreeze()
     {
-        Debug.Log($"ActivateFreeze called. IsOwner: {IsOwner}, isOnCooldown: {isOnCooldown}, isFreezeActive: {isFreezeActive}");
-
-        if (!IsOwner)
-        {
-            Debug.Log("ActivateFreeze aborted: not owner.");
-            return;
-        }
-
-        if (!isOnCooldown && !isFreezeActive)
-        {
-            Debug.Log("Starting FreezeTime coroutine.");
-            StartCoroutine(FreezeTime());
-        }
-        else
-        {
-            Debug.Log("Cannot start freeze: either on cooldown or already active.");
-        }
         if (!IsOwner) return;
 
         if (!isOnCooldown && !isFreezeActive)
         {
             StartCoroutine(FreezeTime());
+            StartCoroutine(Cooldown()); // Start cooldown immediately!
         }
     }
 
@@ -73,9 +57,8 @@ public class TimeFreezeAbility : NetworkBehaviour
         UnfreezeAllRigidbodies();
 
         isFreezeActive = false;
-
-        // Start cooldown
-        StartCoroutine(Cooldown());
+        
+        // Cooldown is already running separately
     }
 
     void FreezeAllRigidbodies()
@@ -97,17 +80,17 @@ public class TimeFreezeAbility : NetworkBehaviour
             RigidbodyState state = new RigidbodyState
             {
                 rb = rb,
-                velocity = rb.linearVelocity,                   // Store linear momentum
-                angularVelocity = rb.angularVelocity,     // Store rotational momentum
+                velocity = rb.linearVelocity,
+                angularVelocity = rb.angularVelocity,
                 wasKinematic = rb.isKinematic
             };
 
             frozenRigidbodies.Add(state);
 
             // ===== FREEZE: Stop all movement =====
-            rb.linearVelocity = Vector3.zero;           // Clear linear momentum
-            rb.angularVelocity = Vector3.zero;    // Clear rotational momentum
-            rb.isKinematic = true;                // Disable physics calculations
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            rb.isKinematic = true;
         }
 
         Debug.Log($"Froze {frozenRigidbodies.Count} rigidbodies for {freezeDuration} seconds");
@@ -115,17 +98,16 @@ public class TimeFreezeAbility : NetworkBehaviour
 
     void UnfreezeAllRigidbodies()
     {
-        if (GetComponent<ClientNetworkTransform>().IsOwner == false) return;
+        if (!IsOwner) return;
 
         foreach (RigidbodyState state in frozenRigidbodies)
         {
             if (state.rb != null)
             {
                 // ===== MOMENTUM RESTORATION: Reapply stored velocities =====
-                state.rb.isKinematic = state.wasKinematic;      // Restore physics state
-                state.rb.linearVelocity = state.velocity;             // Restore linear momentum
-                state.rb.angularVelocity = state.angularVelocity; // Restore rotational momentum
-                // Objects will continue moving exactly as they were before freeze!
+                state.rb.isKinematic = state.wasKinematic;
+                state.rb.linearVelocity = state.velocity;
+                state.rb.angularVelocity = state.angularVelocity;
             }
         }
 
@@ -136,15 +118,26 @@ public class TimeFreezeAbility : NetworkBehaviour
     IEnumerator Cooldown()
     {
         isOnCooldown = true;
-        yield return new WaitForSeconds(cooldownDuration);
+        float totalDuration = cooldownDuration + freezeDuration; // Total cooldown time
+        cooldownTimer = totalDuration;
+        
+        while (cooldownTimer > 0f)
+        {
+            cooldownTimer -= Time.deltaTime;
+            yield return null;
+        }
+        
+        cooldownTimer = 0f;
         isOnCooldown = false;
         Debug.Log("Time freeze ability ready!");
     }
 
-    // Optional: Get cooldown progress for UI
+    // Get cooldown progress for UI (0 = ready, >0 = on cooldown)
     public float GetCooldownProgress()
     {
-        return isOnCooldown ? 0f : 1f;
+        if (!isOnCooldown) return 0f;
+        float totalDuration = cooldownDuration + freezeDuration;
+        return Mathf.Clamp01(cooldownTimer / totalDuration); // Divide by total time
     }
 
     public bool IsOnCooldown()

@@ -29,6 +29,11 @@ public class TimeTravel : NetworkBehaviour
     private bool player2LocationFixed = false;
     private bool isOnCooldown = false;
 
+    // NEW: Icon state toggle
+    private bool iconState = false;
+
+    private float cooldownTimer = 0f;
+
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
@@ -54,6 +59,9 @@ public class TimeTravel : NetworkBehaviour
                 break;
             }
         }
+
+        // Initialize icon state based on starting map
+        iconState = IsOwner ? player2IsInOldMap : player1IsInOldMap;
     }
 
     void Update()
@@ -84,8 +92,6 @@ public class TimeTravel : NetworkBehaviour
 
     public void ActivateTimeTravel()
     {
-        
-
         if (!IsOwner) return;
 
         Debug.Log("//////////" + isOnCooldown + "///////////   :)");
@@ -126,6 +132,9 @@ public class TimeTravel : NetworkBehaviour
         player2IsInOldMap = player2NewMapStatus;
 
         UpdateMapStatusClientRpc(NetworkObjectId, player2NewMapStatus);
+
+        // NEW: Flip icon state each time ability is used
+        iconState = !iconState;
 
         StartCoroutine(Cooldown());
     }
@@ -205,7 +214,41 @@ public class TimeTravel : NetworkBehaviour
     IEnumerator Cooldown()
     {
         isOnCooldown = true;
-        yield return new WaitForSeconds(cooldownDuration);
+        cooldownTimer = cooldownDuration;
+        
+        while (cooldownTimer > 0f)
+        {
+            cooldownTimer -= Time.deltaTime;
+            yield return null;
+        }
+        
+        cooldownTimer = 0f;
         isOnCooldown = false;
+    }
+
+    // NEW: Simple getter for icon state
+    public bool GetIconState()
+    {
+        return iconState;
+    }
+
+    public float GetCooldownProgress()
+    {
+        if (!isOnCooldown) return 0f;
+        return Mathf.Clamp01(cooldownTimer / cooldownDuration);
+    }
+
+    public bool IsOnCooldown()
+    {
+        return isOnCooldown;
+    }
+
+    // Keep this for backwards compatibility if needed
+    public bool IsPlayerInOldMap()
+    {
+        if (IsOwner)
+            return player2IsInOldMap;
+        else
+            return player1IsInOldMap;
     }
 }
