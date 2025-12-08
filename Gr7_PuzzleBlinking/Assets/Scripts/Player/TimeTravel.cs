@@ -34,6 +34,9 @@ public class TimeTravel : NetworkBehaviour
 
     private float cooldownTimer = 0f;
 
+    private float volume = 0.1f;
+    [SerializeField] private AudioClip timeTravelSound;
+
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
@@ -97,6 +100,8 @@ public class TimeTravel : NetworkBehaviour
         Debug.Log("//////////" + isOnCooldown + "///////////   :)");
 
         if (isOnCooldown) return;
+
+        SoundManager.Instance.PlaySoundClip(timeTravelSound, transform, volume);
 
         Debug.Log("///////////////////// TIME TRAVEL USED ///////////////////////");
 

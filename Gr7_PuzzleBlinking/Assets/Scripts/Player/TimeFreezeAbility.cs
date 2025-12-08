@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using Unity.Netcode;
+using UnityEngine;
+using UnityEngine.Rendering;
 
 public class TimeFreezeAbility : NetworkBehaviour
 {
@@ -14,6 +15,12 @@ public class TimeFreezeAbility : NetworkBehaviour
     private bool isFreezeActive = false;
     private float cooldownTimer = 0f;
     private List<RigidbodyState> frozenRigidbodies = new List<RigidbodyState>();
+
+    private float volume = 0.1f;
+    [SerializeField] private AudioClip freezeSound;
+    private float clipLength = 5f;
+    private float slowPitch = 0.5f;
+    private float pitch = 1f;
 
     // Struct to store rigidbody state
     private struct RigidbodyState
@@ -29,6 +36,7 @@ public class TimeFreezeAbility : NetworkBehaviour
         if (Input.GetKeyDown(freezeKey))
         {
             ActivateFreeze();
+
         }
     }
 
@@ -40,6 +48,9 @@ public class TimeFreezeAbility : NetworkBehaviour
         {
             StartCoroutine(FreezeTime());
             StartCoroutine(Cooldown()); // Start cooldown immediately!
+            SoundManager.Instance.PlaySoundClip(freezeSound, transform, volume, clipLength);
+            GetComponent<Ambience>().Past.pitch = slowPitch;
+            GetComponent<Ambience>().Future.pitch = slowPitch;
         }
     }
 
@@ -55,6 +66,8 @@ public class TimeFreezeAbility : NetworkBehaviour
 
         // Unfreeze all rigidbodies
         UnfreezeAllRigidbodies();
+        GetComponent<Ambience>().Past.pitch = pitch;
+        GetComponent<Ambience>().Future.pitch = pitch;
 
         isFreezeActive = false;
         
