@@ -27434,7 +27434,7 @@ MonoBehaviour:
   pressedMaterial: {fileID: 2100000, guid: 327b78704ccad4c5f9cda4af1cb9e1ac, type: 2}
   errorMaterial: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
   cooldownTime: 2
-  buttonTop: {fileID: 0}
+  buttonTop: {fileID: 390855805}
   pressDepth: 0.02
 --- !u!1001 &392146239
 PrefabInstance:
@@ -30869,7 +30869,7 @@ MonoBehaviour:
   pressedMaterial: {fileID: 2100000, guid: 327b78704ccad4c5f9cda4af1cb9e1ac, type: 2}
   errorMaterial: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
   cooldownTime: 2
-  buttonTop: {fileID: 0}
+  buttonTop: {fileID: 537194952}
   pressDepth: 0.02
 --- !u!114 &538143054
 MonoBehaviour:
@@ -69920,7 +69920,7 @@ MonoBehaviour:
   bridgeRb: {fileID: 1886074011}
   upForce: 310
   buttomHeight: 3
-  bridgeSound: {fileID: 0}
+  bridgeSound: {fileID: 8300000, guid: 853ab73064da211428578490769dcb46, type: 3}
 --- !u!4 &2092926222
 Transform:
   m_ObjectHideFlags: 0
