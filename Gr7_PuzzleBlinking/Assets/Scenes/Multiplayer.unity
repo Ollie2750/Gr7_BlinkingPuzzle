@@ -27381,6 +27381,10 @@ PrefabInstance:
       propertyPath: pressedMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 327b78704ccad4c5f9cda4af1cb9e1ac, type: 2}
+    - target: {fileID: 6670471536053802453, guid: f4013c9f987d67d498b81f001000a73f, type: 3}
+      propertyPath: TimedButtonSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 86ecfd55ea78d1540933d96560455d15, type: 3}
     - target: {fileID: 7414012483384283601, guid: f4013c9f987d67d498b81f001000a73f, type: 3}
       propertyPath: m_TagString
       value: Button
@@ -30816,6 +30820,10 @@ PrefabInstance:
       propertyPath: pressedMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 327b78704ccad4c5f9cda4af1cb9e1ac, type: 2}
+    - target: {fileID: 6670471536053802453, guid: f4013c9f987d67d498b81f001000a73f, type: 3}
+      propertyPath: TimedButtonSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 86ecfd55ea78d1540933d96560455d15, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
