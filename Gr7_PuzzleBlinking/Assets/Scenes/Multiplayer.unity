@@ -63949,6 +63949,10 @@ PrefabInstance:
       propertyPath: pressedMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 327b78704ccad4c5f9cda4af1cb9e1ac, type: 2}
+    - target: {fileID: 5483237553407005057, guid: 1823b9b21a4621f4799b93e9304c8888, type: 3}
+      propertyPath: ElevatorButtonSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 86ecfd55ea78d1540933d96560455d15, type: 3}
     - target: {fileID: 5700613907173395919, guid: 1823b9b21a4621f4799b93e9304c8888, type: 3}
       propertyPath: m_Name
       value: PillarButton
@@ -63997,8 +64001,13 @@ MonoBehaviour:
   pressedMaterial: {fileID: 2100000, guid: 327b78704ccad4c5f9cda4af1cb9e1ac, type: 2}
   errorMaterial: {fileID: 2100000, guid: e2e826a436ad94011961fd1eee0b2e32, type: 2}
   cooldownTime: 2
-  buttonTop: {fileID: 0}
+  buttonTop: {fileID: 1781654749}
   pressDepth: 0.02
+--- !u!4 &1781654749 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2188193620007952975, guid: 1823b9b21a4621f4799b93e9304c8888, type: 3}
+  m_PrefabInstance: {fileID: 1781654744}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1783932899
 PrefabInstance:
   m_ObjectHideFlags: 0
