@@ -34,7 +34,7 @@ public class TimeTravel : NetworkBehaviour
 
     private float cooldownTimer = 0f;
 
-    private float volume = 0.1f;
+    private float volume = 0.2f;
     [SerializeField] private AudioClip timeTravelSound;
 
     public override void OnNetworkSpawn()
@@ -101,11 +101,10 @@ public class TimeTravel : NetworkBehaviour
 
         if (isOnCooldown) return;
 
-        SoundManager.Instance.PlaySoundClip(timeTravelSound, transform, volume);
-
         Debug.Log("///////////////////// TIME TRAVEL USED ///////////////////////");
 
         // ==== PLAYER 1 (SERVER TELEPORTED) ====
+        SoundManager.Instance.PlaySoundClip(timeTravelSound, transform, volume);
         Vector3 player1NewPos = CalculateNewPosition(player1Transform.position, player1IsInOldMap, out bool player1NewMapStatus);
 
         Vector3 p1Vel = Vector3.zero;
@@ -142,6 +141,8 @@ public class TimeTravel : NetworkBehaviour
         iconState = !iconState;
 
         StartCoroutine(Cooldown());
+        SoundManager.Instance.PlaySoundClip(timeTravelSound, transform, volume);
+
     }
 
     // ===== LOCAL TELEPORT =====
