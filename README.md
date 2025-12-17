@@ -1,68 +1,68 @@
 # Gr7 Blinking Puzzle
 
-Gr7 Blinking Puzzle er et puslespil udviklet med Unity. Dette projekt er bygget med **Universal Render Pipeline (URP)** og indeholder specialfunktioner og skabeloner til at komme hurtigt i gang med udvikling.
+Gr7 Blinking Puzzle is a puzzle game developed in Unity. This project utilizes the **Universal Render Pipeline (URP)** and includes features and templates to help kickstart development.
 
-## Funktioner
+## Features
 
-- **Blinking Puzzle Mechanic:** Løs puslespil med interaktive blinkende elementer.
-- **Unity Universal Render Pipeline (URP):** Udnyt grafiske ressourcer og URP-indstillinger til bedre ydeevne.
-- **Skabelonfeatures:** Forudindstillede assets og indstillinger til hurtig opstart.
+- **Blinking Puzzle Mechanic:** Solve puzzles with interactive blinking elements.
+- **Unity Universal Render Pipeline (URP):** Includes optimized graphical settings and assets for high performance.
+- **Template Features:** Pre-configured assets and settings to streamline development.
 
-## Kom godt i gang
+## Getting Started
 
-### Forudsætninger
+### Prerequisites
 
-Før du begynder, skal du sikre dig, at du har følgende:
+Before you begin, make sure you have the following:
 
-- **Unity 2021.3 eller nyere**: Dette projekt kræver Unity for at kunne køre. Download Unity Hub og installer den anbefalede version.
-- **Git-klient (valgfrit):** Hvis du vil hente projektet via Git, skal du have en Git-klient installeret.
+- **Unity 2021.3 or Higher:** This project requires Unity to run. Download Unity Hub and install the recommended version.
+- **Git Client (Optional):** If you'd like to clone the project via Git, ensure you have a Git client installed.
 
-### Sådan downloader du projektet
+### How to Download the Project
 
-Der er to måder at downloade projektet på:
+There are two ways to download the project:
 
-#### Metode 1: Download ZIP
-1. Gå til [Gr7 Blinking Puzzle GitHub repository](https://github.com/Ollie2750/Gr7_BlinkingPuzzle).
-2. Klik på den grønne **Code**-knap.
-3. Vælg **Download ZIP**.
-4. Udpak ZIP-filen på din computer.
-5. Åbn projektet i Unity ved at vælge mappen via Unity Hub.
+#### Method 1: Download ZIP
+1. Go to the [Gr7 Blinking Puzzle GitHub repository](https://github.com/Ollie2750/Gr7_BlinkingPuzzle).
+2. Click the green **Code** button.
+3. Select **Download ZIP**.
+4. Extract the ZIP file to your computer.
+5. Open the project in Unity by selecting the extracted folder through Unity Hub.
 
-#### Metode 2: Git Clone
-1. Åbn en terminal eller kommandoprompt.
-2. Indtast følgende kommando for at klone repository:
+#### Method 2: Git Clone
+1. Open a terminal or command prompt on your computer.
+2. Clone the repository using the following command:
    ```bash
    git clone https://github.com/Ollie2750/Gr7_BlinkingPuzzle.git
    ```
-3. Naviger til projektmappen:
+3. Navigate to the project folder:
    ```bash
    cd Gr7_BlinkingPuzzle
    ```
-4. Åbn projektet i Unity Hub.
+4. Open the project in Unity Hub.
 
-### Kørsel af spillet
+### Running the Game
 
-1. Åbn scenefilen `Gr7_PuzzleBlinking` i Unity Editor.
-2. Klik på **Play**-knappen i Unity for at starte spillet.
+1. Open the `Gr7_PuzzleBlinking` scene file in Unity Editor.
+2. Click the **Play** button in Unity to start the game.
 
-## Udvikling
+## Development
 
-### Mappestruktur
+### File Structure
 
-- `Assets/TutorialInfo/Scripts/`: Indeholder scripts som `Readme.cs` for tutorial-opsætning.
-- `Assets/TutorialInfo/Scripts/Editor/`: Scripts til redaktøren, såsom `ReadmeEditor.cs`.
-- `Assets/Readme.asset`: Unity asset til at vise en readme i Unity Editor.
+- `Assets/TutorialInfo/Scripts/`: Contains scripts such as `Readme.cs` for setting up tutorials.
+- `Assets/TutorialInfo/Scripts/Editor/`: Includes editor-related scripts like `ReadmeEditor.cs`.
+- `Assets/Readme.asset`: Unity asset file for rendering the readme in Unity Editor.
 
-### Bidrag
+### Contributing
 
-Bidrag er velkomne! Fork repositoryet, og opret en pull request.
+Contributions are welcome! Fork the repository and submit a pull request.
 
-### Licens
+## License
 
-Dette projekt er licenseret under [MIT-licensen](LICENSE).
+This project is licensed under the [MIT License](LICENSE).
 
-### Referencer
+## References
 
-- [Unity Universal Render Pipeline Dokumentation](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest)
+- [Unity Universal Render Pipeline Documentation](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest)
 - [Unity Forums - URP](https://forum.unity.com/forums/universal-render-pipeline.383/)
 - [Unity Bug Reports](https://unity3d.com/unity/qa/bug-reporting)
