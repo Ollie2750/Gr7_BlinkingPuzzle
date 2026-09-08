@@ -1,3 +1,5 @@
+![Cronolink picture copy.png](Gr7_PuzzleBlinking/Cronolink picture copy.png)
+
 # Gr7 Blinking Puzzle
 
 Gr7 Blinking Puzzle is a puzzle game developed in Unity. This project utilizes the **Universal Render Pipeline (URP)** and includes features and templates to help kickstart development.
