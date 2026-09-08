@@ -1,4 +1,4 @@
-![Cronolink picture copy.png](Gr7_PuzzleBlinking/Cronolink picture copy.png)
+
 
 # Gr7 Blinking Puzzle
 
